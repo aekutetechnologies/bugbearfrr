@@ -27,48 +27,6 @@ const Header = ({handleOpen,handleRemove,openClass}) => {
                             <nav className="nav-main-menu">
                                 <ul className="main-menu">
                                     <li className="has-children">
-                                    <Link legacyBehavior href="/"><a className="active">Home</a></Link>
-
-                                        <ul className="sub-menu">
-                                            <li>
-                                                <Link legacyBehavior href="/"><a>Home 1</a></Link>
-                                            </li>
-                                            <li>
-                                                <Link legacyBehavior href="/index-2"><a>Home 2</a></Link>
-                                            </li>
-                                            <li>
-                                                <Link legacyBehavior href="/index-3"><a>Home 3</a></Link>
-                                            </li>
-                                            <li>
-                                                <Link legacyBehavior href="/index-4"><a>Home 4</a></Link>
-                                            </li>
-                                            <li>
-                                                <Link legacyBehavior href="/index-5"><a>Home 5</a></Link>
-                                            </li>
-                                            <li>
-                                                <Link legacyBehavior href="/index-6"><a>Home 6</a></Link>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li className="has-children">
-                                        <Link legacyBehavior href="/jobs-grid"><a>Find a Job</a></Link>
-
-                                        <ul className="sub-menu">
-                                            <li>
-                                                <Link legacyBehavior href="/jobs-grid"><a>Jobs Grid</a></Link>
-                                            </li>
-                                            <li>
-                                                <Link legacyBehavior href="/jobs-list"><a>Jobs List</a></Link>
-                                            </li>
-                                            <li>
-                                                <Link legacyBehavior href="/job-details"><a>Jobs Details</a></Link>
-                                            </li>
-                                            <li>
-                                                <Link legacyBehavior href="/job-details-2"><a>Jobs Details 2            </a></Link>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li className="has-children">
                                         <Link legacyBehavior href="/companies-grid"><a>Recruiters</a></Link>
 
                                         <ul className="sub-menu">
@@ -169,48 +127,6 @@ const Header = ({handleOpen,handleRemove,openClass}) => {
                                 {/* mobile menu start*/}
                                 <nav>
                                     <ul className="mobile-menu font-heading">
-                                        <li className="has-children">
-                                            <Link legacyBehavior href="/"><a className="active">Home</a></Link>
-
-                                            <ul className="sub-menu">
-                                                <li>
-                                                    <Link legacyBehavior href="/"><a>Home 1</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/index-2"><a>Home 2</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/index-3"><a>Home 3</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/index-4"><a>Home 4</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/index-5"><a>Home 5</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/index-6"><a>Home 6</a></Link>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li className="has-children">
-                                            <Link legacyBehavior href="/jobs-grid"><a>Find a Job</a></Link>
-
-                                            <ul className="sub-menu">
-                                                <li>
-                                                    <Link legacyBehavior href="/jobs-grid"><a>Jobs Grid</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/jobs-list"><a>Jobs List</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/job-details"><a>Jobs Details</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/job-details-2"><a>Jobs Details 2            </a></Link>
-                                                </li>
-                                            </ul>
-                                        </li>
                                         <li className="has-children">
                                             <Link legacyBehavior href="/companies-grid"><a>Recruiters</a></Link>
 

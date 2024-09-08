@@ -1,9 +1,62 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
+import { useState } from "react";
+import { useRouter } from "next/router";
 import Layout from "../components/Layout/Layout";
 import Link from "next/link";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Signin() {
+    const router = useRouter();
+    const [formData, setFormData] = useState({
+        email: '',
+        password: '',
+    });
+    const [error, setError] = useState(null);
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const res = await fetch("http://127.0.0.1:8000/api/user/login/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (res.ok) {
+                const data = await res.json();
+
+                // Store tokens in local storage
+                localStorage.setItem('accessToken', data.token.access);
+                localStorage.setItem('refreshToken', data.token.refresh);
+
+                toast.success(data.msg || "Login successful!");
+
+                // Redirect to dashboard or another protected page
+                router.push('/dashboard');
+            } else {
+                const errorData = await res.json();
+                toast.error(errorData.detail || "Login failed");
+                setError(errorData.detail || "Login failed");
+            }
+        } catch (err) {
+            toast.error("Something went wrong. Please try again later.");
+            setError("Something went wrong. Please try again later.");
+        }
+    };
+
     return (
         <>
             <Layout>
@@ -23,23 +76,41 @@ export default function Signin() {
                                         <span>Or continue with</span>
                                     </div>
                                 </div>
-                                <form className="login-register text-start mt-20" action="#">
+                                <form className="login-register text-start mt-20" onSubmit={handleSubmit}>
                                     <div className="form-group">
                                         <label className="form-label" htmlFor="input-1">
-                                            Username or Email address *
+                                            Email address *
                                         </label>
-                                        <input className="form-control" id="input-1" type="text" required name="fullname" placeholder="Steven Job" />
+                                        <input
+                                            className="form-control"
+                                            id="input-1"
+                                            type="email"
+                                            name="email"
+                                            placeholder="example@example.com"
+                                            value={formData.email}
+                                            onChange={handleChange}
+                                            required
+                                        />
                                     </div>
                                     <div className="form-group">
                                         <label className="form-label" htmlFor="input-4">
                                             Password *
                                         </label>
-                                        <input className="form-control" id="input-4" type="password" required name="password" placeholder="************" />
+                                        <input
+                                            className="form-control"
+                                            id="input-4"
+                                            type="password"
+                                            name="password"
+                                            placeholder="************"
+                                            value={formData.password}
+                                            onChange={handleChange}
+                                            required
+                                        />
                                     </div>
                                     <div className="login_footer form-group d-flex justify-content-between">
                                         <label className="cb-container">
                                             <input type="checkbox" />
-                                            <span className="text-small">Remenber me</span>
+                                            <span className="text-small">Remember me</span>
                                             <span className="checkmark" />
                                         </label>
                                         <Link legacyBehavior href="/page-contact">
@@ -47,7 +118,7 @@ export default function Signin() {
                                         </Link>
                                     </div>
                                     <div className="form-group">
-                                        <button className="btn btn-brand-1 hover-up w-100" type="submit" name="login">
+                                        <button className="btn btn-brand-1 hover-up w-100" type="submit">
                                             Login
                                         </button>
                                     </div>
@@ -68,6 +139,7 @@ export default function Signin() {
                         </div>
                     </div>
                 </section>
+                <ToastContainer />
             </Layout>
         </>
     );
