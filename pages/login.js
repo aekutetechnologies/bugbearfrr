@@ -6,6 +6,7 @@ import Layout from "../components/Layout/Layout";
 import Link from "next/link";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Cookies from 'js-cookie';
 
 export default function Signin() {
     const router = useRouter();
@@ -41,11 +42,17 @@ export default function Signin() {
                 // Store tokens in local storage
                 localStorage.setItem('accessToken', data.token.access);
                 localStorage.setItem('refreshToken', data.token.refresh);
+                localStorage.setItem('userType', data.user_type);
+                Cookies.set('accessToken', data.token.access, { expires: 1 });
 
                 toast.success(data.msg || "Login successful!");
 
                 // Redirect to dashboard or another protected page
-                router.push('/dashboard');
+                if (data.user_type === 3) {
+                    router.push('/dashboard');  // Redirect to dashboard if userType is 3
+                } else {
+                    router.push('/jobs-list');  // Redirect to jobs-list for other userTypes
+                }
             } else {
                 const errorData = await res.json();
                 toast.error(errorData.detail || "Login failed");
@@ -68,13 +75,13 @@ export default function Signin() {
                                     <p className="font-sm text-brand-2">Welcome back! </p>
                                     <h2 className="mt-10 mb-5 text-brand-1">Member Login</h2>
                                     <p className="font-sm text-muted mb-30">Access to all features. No credit card required.</p>
-                                    <button className="btn social-login hover-up mb-20">
+                                    {/* <button className="btn social-login hover-up mb-20">
                                         <img src="assets/imgs/template/icons/icon-google.svg" alt="jobbox" />
                                         <strong>Sign in with Google</strong>
                                     </button>
                                     <div className="divider-text-center">
                                         <span>Or continue with</span>
-                                    </div>
+                                    </div> */}
                                 </div>
                                 <form className="login-register text-start mt-20" onSubmit={handleSubmit}>
                                     <div className="form-group">
@@ -124,7 +131,7 @@ export default function Signin() {
                                     </div>
                                     <div className="text-muted text-center">
                                         Don't have an Account?
-                                        <Link legacyBehavior href="/page-signin">
+                                        <Link legacyBehavior href="/login">
                                             <a>Sign up</a>
                                         </Link>
                                     </div>

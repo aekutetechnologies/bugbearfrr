@@ -30,7 +30,7 @@ export default function Reset() {
                                     </div>
                                     <div className="text-muted text-center">
                                         Don't have an Account?
-                                        <Link legacyBehavior href="/page-signin">
+                                        <Link legacyBehavior href="/login">
                                             <a>Sign up</a>
                                         </Link>
                                     </div>

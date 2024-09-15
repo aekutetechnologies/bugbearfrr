@@ -1,381 +1,222 @@
 ﻿/* eslint-disable @next/next/no-html-link-for-pages */
 import Link from 'next/link';
-import React from 'react';
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
+import { FaUserCircle, FaCog, FaSignOutAlt } from 'react-icons/fa';
+import Sidebar from '../../components/elements/Sidebar'; // Import the sidebar component
+import Cookies from 'js-cookie';
 
-const Header = ({handleOpen,handleRemove,openClass}) => {
-    const [scroll, setScroll] = useState(0)
+const Header = ({ handleOpen, handleRemove, openClass }) => {
+    const [scroll, setScroll] = useState(false);
+    const [profileData, setProfileData] = useState(null);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const [isSidebarOpen, setSidebarOpen] = useState(false);
+    const [userType, setUserType] = useState(null); // Added userType state
+
     useEffect(() => {
-        document.addEventListener("scroll", () => {
-          const scrollCheck = window.scrollY > 100
-          if (scrollCheck !== scroll) {
-            setScroll(scrollCheck)
-          }
-        })
-      })
+        const handleScroll = () => {
+            const scrollCheck = window.scrollY > 100;
+            if (scrollCheck !== scroll) {
+                setScroll(scrollCheck);
+            }
+        };
+
+        document.addEventListener('scroll', handleScroll);
+
+        // Fetch profile data if logged in
+        const token = localStorage.getItem('accessToken');
+        if (token) {
+            fetchProfileData(token);
+        }
+
+        // Cleanup the event listener on component unmount
+        return () => {
+            document.removeEventListener('scroll', handleScroll);
+        };
+    }, [scroll]);
+
+    const toggleSidebar = () => {
+        setSidebarOpen(!isSidebarOpen); // Toggle sidebar
+    };
+
+    const fetchProfileData = async (token) => {
+        try {
+            const response = await fetch("http://127.0.0.1:8000/api/user/user-details/", {
+                method: "GET",
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+            if (response.ok) {
+                const data = await response.json();
+                setProfileData(data);
+                setIsLoggedIn(true);
+                setUserType(localStorage.getItem('userType')); // Set userType from localStorage
+            }
+        } catch (error) {
+            console.error("Error fetching profile data:", error);
+        }
+    };
+
+    const handleLogout = () => {
+        localStorage.removeItem('accessToken');
+        localStorage.removeItem('refreshToken');
+        localStorage.removeItem('userType');
+        Cookies.remove('token');
+        setIsLoggedIn(false);
+        setProfileData(null);
+        setUserType(null);
+    };
+
+    const toggleDropdown = () => {
+        setDropdownOpen(!dropdownOpen);
+    };
+
     return (
         <>
-            <header className={scroll ? "header sticky-bar stick" : "header sticky-bar"}>
+            <header className={scroll ? 'header sticky-bar stick' : 'header sticky-bar'}>
                 <div className="container">
                     <div className="main-header">
                         <div className="header-left">
                             <div className="header-logo">
-                            <Link legacyBehavior href="/"><a className="d-flex"><img alt="jobBox" src="assets/imgs/template/jobhub-logo.svg" /></a></Link>
+                                <Link href="/" className="d-flex">
+                                    <img alt="jobBox" src="/assets/imgs/template/jobhub-logo.svg" />
+                                </Link>
                             </div>
                         </div>
                         <div className="header-nav">
                             <nav className="nav-main-menu">
-                                <ul className="main-menu">
-                                    <li className="has-children">
-                                        <Link legacyBehavior href="/companies-grid"><a>Recruiters</a></Link>
-
-                                        <ul className="sub-menu">
-                                            <li>
-                                                <Link legacyBehavior href="/companies-grid"><a>Recruiters</a></Link>
-                                            </li>
-                                            <li>
-                                                <Link legacyBehavior href="/company-details"><a>Company Details</a></Link>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li className="has-children">
-                                        <Link legacyBehavior href="/candidates-grid"><a>Candidates</a></Link>
-
-                                        <ul className="sub-menu">
-                                            <li>
-                                                <Link legacyBehavior href="/candidates-grid"><a>Candidates Grid</a></Link>
-                                            </li>
-                                            <li>
-                                                <Link legacyBehavior href="/candidate-details"><a>Candidate Details</a></Link>
-                                            </li>
-                                            <li>
-                                                <Link legacyBehavior href="/candidate-profile"><a>Candidate Profile</a></Link>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li className="has-children">
-                                        <Link legacyBehavior href="/blog-grid"><a>Pages</a></Link>
-
-                                        <ul className="sub-menu">
-                                            <li>
-                                                <Link legacyBehavior href="/page-about"><a>About Us</a></Link>
-                                            </li>
-                                            <li>
-                                                <Link legacyBehavior href="/page-pricing"><a>Pricing Plan</a></Link>
-                                            </li>
-                                            <li>
-                                                <Link legacyBehavior href="/page-contact"><a>Contact Us</a></Link>
-                                            </li>
-                                            <li>
-                                                <Link legacyBehavior href="/page-register"><a>Register</a></Link>
-                                            </li>
-                                            <li>
-                                                <Link legacyBehavior href="/page-signin"><a>Signin</a></Link>
-                                            </li>
-                                            <li>
-                                                <Link legacyBehavior href="/page-reset-password"><a>Reset Password</a></Link>
-                                            </li>
-                                            <li>
-                                                <Link legacyBehavior href="/page-content-protected"><a>Content Protected</a></Link>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li className="has-children">
-                                        <Link legacyBehavior href="/blog-grid"><a>Blog</a></Link>
-
-                                        <ul className="sub-menu">
-                                            <li>
-                                                <Link legacyBehavior href="/blog-grid"><a>Blog Grid</a></Link>
-                                            </li>
-                                            <li>
-                                                <Link legacyBehavior href="/blog-grid-2"><a>Blog Grid 2</a></Link>
-                                            </li>
-                                            <li>
-                                                <Link legacyBehavior href="/blog-details"><a>Blog Single</a></Link>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <Link legacyBehavior href="/page-contact"><a>Contact</a></Link>
-                                    </li>
+                                <ul>
+                                    {isLoggedIn && userType === "3" && (
+                                        <li>
+                                            <Link href="/dashboard" className="nav-link">
+                                                Dashboard
+                                            </Link>
+                                        </li>
+                                    )}
+                                    {/* Add more navigation links here if needed */}
                                 </ul>
                             </nav>
-                            <div className={`burger-icon burger-icon-white ${openClass && "burger-close"}`} 
-                            onClick={()=>{handleOpen(); handleRemove()}}>
-                                <span className="burger-icon-top" /><span className="burger-icon-mid" /><span className="burger-icon-bottom" /></div>
+                            <div
+                                className={`burger-icon burger-icon-white ${openClass && 'burger-close'}`}
+                                onClick={() => { handleOpen(); handleRemove(); }}
+                            >
+                                <span className="burger-icon-top" /><span className="burger-icon-mid" /><span className="burger-icon-bottom" />
+                            </div>
                         </div>
                         <div className="header-right">
                             <div className="block-signin">
-                                <Link legacyBehavior href="page-register"><a className="text-link-bd-btom hover-up">Register</a></Link>
+                                {isLoggedIn ? (
+                                    <div className="profile-dropdown">
+                                        <div
+                                            className="profile-header"
+                                            onClick={toggleDropdown}
+                                            style={{
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                cursor: 'pointer',
+                                            }}
+                                        >
+                                            <img
+                                                src={profileData?.profile_pic_url || '/assets/imgs/default-profile-pic.png'}
+                                                alt="Profile"
+                                                style={{
+                                                    width: '40px',
+                                                    height: '40px',
+                                                    borderRadius: '50%',
+                                                    marginRight: '10px',
+                                                }}
+                                            />
+                                            <span>{`Hi, ${profileData?.first_name || 'User'}`}</span>
+                                            <i className="dropdown-icon" style={{ marginLeft: '10px' }}>&#9662;</i>
+                                        </div>
 
-                                <Link legacyBehavior href="page-signin"><a className="btn btn-default btn-shadow ml-40 hover-up">Sign in</a></Link>
+                                        {/* Dropdown menu */}
+                                        {dropdownOpen && (
+                                            <div className="profile-dropdown-menu">
+                                                <Link href={userType === "3" ? "/recruiter-profile" : "/candidate-profile"}>
+                                                    <div className="dropdown-item">
+                                                        <FaUserCircle className="icon" /> View Profile
+                                                    </div>
+                                                </Link>
+                                                <div className="dropdown-item" onClick={toggleSidebar}>
+                                                    <FaCog className="icon" /> My Account
+                                                </div>
+                                                <div className="dropdown-item" onClick={handleLogout}>
+                                                    <FaSignOutAlt className="icon" /> Logout
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
+                                ) : (
+                                    <>
+                                        <Link href="/choose-role" className="text-link-bd-btom hover-up">Register</Link>
+                                        <Link href="/login" className="btn btn-default btn-shadow ml-40 hover-up">Sign in</Link>
+                                    </>
+                                )}
                             </div>
                         </div>
                     </div>
                 </div>
             </header>
-            <div className="mobile-header-active mobile-header-wrapper-style perfect-scrollbar">
-                <div className="mobile-header-wrapper-inner">
-                    <div className="mobile-header-content-area">
-                        <div className="perfect-scroll">
-                            <div className="mobile-search mobile-header-border mb-30">
-                                <form action="#">
-                                    <input type="text" placeholder="Search…" /><i className="fi-rr-search" />
-                                </form>
-                            </div>
-                            <div className="mobile-menu-wrap mobile-header-border">
-                                {/* mobile menu start*/}
-                                <nav>
-                                    <ul className="mobile-menu font-heading">
-                                        <li className="has-children">
-                                            <Link legacyBehavior href="/companies-grid"><a>Recruiters</a></Link>
 
-                                            <ul className="sub-menu">
-                                                <li>
-                                                    <Link legacyBehavior href="/companies-grid"><a>Recruiters</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/company-details"><a>Company Details</a></Link>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li className="has-children">
-                                            <Link legacyBehavior href="/candidates-grid"><a>Candidates</a></Link>
+            <style jsx>{`
+                .profile-dropdown {
+                    position: relative;
+                }
 
-                                            <ul className="sub-menu">
-                                                <li>
-                                                    <Link legacyBehavior href="/candidates-grid"><a>Candidates Grid</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/candidate-details"><a>Candidate Details</a></Link>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li className="has-children">
-                                            <Link legacyBehavior href="/blog-grid"><a>Pages</a></Link>
+                .profile-dropdown-menu {
+                    position: absolute;
+                    right: 0;
+                    top: 50px;
+                    background-color: white;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    z-index: 1000;
+                    padding: 10px;
+                    min-width: 150px;
+                }
 
-                                            <ul className="sub-menu">
-                                                <li>
-                                                    <Link legacyBehavior href="/page-about"><a>About Us</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/page-pricing"><a>Pricing Plan</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/page-contact"><a>Contact Us</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/page-register"><a>Register</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/page-signin"><a>Signin</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/page-reset-password"><a>Reset Password</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/page-content-protected"><a>Content Protected</a></Link>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li className="has-children">
-                                            <Link legacyBehavior href="/blog-grid"><a>Blog</a></Link>
+                .dropdown-item {
+                    padding: 10px;
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                }
 
-                                            <ul className="sub-menu">
-                                                <li>
-                                                    <Link legacyBehavior href="/blog-grid"><a>Blog Grid</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/blog-grid-2"><a>Blog Grid 2</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/blog-details"><a>Blog Single</a></Link>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <Link legacyBehavior href="/page-contact"><a>Contact</a></Link>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                            <div className="mobile-account">
-                                <h6 className="mb-10">Your Account</h6>
-                                <ul className="mobile-menu font-heading">
-                                    <li>
-                                        <Link legacyBehavior href="#"><a>Profile</a></Link>
-                                    </li>
-                                    <li>
-                                        <Link legacyBehavior href="#"><a>Work Preferences</a></Link>
-                                    </li>
-                                    <li>
-                                        <Link legacyBehavior href="#"><a>Account Settings</a></Link>
-                                    </li>
-                                    <li>
-                                        <Link legacyBehavior href="#"><a>Go Pro</a></Link>
-                                    </li>
-                                    <li>
-                                        <Link legacyBehavior href="/page-signin"><a>Sign Out</a></Link>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className="site-copyright">Copyright 2022 © JobBox. <br />Designed by AliThemes.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="mobile-header-active mobile-header-wrapper-style perfect-scrollbar">
-                <div className="mobile-header-wrapper-inner">
-                    <div className="mobile-header-content-area">
-                        <div className="perfect-scroll">
-                            <div className="mobile-search mobile-header-border mb-30">
-                                <form action="#">
-                                    <input type="text" placeholder="Search…" /><i className="fi-rr-search" />
-                                </form>
-                            </div>
-                            <div className="mobile-menu-wrap mobile-header-border">
-                                {/* mobile menu start*/}
-                                <nav>
-                                    <ul className="mobile-menu font-heading">
-                                        <li className="has-children">
-                                            <Link legacyBehavior href="/"><a className="active">Home</a></Link>
+                .dropdown-item:hover {
+                    background-color: #f0f0f0;
+                }
 
-                                            <ul className="sub-menu">
-                                                <li>
-                                                    <Link legacyBehavior href="/"><a>Home 1</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/index-2"><a>Home 2</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/index-3"><a>Home 3</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/index-4"><a>Home 4</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/index-5"><a>Home 5</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/index-6"><a>Home 6</a></Link>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li className="has-children">
-                                            <Link legacyBehavior href="/jobs-grid"><a>Find a Job</a></Link>
+                .icon {
+                    margin-right: 10px;
+                }
 
-                                            <ul className="sub-menu">
-                                                <li>
-                                                    <Link legacyBehavior href="/jobs-grid"><a>Jobs Grid</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/jobs-list"><a>Jobs List</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/job-details"><a>Jobs Details</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/job-details-2"><a>Jobs Details 2            </a></Link>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li className="has-children">
-                                            <Link legacyBehavior href="/companies-grid"><a>Recruiters</a></Link>
+                .nav-main-menu ul {
+                    list-style: none;
+                    display: flex;
+                    gap: 20px;
+                    margin: 0;
+                    padding: 0;
+                }
 
-                                            <ul className="sub-menu">
-                                                <li>
-                                                    <Link legacyBehavior href="/companies-grid"><a>Recruiters</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/company-details"><a>Company Details</a></Link>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li className="has-children">
-                                            <Link legacyBehavior href="/candidates-grid"><a>Candidates</a></Link>
+                .nav-main-menu li {
+                    display: inline;
+                }
 
-                                            <ul className="sub-menu">
-                                                <li>
-                                                    <Link legacyBehavior href="/candidates-grid"><a>Candidates Grid</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/candidate-details"><a>Candidate Details</a></Link>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li className="has-children">
-                                            <Link legacyBehavior href="/blog-grid"><a>Pages</a></Link>
+                .nav-link {
+                    text-decoration: none;
+                    color: inherit;
+                    font-weight: 500;
+                    transition: color 0.3s ease;
+                }
 
-                                            <ul className="sub-menu">
-                                                <li>
-                                                    <Link legacyBehavior href="/page-about"><a>About Us</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/page-pricing"><a>Pricing Plan</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/page-contact"><a>Contact Us</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/page-register"><a>Register</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/page-signin"><a>Signin</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/page-reset-password"><a>Reset Password</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/page-content-protected"><a>Content Protected</a></Link>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li className="has-children">
-                                            <Link legacyBehavior href="/blog-grid"><a>Blog</a></Link>
-
-                                            <ul className="sub-menu">
-                                                <li>
-                                                    <Link legacyBehavior href="/blog-grid"><a>Blog Grid</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/blog-grid-2"><a>Blog Grid 2</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/blog-details"><a>Blog Single</a></Link>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <Link legacyBehavior href="/page-contact"><a>Contact</a></Link>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                            <div className="mobile-account">
-                                <h6 className="mb-10">Your Account</h6>
-                                <ul className="mobile-menu font-heading">
-                                    <li>
-                                        <Link legacyBehavior href="#"><a>Profile</a></Link>
-                                    </li>
-                                    <li>
-                                        <Link legacyBehavior href="#"><a>Work Preferences</a></Link>
-                                    </li>
-                                    <li>
-                                        <Link legacyBehavior href="#"><a>Account Settings</a></Link>
-                                    </li>
-                                    <li>
-                                        <Link legacyBehavior href="#"><a>Go Pro</a></Link>
-                                    </li>
-                                    <li>
-                                        <Link legacyBehavior href="/page-signin"><a>Sign Out</a></Link>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className="site-copyright">Copyright 2022 © JobBox. <br />Designed by AliThemes.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                .nav-link:hover {
+                    color: #0070f3; /* Change to desired hover color */
+                }
+            `}</style>
+            {isSidebarOpen && <Sidebar closeSidebar={toggleSidebar} />}
         </>
     );
 };

@@ -130,7 +130,7 @@ const Sidebar = ({ openClass }) => {
                                                     <Link legacyBehavior href="/page-register"><a>Register</a></Link>
                                                     </li>
                                                 <li>
-                                                    <Link legacyBehavior href="/page-signin"><a>Signin</a></Link>
+                                                    <Link legacyBehavior href="/login"><a>Signin</a></Link>
                                                     </li>
                                                 <li>
                                                     <Link legacyBehavior href="/page-reset-password"><a>Reset Password</a></Link>
@@ -179,7 +179,7 @@ const Sidebar = ({ openClass }) => {
                                         <Link legacyBehavior href="#"><a>Go Pro</a></Link>
                                         </li>
                                     <li>
-                                        <Link legacyBehavior href="/page-signin"><a>Sign Out</a></Link>
+                                        <Link legacyBehavior href="/login"><a>Sign Out</a></Link>
                                         </li>
                                 </ul>
                             </div>

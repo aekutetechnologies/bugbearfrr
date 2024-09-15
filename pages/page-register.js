@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Layout from "../components/Layout/Layout";
 import Link from "next/link";
@@ -12,11 +12,21 @@ export default function Register() {
         password: '',
         password2: '',
         tc: false,
-        user_type: 1,
+        user_type: 1, // Default user_type as Freelancer
     });
 
     const [error, setError] = useState(null);
-    const [success, setSuccess] = useState(null);
+
+    // Capture `user_type` from query params
+    useEffect(() => {
+        const { usertype } = router.query;
+        if (usertype) {
+            setFormData((prevData) => ({
+                ...prevData,
+                user_type: parseInt(usertype), // Set the user_type from query params
+            }));
+        }
+    }, [router.query]);
 
     // Handle form input changes
     const handleChange = (e) => {
@@ -42,7 +52,7 @@ export default function Register() {
             password: formData.password,
             password2: formData.password2,
             tc: formData.tc,
-            user_type: formData.user_type,
+            user_type: formData.user_type, // Include user_type in the request
         };
 
         try {
@@ -55,22 +65,19 @@ export default function Register() {
             });
 
             if (res.ok) {
-                const data = await res.json();
                 toast.success("Registration successful!");
                 setError(null);
 
                 // Redirect to sign-in page
-                router.push('/page-signin');
+                router.push('/login');
             } else {
                 const errorData = await res.json();
                 toast.error(errorData.detail || "Registration failed");
                 setError(errorData.detail || "Registration failed");
-                setSuccess(null);
             }
         } catch (err) {
             toast.error("Something went wrong. Please try again later.");
             setError("Something went wrong. Please try again later.");
-            setSuccess(null);
         }
     };
 
@@ -152,7 +159,7 @@ export default function Register() {
                                 </div>
                                 <div className="text-muted text-center">
                                     Already have an account?
-                                    <Link href="/page-signin">
+                                    <Link href="/login">
                                         <span>Sign in</span>
                                     </Link>
                                 </div>

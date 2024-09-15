@@ -184,8 +184,7 @@ export default function JobList() {
                                                                     </div>
                                                                     <div className="col-lg-6 text-start text-md-end pr-60 col-md-6 col-sm-12">
                                                                         <div className="pl-15 mb-15 mt-30">
-                                                                            <Link href="#" className="btn btn-grey-small mr-5">Adobe XD</Link>
-                                                                            <Link href="#" className="btn btn-grey-small mr-5">Figma</Link>
+                                                                            <Link href="#" className="btn btn-grey-small mr-5">{job.category}</Link>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -205,15 +204,16 @@ export default function JobList() {
                                                                     <div className="card-2-bottom mt-20">
                                                                         <div className="row">
                                                                             <div className="col-lg-7 col-7">
-                                                                                <span className="card-text-price">${job.salary}</span>
-                                                                                <span className="text-muted">/Hour</span>
+                                                                                <span className="card-text-price">${job.salary_min}</span>
+                                                                                <span className="text-muted">-</span>
+                                                                                <span className="card-text-price">${job.salary_max}</span>
                                                                             </div>
                                                                             <div className="col-lg-5 col-5 text-end">
                                                                                 <button
                                                                                     className="btn btn-apply-now"
                                                                                     onClick={() => handleApplyNowClick(job.id)}
                                                                                 >
-                                                                                    Apply now
+                                                                                    View Job
                                                                                 </button>
                                                                             </div>
                                                                         </div>

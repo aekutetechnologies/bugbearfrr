@@ -2,33 +2,116 @@
 import Link from "next/link";
 import Layout from "../../components/Layout/Layout";
 import FeaturedSlider from "./../../components/sliders/Featured";
+import { format } from 'date-fns';
+import { FaIndustry, FaMoneyBillWave, FaClock, FaMapMarkerAlt, FaStar, FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
+import { useState } from "react";  // Import useState for managing button clicks
+import { ToastContainer, toast } from 'react-toastify'; // Import toast notifications
+import 'react-toastify/dist/ReactToastify.css'; // Import styles for toast notifications
 
 export default function JobDetails({ job, featuredJobs }) {
+    const [isApplying, setIsApplying] = useState(false);
+    const [isSaving, setIsSaving] = useState(false);
+    const [saved, setSaved] = useState(false); // Track whether the job is saved
+
     if (!job) {
         return <div>Job details not found!</div>;
     }
 
+    // Format the job_posted and job_expiry dates using date-fns
+    const jobPostedDate = job.job_posted ? format(new Date(job.job_posted), 'MM/dd/yyyy') : 'N/A';
+    const jobExpiryDate = job.job_expiry ? format(new Date(job.job_expiry), 'MM/dd/yyyy') : 'N/A';
+
+    // Function to get the token from localStorage (assuming it's stored there)
+    const getToken = () => {
+        return localStorage.getItem("accessToken"); // Replace with the actual method to retrieve the token
+    };
+
+    // Function to handle job application
+    const handleApply = async () => {
+        setIsApplying(true);
+        const token = getToken();
+        try {
+            const response = await fetch("http://127.0.0.1:8000/api/jobs/apply/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`, // Add token to the Authorization header
+                },
+                body: JSON.stringify({ job_id: job.id }),
+            });
+            if (!response.ok) {
+                throw new Error(`Failed to apply for the job: ${response.status}`);
+            }
+            toast.success("Job application submitted successfully!");
+
+            window.location.reload();
+        } catch (error) {
+            console.error("Error applying for job:", error);
+            toast.error("There was an issue applying for the job.");
+        } finally {
+            setIsApplying(false);
+        }
+    };
+
+    // Function to handle job saving
+    const handleSave = async () => {
+        setIsSaving(true);
+        const token = getToken();
+        try {
+            const response = await fetch(`http://127.0.0.1:8000/api/jobs/${saved ? "unsave" : "save"}/`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`, // Add token to the Authorization header
+                },
+                body: JSON.stringify({ job_id: job.id }),
+            });
+            if (!response.ok) {
+                throw new Error(`Failed to ${saved ? "unsave" : "save"} the job: ${response.status}`);
+            }
+            setSaved(!saved); // Toggle saved state
+            toast.success(`Job ${saved ? "unsaved" : "saved"} successfully!`);
+        } catch (error) {
+            console.error(`Error ${saved ? "unsaving" : "saving"} job:`, error);
+            toast.error(`There was an issue ${saved ? "unsaving" : "saving"} the job.`);
+        } finally {
+            setIsSaving(false);
+        }
+    };
+
     return (
         <>
             <Layout>
+                <ToastContainer /> {/* Add toast container */}
                 <div>
                     <section className="section-box-2">
                         <div className="container">
                             <div className="banner-hero banner-image-single">
-                                <img src="assets/imgs/page/job-single/thumb.png" alt="jobBox" />
+                                <img src="/assets/imgs/page/job-single/thumb.png" alt="jobBox" />
                             </div>
                             <div className="row mt-10">
                                 <div className="col-lg-8 col-md-12">
                                     <h3>{job.title || "Job Title"}</h3>
                                     <div className="mt-0 mb-15">
-                                        <span className="card-briefcase">{job.job_type || "Fulltime"}</span>
-                                        <span className="card-time">{new Date(job.posted_date).toLocaleDateString()}</span>
+                                        <span className="card-briefcase">{job.job_type || "Full Time"}</span>
+                                        <span className="card-time"><FaClock /> {jobPostedDate}</span> {/* Use formatted job_posted date */}
+                                        <span className="card-time"><FaClock /> {jobExpiryDate}</span> {/* Use formatted job_expiry date */}
                                     </div>
                                 </div>
                                 <div className="col-lg-4 col-md-12 text-lg-end">
-                                    <div className="btn btn-apply-icon btn-apply btn-apply-big hover-up" data-bs-toggle="modal" data-bs-target="#ModalApplyJobForm">
-                                        Apply now
-                                    </div>
+                                    <button
+                                        className="btn btn-apply-icon btn-apply btn-apply-big hover-up"
+                                        disabled={isApplying || job.applied}
+                                        onClick={handleApply}
+                                    >
+                                        {job.applied ? "Applied" : isApplying ? "Applying..." : "Apply now"}
+                                    </button>
+                                    <FaStar
+                                        size={24}
+                                        color={saved ? "yellow" : "gray"}  // Yellow if saved, gray if not saved
+                                        style={{ cursor: "pointer", marginLeft: "10px" }}
+                                        onClick={handleSave}
+                                    />
                                 </div>
                             </div>
                             <div className="border-bottom pt-10 pb-10" />
@@ -45,20 +128,20 @@ export default function JobDetails({ job, featuredJobs }) {
                                         <div className="row">
                                             <div className="col-md-6 d-flex">
                                                 <div className="sidebar-icon-item">
-                                                    <img src="assets/imgs/page/job-single/industry.svg" alt="jobBox" />
+                                                    <FaIndustry size={24} />
                                                 </div>
                                                 <div className="sidebar-text-info ml-10">
-                                                    <span className="text-description industry-icon mb-10">Industry</span>
-                                                    <strong className="small-heading">{job.industry || "Industry not provided"}</strong>
+                                                    <span className="text-description industry-icon mb-10">Category</span>
+                                                    <strong className="small-heading">{job.category || "Industry not provided"}</strong> {/* Handle job category */}
                                                 </div>
                                             </div>
                                             <div className="col-md-6 d-flex mt-sm-15">
                                                 <div className="sidebar-icon-item">
-                                                    <img src="assets/imgs/page/job-single/job-level.svg" alt="jobBox" />
+                                                    <FaMoneyBillWave size={24} />
                                                 </div>
                                                 <div className="sidebar-text-info ml-10">
-                                                    <span className="text-description joblevel-icon mb-10">Job level</span>
-                                                    <strong className="small-heading">{job.job_level || "Not specified"}</strong>
+                                                    <span className="text-description salary-icon mb-10">Salary</span>
+                                                    <strong className="small-heading">${job.salary_min} - ${job.salary_max}</strong> {/* Display salary */}
                                                 </div>
                                             </div>
                                         </div>
@@ -66,69 +149,65 @@ export default function JobDetails({ job, featuredJobs }) {
                                         <div className="row mt-25">
                                             <div className="col-md-6 d-flex mt-sm-15">
                                                 <div className="sidebar-icon-item">
-                                                    <img src="assets/imgs/page/job-single/salary.svg" alt="jobBox" />
+                                                    <FaClock size={24} />
                                                 </div>
                                                 <div className="sidebar-text-info ml-10">
-                                                    <span className="text-description salary-icon mb-10">Salary</span>
-                                                    <strong className="small-heading">${job.salary_min} - ${job.salary_max}</strong>
+                                                    <span className="text-description experience-icon mb-10">Experience</span>
+                                                    <strong className="small-heading">{job.experience || "Not specified"} years</strong> {/* Display experience */}
                                                 </div>
                                             </div>
                                             <div className="col-md-6 d-flex">
                                                 <div className="sidebar-icon-item">
-                                                    <img src="assets/imgs/page/job-single/experience.svg" alt="jobBox" />
+                                                    <FaMapMarkerAlt size={24} />
                                                 </div>
                                                 <div className="sidebar-text-info ml-10">
-                                                    <span className="text-description experience-icon mb-10">Experience</span>
-                                                    <strong className="small-heading">{job.experience || "Not specified"}</strong>
+                                                    <span className="text-description jobtype-icon mb-10">Location</span>
+                                                    <strong className="small-heading">{job.location || "Remote"}</strong> {/* Display location */}
                                                 </div>
                                             </div>
                                         </div>
 
+                                        {/* Display if the job is featured or active */}
                                         <div className="row mt-25">
-                                            <div className="col-md-6 d-flex mt-sm-15">
+                                            <div className="col-md-6 d-flex">
                                                 <div className="sidebar-icon-item">
-                                                    <img src="assets/imgs/page/job-single/job-type.svg" alt="jobBox" />
+                                                    <FaStar size={24} color="gray" /> {/* Featured icon in grey */}
                                                 </div>
                                                 <div className="sidebar-text-info ml-10">
-                                                    <span className="text-description jobtype-icon mb-10">Job type</span>
-                                                    <strong className="small-heading">{job.job_type || "Permanent"}</strong>
+                                                    <span className="text-description mb-10">Featured</span>
+                                                    <strong className="small-heading">{job.featured ? "Yes" : "No"}</strong> {/* Display featured status */}
                                                 </div>
                                             </div>
-                                            <div className="col-md-6 d-flex mt-sm-15">
+                                            <div className="col-md-6 d-flex">
                                                 <div className="sidebar-icon-item">
-                                                    <img src="assets/imgs/page/job-single/location.svg" alt="jobBox" />
+                                                    {job.is_active ? <FaCheckCircle size={24} color="gray" /> : <FaTimesCircle size={24} color="gray" />} {/* Active/Inactive icons in grey */}
                                                 </div>
                                                 <div className="sidebar-text-info ml-10">
-                                                    <span className="text-description mb-10">Location</span>
-                                                    <strong className="small-heading">{job.location || "Remote"}</strong>
+                                                    <span className="text-description mb-10">Status</span>
+                                                    <strong className="small-heading">{job.is_active ? "Open" : "Closed"}</strong> {/* Display active status */}
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
+                                    {/* Job Description */}
                                     <div className="content-single">
                                         <h4>Job Description</h4>
-                                        <p>{job.job_description || "Job description not available."}</p>
+                                        <p>{job.responsibilities || "Job description not available."}</p>
 
                                         <h4>Essential Knowledge, Skills, and Experience</h4>
                                         <ul>
-                                            {job.skills && job.skills.map((skill, index) => (
-                                                <li key={index}>{skill}</li>
-                                            ))}
+                                            {job.skills && job.skills.length > 0 ? (
+                                                job.skills.split(",").map((skill, index) => (
+                                                    <li key={index}>{skill.trim()}</li>
+                                                ))
+                                            ) : (
+                                                <li>Skills not provided</li>
+                                            )}
                                         </ul>
-                                    </div>
 
-                                    <div className="single-apply-jobs">
-                                        <div className="row align-items-center">
-                                            <div className="col-md-5">
-                                                <Link href="/job-details">
-                                                    Apply now
-                                                </Link>
-                                                <Link href="/job-details">
-                                                    Save job
-                                                </Link>
-                                            </div>
-                                        </div>
+                                        <h4>Qualifications</h4>
+                                        <p>{job.qualifications || "No qualifications provided."}</p>
                                     </div>
                                 </div>
 
@@ -143,9 +222,7 @@ export default function JobDetails({ job, featuredJobs }) {
                             <div className="text-left">
                                 <h2 className="section-title mb-10">Featured Jobs</h2>
                                 <div className="mt-50">
-                                <div className="mt-50">
-                                <FeaturedSlider featuredJobs={featuredJobs} />
-                            </div>
+                                    <FeaturedSlider featuredJobs={featuredJobs} />
                                     <div className="text-center">
                                         <Link href="#">
                                             Load more posts
@@ -161,13 +238,24 @@ export default function JobDetails({ job, featuredJobs }) {
     );
 }
 
+
+import cookie from 'cookie';
+
 // Fetch data from the API
 export async function getServerSideProps(context) {
     const { id } = context.query;
-    console.log("ID:", id);
 
     try {
-        const res = await fetch(`http://127.0.0.1:8000/api/jobs/${id}`);
+        // Parse cookies from the request header
+        const cookies = context.req.headers.cookie ? cookie.parse(context.req.headers.cookie) : {};
+        const token = cookies.accessToken; // Get the token from cookies
+
+        const res = await fetch(`http://127.0.0.1:8000/api/jobs/${id}`, {
+            method: 'GET',
+            headers: {
+                Authorization: `Bearer ${token}`, // Pass the token in the headers
+            },
+        });
 
         if (!res.ok) {
             throw new Error(`Failed to fetch job details: ${res.status}`);
@@ -191,10 +279,14 @@ export async function getServerSideProps(context) {
                 jobType: [],
             }),
         });
+
         if (!featuredRes.ok) {
             throw new Error(`Failed to fetch featured jobs: ${featuredRes.status}`);
         }
+
         const featuredJobs = await featuredRes.json();
+
+        console.log("Featured jobs:", featuredJobs);
 
         return {
             props: { job, featuredJobs: featuredJobs.results || [] },
@@ -207,3 +299,4 @@ export async function getServerSideProps(context) {
         };
     }
 }
+
