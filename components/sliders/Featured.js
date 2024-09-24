@@ -33,7 +33,7 @@ const FeaturedSlider = ({ featuredJobs }) => {
                                         <div className="image-box logo-background">
                                             <img
                                                 src={job.company_logo || "/assets/imgs/brands/default-logo.png"}
-                                                alt="jobBox"
+                                                alt="bugbear"
                                                 className="company-logo-img"
                                             />
                                         </div>

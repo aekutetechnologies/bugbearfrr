@@ -11,7 +11,7 @@ export default function JobDetails() {
                     <section className="section-box-2">
                         <div className="container">
                             <div className="banner-hero banner-image-single">
-                                <img src="assets/imgs/page/job-single/thumb.png" alt="jobBox" />
+                                <img src="assets/imgs/page/job-single/thumb.png" alt="bugbear" />
                             </div>
                             <div className="row mt-10">
                                 <div className="col-lg-8 col-md-12">
@@ -39,7 +39,7 @@ export default function JobDetails() {
                                         <div className="row">
                                             <div className="col-md-6 d-flex">
                                                 <div className="sidebar-icon-item">
-                                                    <img src="assets/imgs/page/job-single/industry.svg" alt="jobBox" />
+                                                    <img src="assets/imgs/page/job-single/industry.svg" alt="bugbear" />
                                                 </div>
                                                 <div className="sidebar-text-info ml-10">
                                                     <span className="text-description industry-icon mb-10">Industry</span>
@@ -48,7 +48,7 @@ export default function JobDetails() {
                                             </div>
                                             <div className="col-md-6 d-flex mt-sm-15">
                                                 <div className="sidebar-icon-item">
-                                                    <img src="assets/imgs/page/job-single/job-level.svg" alt="jobBox" />
+                                                    <img src="assets/imgs/page/job-single/job-level.svg" alt="bugbear" />
                                                 </div>
                                                 <div className="sidebar-text-info ml-10">
                                                     <span className="text-description joblevel-icon mb-10">Job level</span>
@@ -59,7 +59,7 @@ export default function JobDetails() {
                                         <div className="row mt-25">
                                             <div className="col-md-6 d-flex mt-sm-15">
                                                 <div className="sidebar-icon-item">
-                                                    <img src="assets/imgs/page/job-single/salary.svg" alt="jobBox" />
+                                                    <img src="assets/imgs/page/job-single/salary.svg" alt="bugbear" />
                                                 </div>
                                                 <div className="sidebar-text-info ml-10">
                                                     <span className="text-description salary-icon mb-10">Salary</span>
@@ -68,7 +68,7 @@ export default function JobDetails() {
                                             </div>
                                             <div className="col-md-6 d-flex">
                                                 <div className="sidebar-icon-item">
-                                                    <img src="assets/imgs/page/job-single/experience.svg" alt="jobBox" />
+                                                    <img src="assets/imgs/page/job-single/experience.svg" alt="bugbear" />
                                                 </div>
                                                 <div className="sidebar-text-info ml-10">
                                                     <span className="text-description experience-icon mb-10">Experience</span>
@@ -79,7 +79,7 @@ export default function JobDetails() {
                                         <div className="row mt-25">
                                             <div className="col-md-6 d-flex mt-sm-15">
                                                 <div className="sidebar-icon-item">
-                                                    <img src="assets/imgs/page/job-single/job-type.svg" alt="jobBox" />
+                                                    <img src="assets/imgs/page/job-single/job-type.svg" alt="bugbear" />
                                                 </div>
                                                 <div className="sidebar-text-info ml-10">
                                                     <span className="text-description jobtype-icon mb-10">Job type</span>
@@ -88,7 +88,7 @@ export default function JobDetails() {
                                             </div>
                                             <div className="col-md-6 d-flex mt-sm-15">
                                                 <div className="sidebar-icon-item">
-                                                    <img src="assets/imgs/page/job-single/deadline.svg" alt="jobBox" />
+                                                    <img src="assets/imgs/page/job-single/deadline.svg" alt="bugbear" />
                                                 </div>
                                                 <div className="sidebar-text-info ml-10">
                                                     <span className="text-description mb-10">Deadline</span>
@@ -99,7 +99,7 @@ export default function JobDetails() {
                                         <div className="row mt-25">
                                             <div className="col-md-6 d-flex mt-sm-15">
                                                 <div className="sidebar-icon-item">
-                                                    <img src="assets/imgs/page/job-single/updated.svg" alt="jobBox" />
+                                                    <img src="assets/imgs/page/job-single/updated.svg" alt="bugbear" />
                                                 </div>
                                                 <div className="sidebar-text-info ml-10">
                                                     <span className="text-description jobtype-icon mb-10">Updated</span>
@@ -108,7 +108,7 @@ export default function JobDetails() {
                                             </div>
                                             <div className="col-md-6 d-flex mt-sm-15">
                                                 <div className="sidebar-icon-item">
-                                                    <img src="assets/imgs/page/job-single/location.svg" alt="jobBox" />
+                                                    <img src="assets/imgs/page/job-single/location.svg" alt="bugbear" />
                                                 </div>
                                                 <div className="sidebar-text-info ml-10">
                                                     <span className="text-description mb-10">Location</span>
@@ -171,25 +171,25 @@ export default function JobDetails() {
                                                 <h6 className="color-text-paragraph-2 d-inline-block d-baseline mr-10">Share this</h6>
                                                 <Link legacyBehavior href="#">
                                                     <a className="mr-5 d-inline-block d-middle">
-                                                        <img alt="jobBox" src="assets/imgs/template/icons/share-fb.svg" />
+                                                        <img alt="bugbear" src="assets/imgs/template/icons/share-fb.svg" />
                                                     </a>
                                                 </Link>
 
                                                 <Link legacyBehavior href="#">
                                                     <a className="mr-5 d-inline-block d-middle">
-                                                        <img alt="jobBox" src="assets/imgs/template/icons/share-tw.svg" />
+                                                        <img alt="bugbear" src="assets/imgs/template/icons/share-tw.svg" />
                                                     </a>
                                                 </Link>
 
                                                 <Link legacyBehavior href="#">
                                                     <a className="mr-5 d-inline-block d-middle">
-                                                        <img alt="jobBox" src="assets/imgs/template/icons/share-red.svg" />
+                                                        <img alt="bugbear" src="assets/imgs/template/icons/share-red.svg" />
                                                     </a>
                                                 </Link>
 
                                                 <Link legacyBehavior href="#">
                                                     <a className="d-inline-block d-middle">
-                                                        <img alt="jobBox" src="assets/imgs/template/icons/share-whatsapp.svg" />
+                                                        <img alt="bugbear" src="assets/imgs/template/icons/share-whatsapp.svg" />
                                                     </a>
                                                 </Link>
                                             </div>
@@ -201,7 +201,7 @@ export default function JobDetails() {
                                         <div className="sidebar-heading">
                                             <div className="avatar-sidebar">
                                                 <figure>
-                                                    <img alt="jobBox" src="assets/imgs/page/job-single/avatar.png" />
+                                                    <img alt="bugbear" src="assets/imgs/page/job-single/avatar.png" />
                                                 </figure>
                                                 <div className="sidebar-info">
                                                     <span className="sidebar-company">AliThemes</span>
@@ -232,7 +232,7 @@ export default function JobDetails() {
                                                         <div className="image">
                                                             <Link legacyBehavior href="/job-details">
                                                                 <a>
-                                                                    <img src="assets/imgs/brands/brand-1.png" alt="jobBox" />
+                                                                    <img src="assets/imgs/brands/brand-1.png" alt="bugbear" />
                                                                 </a>
                                                             </Link>
                                                         </div>
@@ -269,7 +269,7 @@ export default function JobDetails() {
                                                         <div className="image">
                                                             <Link legacyBehavior href="/job-details">
                                                                 <a>
-                                                                    <img src="assets/imgs/brands/brand-2.png" alt="jobBox" />
+                                                                    <img src="assets/imgs/brands/brand-2.png" alt="bugbear" />
                                                                 </a>
                                                             </Link>
                                                         </div>
@@ -306,7 +306,7 @@ export default function JobDetails() {
                                                         <div className="image">
                                                             <Link legacyBehavior href="/job-details">
                                                                 <a>
-                                                                    <img src="assets/imgs/brands/brand-3.png" alt="jobBox" />
+                                                                    <img src="assets/imgs/brands/brand-3.png" alt="bugbear" />
                                                                 </a>
                                                             </Link>
                                                         </div>
@@ -343,7 +343,7 @@ export default function JobDetails() {
                                                         <div className="image">
                                                             <Link legacyBehavior href="/job-details">
                                                                 <a>
-                                                                    <img src="assets/imgs/brands/brand-4.png" alt="jobBox" />
+                                                                    <img src="assets/imgs/brands/brand-4.png" alt="bugbear" />
                                                                 </a>
                                                             </Link>
                                                         </div>
@@ -380,7 +380,7 @@ export default function JobDetails() {
                                                         <div className="image">
                                                             <Link legacyBehavior href="/job-details">
                                                                 <a>
-                                                                    <img src="assets/imgs/brands/brand-5.png" alt="jobBox" />
+                                                                    <img src="assets/imgs/brands/brand-5.png" alt="bugbear" />
                                                                 </a>
                                                             </Link>
                                                         </div>
@@ -417,7 +417,7 @@ export default function JobDetails() {
                                                         <div className="image">
                                                             <Link legacyBehavior href="/job-details">
                                                                 <a>
-                                                                    <img src="assets/imgs/brands/brand-6.png" alt="jobBox" />
+                                                                    <img src="assets/imgs/brands/brand-6.png" alt="bugbear" />
                                                                 </a>
                                                             </Link>
                                                         </div>
@@ -454,7 +454,7 @@ export default function JobDetails() {
                                                         <div className="image">
                                                             <Link legacyBehavior href="/job-details">
                                                                 <a>
-                                                                    <img src="assets/imgs/brands/brand-7.png" alt="jobBox" />
+                                                                    <img src="assets/imgs/brands/brand-7.png" alt="bugbear" />
                                                                 </a>
                                                             </Link>
                                                         </div>
@@ -491,7 +491,7 @@ export default function JobDetails() {
                                                         <div className="image">
                                                             <Link legacyBehavior href="/job-details">
                                                                 <a>
-                                                                    <img src="assets/imgs/brands/brand-8.png" alt="jobBox" />
+                                                                    <img src="assets/imgs/brands/brand-8.png" alt="bugbear" />
                                                                 </a>
                                                             </Link>
                                                         </div>

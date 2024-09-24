@@ -20,52 +20,52 @@ const BrandSlider = () => {
                 >
                     <SwiperSlide>
                         <a href="#">
-                            <img src="assets/imgs/slider/logo/microsoft.svg" alt="jobBox" />
+                            <img src="assets/imgs/slider/logo/microsoft.svg" alt="bugbear" />
                         </a>
                     </SwiperSlide>
                     <SwiperSlide>
                         <a href="#">
-                            <img src="assets/imgs/slider/logo/sony.svg" alt="jobBox" />
+                            <img src="assets/imgs/slider/logo/sony.svg" alt="bugbear" />
                         </a>
                     </SwiperSlide>
                     <SwiperSlide>
                         <a href="#">
-                            <img src="assets/imgs/slider/logo/acer.svg" alt="jobBox" />
+                            <img src="assets/imgs/slider/logo/acer.svg" alt="bugbear" />
                         </a>
                     </SwiperSlide>
                     <SwiperSlide>
                         <a href="#">
-                            <img src="assets/imgs/slider/logo/nokia.svg" alt="jobBox" />
+                            <img src="assets/imgs/slider/logo/nokia.svg" alt="bugbear" />
                         </a>
                     </SwiperSlide>
                     <SwiperSlide>
                         <a href="#">
-                            <img src="assets/imgs/slider/logo/assus.svg" alt="jobBox" />
+                            <img src="assets/imgs/slider/logo/assus.svg" alt="bugbear" />
                         </a>
                     </SwiperSlide>
                     <SwiperSlide>
                         <a href="#">
-                            <img src="assets/imgs/slider/logo/casio.svg" alt="jobBox" />
+                            <img src="assets/imgs/slider/logo/casio.svg" alt="bugbear" />
                         </a>
                     </SwiperSlide>
                     <SwiperSlide>
                         <a href="#">
-                            <img src="assets/imgs/slider/logo/dell.svg" alt="jobBox" />
+                            <img src="assets/imgs/slider/logo/dell.svg" alt="bugbear" />
                         </a>
                     </SwiperSlide>
                     <SwiperSlide>
                         <a href="#">
-                            <img src="assets/imgs/slider/logo/panasonic.svg" alt="jobBox" />
+                            <img src="assets/imgs/slider/logo/panasonic.svg" alt="bugbear" />
                         </a>
                     </SwiperSlide>
                     <SwiperSlide>
                         <a href="#">
-                            <img src="assets/imgs/slider/logo/vaio.svg" alt="jobBox" />
+                            <img src="assets/imgs/slider/logo/vaio.svg" alt="bugbear" />
                         </a>
                     </SwiperSlide>
                     <SwiperSlide>
                         <a href="#">
-                            <img src="assets/imgs/slider/logo/sharp.svg" alt="jobBox" />
+                            <img src="assets/imgs/slider/logo/sharp.svg" alt="bugbear" />
                         </a>
                     </SwiperSlide>
                 </Swiper>

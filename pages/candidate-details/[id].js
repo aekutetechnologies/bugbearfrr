@@ -61,11 +61,11 @@ export default function CandidateDetails() {
                 <section className="section-box-2">
                     <div className="container">
                         <div className="banner-hero banner-image-single">
-                            <img src={candidate?.banner_image || "assets/imgs/page/candidates/img.png"} alt="jobbox" />
+                            <img src={candidate?.banner_image || "assets/imgs/page/candidates/img.png"} alt="bugbear" />
                         </div>
                         <div className="box-company-profile">
                             <div className="image-compay">
-                                <img src={candidate?.profile_pic_url || "assets/imgs/page/candidates/candidate-profile.png"} alt="jobbox" />
+                                <img src={candidate?.profile_pic_url || "assets/imgs/page/candidates/candidate-profile.png"} alt="bugbear" />
                             </div>
                             <div className="row mt-10">
                                 <div className="col-lg-8 col-md-12">

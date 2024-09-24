@@ -74,7 +74,7 @@ export default function About() {
                                         <div className="card-grid-4 text-center hover-up">
                                             <div className="image-top-feature">
                                                 <figure>
-                                                    <img alt="jobBox" src="assets/imgs/page/about/team1.png" />
+                                                    <img alt="bugbear" src="assets/imgs/page/about/team1.png" />
                                                 </figure>
                                             </div>
                                             <div className="card-grid-4-info">
@@ -82,19 +82,19 @@ export default function About() {
                                                 <p className="font-xs color-text-paragraph-2 mt-5 mb-5">Frontend Developer</p>
                                                 <div className="rate-reviews-small pt-5">
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span className="ml-10 color-text-mutted font-xs">
                                                         <span>(</span>
@@ -116,7 +116,7 @@ export default function About() {
                                         <div className="card-grid-4 text-center hover-up">
                                             <div className="image-top-feature">
                                                 <figure>
-                                                    <img alt="jobBox" src="assets/imgs/page/about/team2.png" />
+                                                    <img alt="bugbear" src="assets/imgs/page/about/team2.png" />
                                                 </figure>
                                             </div>
                                             <div className="card-grid-4-info">
@@ -124,19 +124,19 @@ export default function About() {
                                                 <p className="font-xs color-text-paragraph-2 mt-5 mb-5">UI/UX Designer</p>
                                                 <div className="rate-reviews-small pt-5">
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span className="ml-10 color-text-mutted font-xs">
                                                         <span>(</span>
@@ -158,7 +158,7 @@ export default function About() {
                                         <div className="card-grid-4 text-center hover-up">
                                             <div className="image-top-feature">
                                                 <figure>
-                                                    <img alt="jobBox" src="assets/imgs/page/about/team3.png" />
+                                                    <img alt="bugbear" src="assets/imgs/page/about/team3.png" />
                                                 </figure>
                                             </div>
                                             <div className="card-grid-4-info">
@@ -166,19 +166,19 @@ export default function About() {
                                                 <p className="font-xs color-text-paragraph-2 mt-5 mb-5">Frontend Developer</p>
                                                 <div className="rate-reviews-small pt-5">
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span className="ml-10 color-text-mutted font-xs">
                                                         <span>(</span>
@@ -200,7 +200,7 @@ export default function About() {
                                         <div className="card-grid-4 text-center hover-up">
                                             <div className="image-top-feature">
                                                 <figure>
-                                                    <img alt="jobBox" src="assets/imgs/page/about/team4.png" />
+                                                    <img alt="bugbear" src="assets/imgs/page/about/team4.png" />
                                                 </figure>
                                             </div>
                                             <div className="card-grid-4-info">
@@ -208,19 +208,19 @@ export default function About() {
                                                 <p className="font-xs color-text-paragraph-2 mt-5 mb-5">Frontend Developer</p>
                                                 <div className="rate-reviews-small pt-5">
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span className="ml-10 color-text-mutted font-xs">
                                                         <span>(</span>
@@ -242,7 +242,7 @@ export default function About() {
                                         <div className="card-grid-4 text-center hover-up">
                                             <div className="image-top-feature">
                                                 <figure>
-                                                    <img alt="jobBox" src="assets/imgs/page/about/team5.png" />
+                                                    <img alt="bugbear" src="assets/imgs/page/about/team5.png" />
                                                 </figure>
                                             </div>
                                             <div className="card-grid-4-info">
@@ -250,19 +250,19 @@ export default function About() {
                                                 <p className="font-xs color-text-paragraph-2 mt-5 mb-5">Frontend Developer</p>
                                                 <div className="rate-reviews-small pt-5">
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span className="ml-10 color-text-mutted font-xs">
                                                         <span>(</span>
@@ -284,7 +284,7 @@ export default function About() {
                                         <div className="card-grid-4 text-center hover-up">
                                             <div className="image-top-feature">
                                                 <figure>
-                                                    <img alt="jobBox" src="assets/imgs/page/about/team6.png" />
+                                                    <img alt="bugbear" src="assets/imgs/page/about/team6.png" />
                                                 </figure>
                                             </div>
                                             <div className="card-grid-4-info">
@@ -292,19 +292,19 @@ export default function About() {
                                                 <p className="font-xs color-text-paragraph-2 mt-5 mb-5">Frontend Developer</p>
                                                 <div className="rate-reviews-small pt-5">
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span className="ml-10 color-text-mutted font-xs">
                                                         <span>(</span>
@@ -326,7 +326,7 @@ export default function About() {
                                         <div className="card-grid-4 text-center hover-up">
                                             <div className="image-top-feature">
                                                 <figure>
-                                                    <img alt="jobBox" src="assets/imgs/page/about/team7.png" />
+                                                    <img alt="bugbear" src="assets/imgs/page/about/team7.png" />
                                                 </figure>
                                             </div>
                                             <div className="card-grid-4-info">
@@ -334,19 +334,19 @@ export default function About() {
                                                 <p className="font-xs color-text-paragraph-2 mt-5 mb-5">Frontend Developer</p>
                                                 <div className="rate-reviews-small pt-5">
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span className="ml-10 color-text-mutted font-xs">
                                                         <span>(</span>
@@ -368,7 +368,7 @@ export default function About() {
                                         <div className="card-grid-4 text-center hover-up">
                                             <div className="image-top-feature">
                                                 <figure>
-                                                    <img alt="jobBox" src="assets/imgs/page/about/team8.png" />
+                                                    <img alt="bugbear" src="assets/imgs/page/about/team8.png" />
                                                 </figure>
                                             </div>
                                             <div className="card-grid-4-info">
@@ -376,19 +376,19 @@ export default function About() {
                                                 <p className="font-xs color-text-paragraph-2 mt-5 mb-5">Frontend Developer</p>
                                                 <div className="rate-reviews-small pt-5">
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span>
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                                     </span>
                                                     <span className="ml-10 color-text-mutted font-xs">
                                                         <span>(</span>

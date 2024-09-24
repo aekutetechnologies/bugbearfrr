@@ -224,13 +224,13 @@ export default function CompaniesGrid() {
                                                         <div className="box-view-type">
                                                             <Link legacyBehavior href="/jobs-list">
                                                                 <a className="view-type">
-                                                                    <img src="assets/imgs/template/icons/icon-list.svg" alt="jobBox" />
+                                                                    <img src="assets/imgs/template/icons/icon-list.svg" alt="bugbear" />
                                                                 </a>
                                                             </Link>
 
                                                             <Link legacyBehavior href="/jobs-grid">
                                                                 <a className="view-type">
-                                                                    <img src="assets/imgs/template/icons/icon-grid-hover.svg" alt="jobBox" />
+                                                                    <img src="assets/imgs/template/icons/icon-grid-hover.svg" alt="bugbear" />
                                                                 </a>
                                                             </Link>
                                                         </div>
@@ -244,7 +244,7 @@ export default function CompaniesGrid() {
                                                     <div className="image-box">
                                                         <Link legacyBehavior href="/company-details">
                                                             <a>
-                                                                <img src="assets/imgs/brands/brand-1.png" alt="jobBox" />
+                                                                <img src="assets/imgs/brands/brand-1.png" alt="bugbear" />
                                                             </a>
                                                         </Link>
                                                     </div>
@@ -255,11 +255,11 @@ export default function CompaniesGrid() {
                                                             </Link>
                                                         </h5>
                                                         <div className="mt-5">
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
                                                             <span className="font-xs color-text-mutted ml-10">
                                                                 <span>(</span>
                                                                 <span>66</span>
@@ -283,7 +283,7 @@ export default function CompaniesGrid() {
                                                     <div className="image-box">
                                                         <Link legacyBehavior href="/company-details">
                                                             <a>
-                                                                <img src="assets/imgs/brands/brand-2.png" alt="jobBox" />
+                                                                <img src="assets/imgs/brands/brand-2.png" alt="bugbear" />
                                                             </a>
                                                         </Link>
                                                     </div>
@@ -294,11 +294,11 @@ export default function CompaniesGrid() {
                                                             </Link>
                                                         </h5>
                                                         <div className="mt-5">
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
                                                             <span className="font-xs color-text-mutted ml-10">
                                                                 <span>(</span>
                                                                 <span>18</span>
@@ -322,7 +322,7 @@ export default function CompaniesGrid() {
                                                     <div className="image-box">
                                                         <Link legacyBehavior href="/company-details">
                                                             <a>
-                                                                <img src="assets/imgs/brands/brand-3.png" alt="jobBox" />
+                                                                <img src="assets/imgs/brands/brand-3.png" alt="bugbear" />
                                                             </a>
                                                         </Link>
                                                     </div>
@@ -333,11 +333,11 @@ export default function CompaniesGrid() {
                                                             </Link>
                                                         </h5>
                                                         <div className="mt-5">
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
                                                             <span className="font-xs color-text-mutted ml-10">
                                                                 <span>(</span>
                                                                 <span>52</span>
@@ -361,7 +361,7 @@ export default function CompaniesGrid() {
                                                     <div className="image-box">
                                                         <Link legacyBehavior href="/company-details">
                                                             <a>
-                                                                <img src="assets/imgs/brands/brand-4.png" alt="jobBox" />
+                                                                <img src="assets/imgs/brands/brand-4.png" alt="bugbear" />
                                                             </a>
                                                         </Link>
                                                     </div>
@@ -372,11 +372,11 @@ export default function CompaniesGrid() {
                                                             </Link>
                                                         </h5>
                                                         <div className="mt-5">
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
                                                             <span className="font-xs color-text-mutted ml-10">
                                                                 <span>(</span>
                                                                 <span>85</span>
@@ -400,7 +400,7 @@ export default function CompaniesGrid() {
                                                     <div className="image-box">
                                                         <Link legacyBehavior href="/company-details">
                                                             <a>
-                                                                <img src="assets/imgs/brands/brand-5.png" alt="jobBox" />
+                                                                <img src="assets/imgs/brands/brand-5.png" alt="bugbear" />
                                                             </a>
                                                         </Link>
                                                     </div>
@@ -411,11 +411,11 @@ export default function CompaniesGrid() {
                                                             </Link>
                                                         </h5>
                                                         <div className="mt-5">
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
                                                             <span className="font-xs color-text-mutted ml-10">
                                                                 <span>(</span>
                                                                 <span>25</span>
@@ -439,7 +439,7 @@ export default function CompaniesGrid() {
                                                     <div className="image-box">
                                                         <Link legacyBehavior href="/company-details">
                                                             <a>
-                                                                <img src="assets/imgs/brands/brand-6.png" alt="jobBox" />
+                                                                <img src="assets/imgs/brands/brand-6.png" alt="bugbear" />
                                                             </a>
                                                         </Link>
                                                     </div>
@@ -450,11 +450,11 @@ export default function CompaniesGrid() {
                                                             </Link>
                                                         </h5>
                                                         <div className="mt-5">
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
                                                             <span className="font-xs color-text-mutted ml-10">
                                                                 <span>(</span>
                                                                 <span>34</span>
@@ -478,7 +478,7 @@ export default function CompaniesGrid() {
                                                     <div className="image-box">
                                                         <Link legacyBehavior href="/company-details">
                                                             <a>
-                                                                <img src="assets/imgs/brands/brand-7.png" alt="jobBox" />
+                                                                <img src="assets/imgs/brands/brand-7.png" alt="bugbear" />
                                                             </a>
                                                         </Link>
                                                     </div>
@@ -489,11 +489,11 @@ export default function CompaniesGrid() {
                                                             </Link>
                                                         </h5>
                                                         <div className="mt-5">
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
                                                             <span className="font-xs color-text-mutted ml-10">
                                                                 <span>(</span>
                                                                 <span>97</span>
@@ -517,7 +517,7 @@ export default function CompaniesGrid() {
                                                     <div className="image-box">
                                                         <Link legacyBehavior href="/company-details">
                                                             <a>
-                                                                <img src="assets/imgs/brands/brand-8.png" alt="jobBox" />
+                                                                <img src="assets/imgs/brands/brand-8.png" alt="bugbear" />
                                                             </a>
                                                         </Link>
                                                     </div>
@@ -528,11 +528,11 @@ export default function CompaniesGrid() {
                                                             </Link>
                                                         </h5>
                                                         <div className="mt-5">
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
                                                             <span className="font-xs color-text-mutted ml-10">
                                                                 <span>(</span>
                                                                 <span>67</span>
@@ -556,7 +556,7 @@ export default function CompaniesGrid() {
                                                     <div className="image-box">
                                                         <Link legacyBehavior href="/company-details">
                                                             <a>
-                                                                <img src="assets/imgs/brands/brand-9.png" alt="jobBox" />
+                                                                <img src="assets/imgs/brands/brand-9.png" alt="bugbear" />
                                                             </a>
                                                         </Link>
                                                     </div>
@@ -567,11 +567,11 @@ export default function CompaniesGrid() {
                                                             </Link>
                                                         </h5>
                                                         <div className="mt-5">
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
                                                             <span className="font-xs color-text-mutted ml-10">
                                                                 <span>(</span>
                                                                 <span>45</span>
@@ -595,7 +595,7 @@ export default function CompaniesGrid() {
                                                     <div className="image-box">
                                                         <Link legacyBehavior href="/company-details">
                                                             <a>
-                                                                <img src="assets/imgs/brands/brand-1.png" alt="jobBox" />
+                                                                <img src="assets/imgs/brands/brand-1.png" alt="bugbear" />
                                                             </a>
                                                         </Link>
                                                     </div>
@@ -606,11 +606,11 @@ export default function CompaniesGrid() {
                                                             </Link>
                                                         </h5>
                                                         <div className="mt-5">
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
                                                             <span className="font-xs color-text-mutted ml-10">
                                                                 <span>(</span>
                                                                 <span>08</span>
@@ -634,7 +634,7 @@ export default function CompaniesGrid() {
                                                     <div className="image-box">
                                                         <Link legacyBehavior href="/company-details">
                                                             <a>
-                                                                <img src="assets/imgs/brands/brand-2.png" alt="jobBox" />
+                                                                <img src="assets/imgs/brands/brand-2.png" alt="bugbear" />
                                                             </a>
                                                         </Link>
                                                     </div>
@@ -645,11 +645,11 @@ export default function CompaniesGrid() {
                                                             </Link>
                                                         </h5>
                                                         <div className="mt-5">
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
                                                             <span className="font-xs color-text-mutted ml-10">
                                                                 <span>(</span>
                                                                 <span>54</span>
@@ -673,7 +673,7 @@ export default function CompaniesGrid() {
                                                     <div className="image-box">
                                                         <Link legacyBehavior href="/company-details">
                                                             <a>
-                                                                <img src="assets/imgs/brands/brand-3.png" alt="jobBox" />
+                                                                <img src="assets/imgs/brands/brand-3.png" alt="bugbear" />
                                                             </a>
                                                         </Link>
                                                     </div>
@@ -684,11 +684,11 @@ export default function CompaniesGrid() {
                                                             </Link>
                                                         </h5>
                                                         <div className="mt-5">
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
                                                             <span className="font-xs color-text-mutted ml-10">
                                                                 <span>(</span>
                                                                 <span>123</span>
@@ -712,7 +712,7 @@ export default function CompaniesGrid() {
                                                     <div className="image-box">
                                                         <Link legacyBehavior href="/company-details">
                                                             <a>
-                                                                <img src="assets/imgs/brands/brand-4.png" alt="jobBox" />
+                                                                <img src="assets/imgs/brands/brand-4.png" alt="bugbear" />
                                                             </a>
                                                         </Link>
                                                     </div>
@@ -723,11 +723,11 @@ export default function CompaniesGrid() {
                                                             </Link>
                                                         </h5>
                                                         <div className="mt-5">
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
                                                             <span className="font-xs color-text-mutted ml-10">
                                                                 <span>(</span>
                                                                 <span>64</span>
@@ -751,7 +751,7 @@ export default function CompaniesGrid() {
                                                     <div className="image-box">
                                                         <Link legacyBehavior href="/company-details">
                                                             <a>
-                                                                <img src="assets/imgs/brands/brand-5.png" alt="jobBox" />
+                                                                <img src="assets/imgs/brands/brand-5.png" alt="bugbear" />
                                                             </a>
                                                         </Link>
                                                     </div>
@@ -762,11 +762,11 @@ export default function CompaniesGrid() {
                                                             </Link>
                                                         </h5>
                                                         <div className="mt-5">
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
                                                             <span className="font-xs color-text-mutted ml-10">
                                                                 <span>(</span>
                                                                 <span>34</span>
@@ -790,7 +790,7 @@ export default function CompaniesGrid() {
                                                     <div className="image-box">
                                                         <Link legacyBehavior href="/company-details">
                                                             <a>
-                                                                <img src="assets/imgs/brands/brand-6.png" alt="jobBox" />
+                                                                <img src="assets/imgs/brands/brand-6.png" alt="bugbear" />
                                                             </a>
                                                         </Link>
                                                     </div>
@@ -801,11 +801,11 @@ export default function CompaniesGrid() {
                                                             </Link>
                                                         </h5>
                                                         <div className="mt-5">
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
                                                             <span className="font-xs color-text-mutted ml-10">
                                                                 <span>(</span>
                                                                 <span>12</span>
@@ -829,7 +829,7 @@ export default function CompaniesGrid() {
                                                     <div className="image-box">
                                                         <Link legacyBehavior href="/company-details">
                                                             <a>
-                                                                <img src="assets/imgs/brands/brand-1.png" alt="jobBox" />
+                                                                <img src="assets/imgs/brands/brand-1.png" alt="bugbear" />
                                                             </a>
                                                         </Link>
                                                     </div>
@@ -840,11 +840,11 @@ export default function CompaniesGrid() {
                                                             </Link>
                                                         </h5>
                                                         <div className="mt-5">
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
                                                             <span className="font-xs color-text-mutted ml-10">
                                                                 <span>(</span>
                                                                 <span>66</span>
@@ -868,7 +868,7 @@ export default function CompaniesGrid() {
                                                     <div className="image-box">
                                                         <Link legacyBehavior href="/company-details">
                                                             <a>
-                                                                <img src="assets/imgs/brands/brand-2.png" alt="jobBox" />
+                                                                <img src="assets/imgs/brands/brand-2.png" alt="bugbear" />
                                                             </a>
                                                         </Link>
                                                     </div>
@@ -879,11 +879,11 @@ export default function CompaniesGrid() {
                                                             </Link>
                                                         </h5>
                                                         <div className="mt-5">
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
                                                             <span className="font-xs color-text-mutted ml-10">
                                                                 <span>(</span>
                                                                 <span>18</span>
@@ -907,7 +907,7 @@ export default function CompaniesGrid() {
                                                     <div className="image-box">
                                                         <Link legacyBehavior href="/company-details">
                                                             <a>
-                                                                <img src="assets/imgs/brands/brand-3.png" alt="jobBox" />
+                                                                <img src="assets/imgs/brands/brand-3.png" alt="bugbear" />
                                                             </a>
                                                         </Link>
                                                     </div>
@@ -918,11 +918,11 @@ export default function CompaniesGrid() {
                                                             </Link>
                                                         </h5>
                                                         <div className="mt-5">
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
                                                             <span className="font-xs color-text-mutted ml-10">
                                                                 <span>(</span>
                                                                 <span>52</span>
@@ -946,7 +946,7 @@ export default function CompaniesGrid() {
                                                     <div className="image-box">
                                                         <Link legacyBehavior href="/company-details">
                                                             <a>
-                                                                <img src="assets/imgs/brands/brand-4.png" alt="jobBox" />
+                                                                <img src="assets/imgs/brands/brand-4.png" alt="bugbear" />
                                                             </a>
                                                         </Link>
                                                     </div>
@@ -957,11 +957,11 @@ export default function CompaniesGrid() {
                                                             </Link>
                                                         </h5>
                                                         <div className="mt-5">
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
                                                             <span className="font-xs color-text-mutted ml-10">
                                                                 <span>(</span>
                                                                 <span>85</span>
@@ -985,7 +985,7 @@ export default function CompaniesGrid() {
                                                     <div className="image-box">
                                                         <Link legacyBehavior href="/company-details">
                                                             <a>
-                                                                <img src="assets/imgs/brands/brand-5.png" alt="jobBox" />
+                                                                <img src="assets/imgs/brands/brand-5.png" alt="bugbear" />
                                                             </a>
                                                         </Link>
                                                     </div>
@@ -996,11 +996,11 @@ export default function CompaniesGrid() {
                                                             </Link>
                                                         </h5>
                                                         <div className="mt-5">
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
                                                             <span className="font-xs color-text-mutted ml-10">
                                                                 <span>(</span>
                                                                 <span>25</span>
@@ -1024,7 +1024,7 @@ export default function CompaniesGrid() {
                                                     <div className="image-box">
                                                         <Link legacyBehavior href="/company-details">
                                                             <a>
-                                                                <img src="assets/imgs/brands/brand-6.png" alt="jobBox" />
+                                                                <img src="assets/imgs/brands/brand-6.png" alt="bugbear" />
                                                             </a>
                                                         </Link>
                                                     </div>
@@ -1035,11 +1035,11 @@ export default function CompaniesGrid() {
                                                             </Link>
                                                         </h5>
                                                         <div className="mt-5">
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
-                                                            <img alt="jobBox" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/template/icons/star.svg" />
                                                             <span className="font-xs color-text-mutted ml-10">
                                                                 <span>(</span>
                                                                 <span>34</span>

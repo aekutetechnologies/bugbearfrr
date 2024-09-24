@@ -60,15 +60,15 @@ const TopRekruterSlider = () => {
                                     <a href="#">
                                         <div className="item-logo">
                                             <div className="image-left">
-                                                <img alt="jobBox" src="/assets/imgs/brands/brand-1.png" />
+                                                <img alt="bugbear" src="/assets/imgs/brands/brand-1.png" />
                                             </div>
                                             <div className="text-info-right">
                                                 <h4>Linkedin</h4>
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
                                                 <span className="font-xs color-text-mutted ml-10">
                                                     <span>(</span>
                                                     <span>68</span>
@@ -88,15 +88,15 @@ const TopRekruterSlider = () => {
                                     <a href="#">
                                         <div className="item-logo">
                                             <div className="image-left">
-                                                <img alt="jobBox" src="/assets/imgs/brands/brand-2.png" />
+                                                <img alt="bugbear" src="/assets/imgs/brands/brand-2.png" />
                                             </div>
                                             <div className="text-info-right">
                                                 <h4>Adobe</h4>
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
                                                 <span className="font-xs color-text-mutted ml-10">
                                                     <span>(</span>
                                                     <span>42</span>
@@ -116,15 +116,15 @@ const TopRekruterSlider = () => {
                                     <a href="#">
                                         <div className="item-logo">
                                             <div className="image-left">
-                                                <img alt="jobBox" src="/assets/imgs/brands/brand-3.png" />
+                                                <img alt="bugbear" src="/assets/imgs/brands/brand-3.png" />
                                             </div>
                                             <div className="text-info-right">
                                                 <h4>Dailymotion</h4>
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
                                                 <span className="font-xs color-text-mutted ml-10">
                                                     <span>(</span>
                                                     <span>46</span>
@@ -144,15 +144,15 @@ const TopRekruterSlider = () => {
                                     <a href="#">
                                         <div className="item-logo">
                                             <div className="image-left">
-                                                <img alt="jobBox" src="/assets/imgs/brands/brand-4.png" />
+                                                <img alt="bugbear" src="/assets/imgs/brands/brand-4.png" />
                                             </div>
                                             <div className="text-info-right">
                                                 <h4>NewSum</h4>
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
                                                 <span className="font-xs color-text-mutted ml-10">
                                                     <span>(</span>
                                                     <span>68</span>
@@ -172,15 +172,15 @@ const TopRekruterSlider = () => {
                                     <a href="#">
                                         <div className="item-logo">
                                             <div className="image-left">
-                                                <img alt="jobBox" src="/assets/imgs/brands/brand-5.png" />
+                                                <img alt="bugbear" src="/assets/imgs/brands/brand-5.png" />
                                             </div>
                                             <div className="text-info-right">
                                                 <h4>PowerHome</h4>
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
                                                 <span className="font-xs color-text-mutted ml-10">
                                                     <span>(</span>
                                                     <span>87</span>
@@ -200,15 +200,15 @@ const TopRekruterSlider = () => {
                                     <a href="#">
                                         <div className="item-logo">
                                             <div className="image-left">
-                                                <img alt="jobBox" src="/assets/imgs/brands/brand-6.png" />
+                                                <img alt="bugbear" src="/assets/imgs/brands/brand-6.png" />
                                             </div>
                                             <div className="text-info-right">
                                                 <h4>Whop.com</h4>
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
                                                 <span className="font-xs color-text-mutted ml-10">
                                                     <span>(</span>
                                                     <span>34</span>
@@ -228,15 +228,15 @@ const TopRekruterSlider = () => {
                                     <a href="#">
                                         <div className="item-logo">
                                             <div className="image-left">
-                                                <img alt="jobBox" src="/assets/imgs/brands/brand-7.png" />
+                                                <img alt="bugbear" src="/assets/imgs/brands/brand-7.png" />
                                             </div>
                                             <div className="text-info-right">
                                                 <h4>Greewood</h4>
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
                                                 <span className="font-xs color-text-mutted ml-10">
                                                     <span>(</span>
                                                     <span>124</span>
@@ -256,15 +256,15 @@ const TopRekruterSlider = () => {
                                     <a href="#">
                                         <div className="item-logo">
                                             <div className="image-left">
-                                                <img alt="jobBox" src="/assets/imgs/brands/brand-8.png" />
+                                                <img alt="bugbear" src="/assets/imgs/brands/brand-8.png" />
                                             </div>
                                             <div className="text-info-right">
                                                 <h4>Kentucky</h4>
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
                                                 <span className="font-xs color-text-mutted ml-10">
                                                     <span>(</span>
                                                     <span>54</span>
@@ -284,15 +284,15 @@ const TopRekruterSlider = () => {
                                     <a href="#">
                                         <div className="item-logo">
                                             <div className="image-left">
-                                                <img alt="jobBox" src="/assets/imgs/brands/brand-9.png" />
+                                                <img alt="bugbear" src="/assets/imgs/brands/brand-9.png" />
                                             </div>
                                             <div className="text-info-right">
                                                 <h4>Qeuity</h4>
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
                                                 <span className="font-xs color-text-mutted ml-10">
                                                     <span>(</span>
                                                     <span>76</span>
@@ -312,15 +312,15 @@ const TopRekruterSlider = () => {
                                     <a href="#">
                                         <div className="item-logo">
                                             <div className="image-left">
-                                                <img alt="jobBox" src="/assets/imgs/brands/brand-10.png" />
+                                                <img alt="bugbear" src="/assets/imgs/brands/brand-10.png" />
                                             </div>
                                             <div className="text-info-right">
                                                 <h4>Honda</h4>
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
                                                 <span className="font-xs color-text-mutted ml-10">
                                                     <span>(</span>
                                                     <span>89</span>
@@ -340,15 +340,15 @@ const TopRekruterSlider = () => {
                                     <a href="#">
                                         <div className="item-logo">
                                             <div className="image-left">
-                                                <img alt="jobBox" src="/assets/imgs/brands/brand-5.png" />
+                                                <img alt="bugbear" src="/assets/imgs/brands/brand-5.png" />
                                             </div>
                                             <div className="text-info-right">
                                                 <h4>Toyota</h4>
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
                                                 <span className="font-xs color-text-mutted ml-10">
                                                     <span>(</span>
                                                     <span>34</span>
@@ -368,15 +368,15 @@ const TopRekruterSlider = () => {
                                     <a href="#">
                                         <div className="item-logo">
                                             <div className="image-left">
-                                                <img alt="jobBox" src="/assets/imgs/brands/brand-3.png" />
+                                                <img alt="bugbear" src="/assets/imgs/brands/brand-3.png" />
                                             </div>
                                             <div className="text-info-right">
                                                 <h4>Lexuxs</h4>
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
                                                 <span className="font-xs color-text-mutted ml-10">
                                                     <span>(</span>
                                                     <span>27</span>
@@ -396,15 +396,15 @@ const TopRekruterSlider = () => {
                                     <a href="#">
                                         <div className="item-logo">
                                             <div className="image-left">
-                                                <img alt="jobBox" src="/assets/imgs/brands/brand-6.png" />
+                                                <img alt="bugbear" src="/assets/imgs/brands/brand-6.png" />
                                             </div>
                                             <div className="text-info-right">
                                                 <h4>Ondo</h4>
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
                                                 <span className="font-xs color-text-mutted ml-10">
                                                     <span>(</span>
                                                     <span>54</span>
@@ -424,15 +424,15 @@ const TopRekruterSlider = () => {
                                     <a href="#">
                                         <div className="item-logo">
                                             <div className="image-left">
-                                                <img alt="jobBox" src="/assets/imgs/brands/brand-2.png" />
+                                                <img alt="bugbear" src="/assets/imgs/brands/brand-2.png" />
                                             </div>
                                             <div className="text-info-right">
                                                 <h4>Square</h4>
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
                                                 <span className="font-xs color-text-mutted ml-10">
                                                     <span>(</span>
                                                     <span>16</span>
@@ -452,15 +452,15 @@ const TopRekruterSlider = () => {
                                     <a href="#">
                                         <div className="item-logo">
                                             <div className="image-left">
-                                                <img alt="jobBox" src="/assets/imgs/brands/brand-8.png" />
+                                                <img alt="bugbear" src="/assets/imgs/brands/brand-8.png" />
                                             </div>
                                             <div className="text-info-right">
                                                 <h4>Vista</h4>
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
-                                                <img alt="jobBox" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
+                                                <img alt="bugbear" src="/assets/imgs/template/icons/star.svg" />
                                                 <span className="font-xs color-text-mutted ml-10">
                                                     <span>(</span>
                                                     <span>97</span>

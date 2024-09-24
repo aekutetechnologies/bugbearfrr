@@ -18,11 +18,11 @@ export default function CompanyDetails() {
                     <section className="section-box-2">
                         <div className="container">
                             <div className="banner-hero banner-image-single">
-                                <img src="assets/imgs/page/company/img.png" alt="jobBox" />
+                                <img src="assets/imgs/page/company/img.png" alt="bugbear" />
                             </div>
                             <div className="box-company-profile">
                                 <div className="image-compay">
-                                    <img src="assets/imgs/page/company/company.png" alt="jobBox" />
+                                    <img src="assets/imgs/page/company/company.png" alt="bugbear" />
                                 </div>
                                 <div className="row mt-10">
                                     <div className="col-lg-8 col-md-12">
@@ -105,7 +105,7 @@ export default function CompanyDetails() {
                                                         <div className="col-lg-6 col-md-6 col-sm-12">
                                                             <div className="card-grid-2-image-left">
                                                                 <div className="image-box">
-                                                                    <img src="assets/imgs/brands/brand-6.png" alt="jobBox" />
+                                                                    <img src="assets/imgs/brands/brand-6.png" alt="bugbear" />
                                                                 </div>
                                                                 <div className="right-info">
                                                                     <Link legacyBehavior href="#">
@@ -164,7 +164,7 @@ export default function CompanyDetails() {
                                                         <div className="col-lg-6 col-md-6 col-sm-12">
                                                             <div className="card-grid-2-image-left">
                                                                 <div className="image-box">
-                                                                    <img src="assets/imgs/brands/brand-7.png" alt="jobBox" />
+                                                                    <img src="assets/imgs/brands/brand-7.png" alt="bugbear" />
                                                                 </div>
                                                                 <div className="right-info">
                                                                     <Link legacyBehavior href="#">
@@ -223,7 +223,7 @@ export default function CompanyDetails() {
                                                         <div className="col-lg-6 col-md-6 col-sm-12">
                                                             <div className="card-grid-2-image-left">
                                                                 <div className="image-box">
-                                                                    <img src="assets/imgs/brands/brand-8.png" alt="jobBox" />
+                                                                    <img src="assets/imgs/brands/brand-8.png" alt="bugbear" />
                                                                 </div>
                                                                 <div className="right-info">
                                                                     <Link legacyBehavior href="#">

@@ -86,16 +86,16 @@ export default function Home() {
                                 <div className="col-xl-4 col-lg-12 d-none d-xl-block col-md-6">
                                     <div className="banner-imgs">
                                         <div className="block-1 shape-1">
-                                            <img className="img-responsive" alt="jobBox" src="assets/imgs/page/homepage1/banner1.png" />
+                                            <img className="img-responsive" alt="bugbear" src="assets/imgs/page/homepage1/banner1.png" />
                                         </div>
                                         <div className="block-2 shape-2">
-                                            <img className="img-responsive" alt="jobBox" src="assets/imgs/page/homepage1/banner2.png" />
+                                            <img className="img-responsive" alt="bugbear" src="assets/imgs/page/homepage1/banner2.png" />
                                         </div>
                                         <div className="block-3 shape-3">
-                                            <img className="img-responsive" alt="jobBox" src="assets/imgs/page/homepage1/icon-top-banner.png" />
+                                            <img className="img-responsive" alt="bugbear" src="assets/imgs/page/homepage1/icon-top-banner.png" />
                                         </div>
                                         <div className="block-4 shape-3">
-                                            <img className="img-responsive" alt="jobBox" src="assets/imgs/page/homepage1/icon-bottom-banner.png" />
+                                            <img className="img-responsive" alt="bugbear" src="assets/imgs/page/homepage1/icon-bottom-banner.png" />
                                         </div>
                                     </div>
                                 </div>
@@ -136,7 +136,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <section className="section-box mt-50">
+                {/* <section className="section-box mt-50">
                     <div className="container">
                         <div className="text-center">
                             <h2 className="section-title mb-10 wow animate__animated animate__fadeInUp">Jobs of the day</h2>
@@ -152,10 +152,10 @@ export default function Home() {
                         <div className="row">
                             <div className="col-lg-6 col-sm-12">
                                 <div className="box-image-job">
-                                    <img className="img-job-1" alt="jobBox" src="assets/imgs/page/homepage1/img-chart.png" />
-                                    <img className="img-job-2" alt="jobBox" src="assets/imgs/page/homepage1/controlcard.png" />
+                                    <img className="img-job-1" alt="bugbear" src="assets/imgs/page/homepage1/img-chart.png" />
+                                    <img className="img-job-2" alt="bugbear" src="assets/imgs/page/homepage1/controlcard.png" />
                                     <figure className="wow animate__animated animate__fadeIn">
-                                        <img alt="jobBox" src="assets/imgs/page/homepage1/img1.png" />
+                                        <img alt="bugbear" src="assets/imgs/page/homepage1/img1.png" />
                                     </figure>
                                 </div>
                             </div>
@@ -181,7 +181,7 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> */}
                 <section className="section-box overflow-visible mt-50 mb-50">
                     <div className="container">
                         <div className="row">
@@ -257,7 +257,7 @@ export default function Home() {
                         </div>
                     </div>
                 </section>
-                <section className="section-box mt-50">
+                {/* <section className="section-box mt-50">
                     <div className="container">
                         <div className="text-center">
                             <h2 className="section-title mb-10 wow animate__animated animate__fadeInUp">Jobs by Location</h2>
@@ -451,7 +451,7 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> */}
                 <section className="section-box mt-50 mb-20">
                     <div className="container">
                         <div className="box-newsletter">

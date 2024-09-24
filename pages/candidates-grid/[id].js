@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import Layout from "../../components/Layout/Layout";
-import BlogSlider from "./../../components/sliders/Blog";
+import BlogSlider from "../../components/sliders/Blog";
 import cookie from "cookie";
 import { format } from "date-fns";
 import { useState, useEffect, useCallback } from "react";
@@ -91,19 +91,18 @@ const Pagination = ({ currentPage, totalPages, handlePageChange }) => {
 };
 
 // Candidate Card Component
-const CandidateCard = ({ candidate }) => {
-    // Format date for applied_date
+const CandidateCard = ({ candidate, handleApprove }) => {
     const appliedDate = format(new Date(candidate.applied_date), 'MM/dd/yyyy HH:mm');
 
     return (
         <div className="col-xl-3 col-lg-4 col-md-6">
-            <div className="card-grid-2 hover-up">
+            <div className="card-grid-2 hover-up fixed-card-height">
                 <div className="card-grid-2-image-left">
                     <div className={`card-grid-2-image-rd ${candidate.user.is_online ? 'online' : 'offline'}`}>
                         <Link legacyBehavior href={`/candidate-details/${candidate.user.id}`}>
                             <a>
                                 <figure>
-                                    <img alt="jobBox" src={candidate.user.profile_pic} />
+                                    <img alt="bugbear" src={candidate.user.profile_pic} />
                                 </figure>
                             </a>
                         </Link>
@@ -137,15 +136,57 @@ const CandidateCard = ({ candidate }) => {
                             </div>
                         </div>
                     </div>
+                    <div className="mt-10 text-center">
+                        {/* Approve or Disapprove Button */}
+                        {!candidate.is_approved ? (
+                            <button
+                                className="btn btn-apply-icon btn-apply btn-apply-big hover-up"
+                                onClick={() => handleApprove(candidate.user.id, true)}
+                            >
+                                Approve
+                            </button>
+                        ) : (
+                            <button
+                                className="btn btn-apply-icon btn-apply btn-apply-big hover-up"
+                                onClick={() => handleApprove(candidate.user.id, false)}
+                            >
+                                Disapprove
+                            </button>
+                        )}
+                    </div>
                 </div>
             </div>
             <style jsx>{`
-                .card-grid-2-image-rd.online {
-                    /* Styles for online status */
+                .fixed-card-height {
+                    height: 400px; /* Fixed height for the card */
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
                 }
 
-                .card-grid-2-image-rd.offline {
-                    /* Styles for offline status */
+                .card-grid-2-image-left {
+                    position: relative;
+                    padding: 10px;
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .card-grid-2-image-left figure {
+                    width: 80px;
+                    height: 80px;
+                    overflow: hidden;
+                    border-radius: 50%;
+                    border: 2px solid #f0f0f0;
+                }
+
+                .card-grid-2-image-left img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                .card-profile {
+                    text-align: center;
                 }
             `}</style>
         </div>
@@ -173,7 +214,7 @@ export default function CandidateGrid({ initialApplicants, jobId }) {
     const handlePageChange = (page) => {
         if (page >= 1 && page <= totalPages) {
             setCurrentPage(page);
-            window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top on page change
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     };
 
@@ -183,7 +224,6 @@ export default function CandidateGrid({ initialApplicants, jobId }) {
         setError(null); // Reset error state
         try {
             const token = cookie.parse(document.cookie).accessToken;
-
             const payload = { searchTerm };
 
             const response = await fetch(`http://127.0.0.1:8000/api/jobs/applicants/${jobId}/`, {
@@ -210,11 +250,45 @@ export default function CandidateGrid({ initialApplicants, jobId }) {
         }
     }, [jobId]);
 
+    // Approve or Disapprove a candidate
+    const handleApprove = async (candidateId, isApproved) => {
+        try {
+            const token = cookie.parse(document.cookie).accessToken;
+            const response = await fetch(`http://127.0.0.1:8000/api/jobs/apply/`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
+                },
+                body: JSON.stringify({
+                    job_id: jobId,
+                    user_id: candidateId,
+                    is_approved: isApproved,
+                }),
+            });
+
+            if (response.ok) {
+                // Update the applicant's approval status locally
+                setApplicants((prevApplicants) =>
+                    prevApplicants.map((applicant) =>
+                        applicant.user.id === candidateId
+                            ? { ...applicant, is_approved: isApproved } // Update the specific applicant's approval status
+                            : applicant
+                    )
+                );
+            } else {
+                throw new Error(`Failed to update approval status: ${response.statusText}`);
+            }
+        } catch (error) {
+            console.error("Error updating approval status:", error);
+        }
+    };
+
     // Debounce search input to prevent excessive API calls
     useEffect(() => {
         const delayDebounceFn = setTimeout(() => {
             fetchApplicants(searchTerm.trim());
-        }, 500); // 500ms delay
+        }, 500);
 
         return () => clearTimeout(delayDebounceFn);
     }, [searchTerm, fetchApplicants]);
@@ -256,7 +330,11 @@ export default function CandidateGrid({ initialApplicants, jobId }) {
                                 ) : (
                                     <div className="row">
                                         {currentApplicants.map((candidate, index) => (
-                                            <CandidateCard candidate={candidate} key={candidate.id || index} />
+                                            <CandidateCard
+                                                candidate={candidate}
+                                                key={candidate.id || index}
+                                                handleApprove={handleApprove}
+                                            />
                                         ))}
                                     </div>
                                 )}
@@ -325,6 +403,7 @@ export async function getServerSideProps(context) {
         }
 
         const applicants = await res.json();
+        console.log("Applicants:", applicants);
 
         return {
             props: { initialApplicants: applicants, jobId: id },

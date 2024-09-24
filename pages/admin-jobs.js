@@ -1,12 +1,15 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Layout from "../components/Layout/Layout";
 import { formatDistanceToNow, parseISO } from 'date-fns'; // To handle relative time formatting
+import { FaEdit } from "react-icons/fa"; // Import the edit icon from react-icons
 
 export default function JobsList() {
     const router = useRouter();
     const { status } = router.query; // Get status from query parameters
     const [jobs, setJobs] = useState([]);
+    const [vdIs, setVdIs] = useState([]); // State to store the VDI list
     const [loading, setLoading] = useState(true);
 
     // Helper function to format salary
@@ -78,6 +81,39 @@ export default function JobsList() {
         fetchJobs();
     }, [status, router]);
 
+    // Fetch VDI list
+    useEffect(() => {
+        const fetchVdIs = async () => {
+            const token = localStorage.getItem("accessToken");
+            if (!token) {
+                router.push("/login");
+                return;
+            }
+
+            try {
+                console.log("Fetching VDIs...");
+                const response = await fetch("http://127.0.0.1:8000/api/vdi/list", {
+                    method: "GET",
+                    headers: {
+                        Authorization: `Bearer ${token}`, // Pass the token in the headers
+                    },
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log("VDIs:", data);
+                    setVdIs(data); // Set VDIs
+                } else {
+                    console.error("Failed to fetch VDIs");
+                }
+            } catch (error) {
+                console.error("Error fetching VDIs:", error);
+            }
+        };
+
+        fetchVdIs();
+    }, [router]);
+
     // Function to navigate to job edit page
     const handleJobRowClick = (jobId) => {
         router.push(`/create-job?id=${jobId}`);
@@ -116,6 +152,27 @@ export default function JobsList() {
         }
     };
 
+    // Function to handle VDI change for a job
+    const handleVdiChange = async (jobId, vdiId) => {
+        const token = localStorage.getItem("accessToken");
+        try {
+            const response = await fetch("http://127.0.0.1:8000/api/jobs/vdi/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`, // Pass the token in the headers
+                },
+                body: JSON.stringify({ job_id: jobId, vdi_id: vdiId }),
+            });
+
+            if (!response.ok) {
+                console.error("Failed to update VDI for the job");
+            }
+        } catch (error) {
+            console.error("Error updating VDI for the job:", error);
+        }
+    };
+
     return (
         <Layout>
             <div className="container">
@@ -133,7 +190,8 @@ export default function JobsList() {
                                     <th>Posted</th>
                                     <th>Salary</th>
                                     <th>Status</th>
-                                    <th>Applicants</th>
+                                    <th>VDI</th> {/* New column for VDI selection */}
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -145,27 +203,51 @@ export default function JobsList() {
                                         <td onClick={() => handleJobRowClick(job.id)}>{job.job_created}</td>
                                         <td onClick={() => handleJobRowClick(job.id)}>{job.salary}</td>
                                         <td>
-                                        <select
-        value={job.is_active ? "Open" : "Closed"}
-        onChange={(e) => handleStatusChange(job.id, e.target.value)}
-        style={{
-            paddingRight: '20px',       // Ensure padding to bring the arrow closer
-            appearance: 'none',         // Remove default styling for consistent appearance
-            background: 'url(data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="none" stroke="black" stroke-width=".5" d="M0 0l2 2 2-2"/></svg>) no-repeat right center', // Custom dropdown arrow
-            backgroundColor: '#fff',    // Set background to white
-            backgroundSize: '12px',     // Adjust size of the arrow
-            border: '1px solid #ccc',   // Add a border for visibility
-            borderRadius: '4px',        // Add border radius for rounded edges
-            padding: '5px',             // Add padding for text
-            margin: 0,                  // Remove margin for alignment
-        }}
-    >
-        <option value="Open">Open</option>
-        <option value="Closed">Closed</option>
-    </select>
+                                            <select
+                                                value={job.is_active ? "Open" : "Closed"}
+                                                onChange={(e) => handleStatusChange(job.id, e.target.value)}
+                                                style={{
+                                                    paddingRight: '20px',
+                                                    appearance: 'none',
+                                                    background: 'url(data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="none" stroke="black" stroke-width=".5" d="M0 0l2 2 2-2"/></svg>) no-repeat right center',
+                                                    backgroundColor: '#fff',
+                                                    backgroundSize: '12px',
+                                                    border: '1px solid #ccc',
+                                                    borderRadius: '4px',
+                                                    padding: '5px',
+                                                    margin: 0,
+                                                }}
+                                            >
+                                                <option value="Open">Open</option>
+                                                <option value="Closed">Closed</option>
+                                            </select>
                                         </td>
-                                        <td onClick={() => handleApplicantsClick(job.id)} style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}>
-                                            View Applicants
+                                        <td>
+                                            {/* Dropdown to select VDI */}
+                                            <select
+                                                onChange={(e) => handleVdiChange(job.id, e.target.value)}
+                                                defaultValue=""
+                                                style={{
+                                                    appearance: 'none',
+                                                    backgroundColor: '#fff',
+                                                    padding: '5px',
+                                                    border: '1px solid #ccc',
+                                                    borderRadius: '4px',
+                                                }}
+                                            >
+                                                <option value="" disabled>Select VDI</option>
+                                                {vdIs.map(vdi => (
+                                                    <option key={vdi.id} value={vdi.id}>
+                                                        {vdi.name}
+                                                    </option>
+                                                ))}
+                                            </select>
+                                        </td>
+                                        <td style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+                                            <span onClick={() => handleApplicantsClick(job.id)} style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}>
+                                                View Applicants
+                                            </span>
+                                            <FaEdit onClick={() => handleJobRowClick(job.id)} style={{ cursor: 'pointer', color: 'blue' }} />
                                         </td>
                                     </tr>
                                 ))}

@@ -25,7 +25,7 @@ const BlogSlider = () => {
                                     <Link legacyBehavior href="#">
                                         <a>
                                             <figure>
-                                                <img alt="jobBox" src="/assets/imgs/page/homepage1/img-news1.png" />
+                                                <img alt="bugbear" src="/assets/imgs/page/homepage1/img-news1.png" />
                                             </figure>
                                         </a>
                                     </Link>
@@ -46,7 +46,7 @@ const BlogSlider = () => {
                                         <div className="row">
                                             <div className="col-lg-6 col-6">
                                                 <div className="d-flex">
-                                                    <img className="img-rounded" src="/assets/imgs/page/homepage1/user1.png" alt="jobBox" />
+                                                    <img className="img-rounded" src="/assets/imgs/page/homepage1/user1.png" alt="bugbear" />
                                                     <div className="info-right-img">
                                                         <span className="font-sm font-bold color-brand-1 op-70">Sarah Harding</span>
                                                         <br />
@@ -70,7 +70,7 @@ const BlogSlider = () => {
                                     <Link legacyBehavior href="#">
                                         <a>
                                             <figure>
-                                                <img alt="jobBox" src="/assets/imgs/page/homepage1/img-news2.png" />
+                                                <img alt="bugbear" src="/assets/imgs/page/homepage1/img-news2.png" />
                                             </figure>
                                         </a>
                                     </Link>
@@ -91,7 +91,7 @@ const BlogSlider = () => {
                                         <div className="row">
                                             <div className="col-lg-6 col-6">
                                                 <div className="d-flex">
-                                                    <img className="img-rounded" src="/assets/imgs/page/homepage1/user2.png" alt="jobBox" />
+                                                    <img className="img-rounded" src="/assets/imgs/page/homepage1/user2.png" alt="bugbear" />
                                                     <div className="info-right-img">
                                                         <span className="font-sm font-bold color-brand-1 op-70">Steven Jobs</span>
                                                         <br />
@@ -115,7 +115,7 @@ const BlogSlider = () => {
                                     <Link legacyBehavior href="#">
                                         <a>
                                             <figure>
-                                                <img alt="jobBox" src="/assets/imgs/page/homepage1/img-news3.png" />
+                                                <img alt="bugbear" src="/assets/imgs/page/homepage1/img-news3.png" />
                                             </figure>
                                         </a>
                                     </Link>
@@ -136,7 +136,7 @@ const BlogSlider = () => {
                                         <div className="row">
                                             <div className="col-lg-6 col-6">
                                                 <div className="d-flex">
-                                                    <img className="img-rounded" src="/assets/imgs/page/homepage1/user3.png" alt="jobBox" />
+                                                    <img className="img-rounded" src="/assets/imgs/page/homepage1/user3.png" alt="bugbear" />
                                                     <div className="info-right-img">
                                                         <span className="font-sm font-bold color-brand-1 op-70">Wiliam Kend</span>
                                                         <br />

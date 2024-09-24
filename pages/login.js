@@ -76,7 +76,7 @@ export default function Signin() {
                                     <h2 className="mt-10 mb-5 text-brand-1">Member Login</h2>
                                     <p className="font-sm text-muted mb-30">Access to all features. No credit card required.</p>
                                     {/* <button className="btn social-login hover-up mb-20">
-                                        <img src="assets/imgs/template/icons/icon-google.svg" alt="jobbox" />
+                                        <img src="assets/imgs/template/icons/icon-google.svg" alt="bugbear" />
                                         <strong>Sign in with Google</strong>
                                     </button>
                                     <div className="divider-text-center">
@@ -138,10 +138,10 @@ export default function Signin() {
                                 </form>
                             </div>
                             <div className="img-1 d-none d-lg-block">
-                                <img className="shape-1" src="assets/imgs/page/login-register/img-4.svg" alt="JobBox" />
+                                <img className="shape-1" src="assets/imgs/page/login-register/img-4.svg" alt="bugbear" />
                             </div>
                             <div className="img-2">
-                                <img src="assets/imgs/page/login-register/img-3.svg" alt="JobBox" />
+                                <img src="assets/imgs/page/login-register/img-3.svg" alt="bugbear" />
                             </div>
                         </div>
                     </div>

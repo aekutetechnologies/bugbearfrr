@@ -22,7 +22,7 @@ const TestimonialSlider1 = () => {
                             <div className="card-image">
                                 <div className="image">
                                     <figure>
-                                        <img alt="jobBox" src="assets/imgs/page/about/user1.png" />
+                                        <img alt="bugbear" src="assets/imgs/page/about/user1.png" />
                                     </figure>
                                 </div>
                                 <div className="card-profile">
@@ -40,7 +40,7 @@ const TestimonialSlider1 = () => {
                             <div className="card-image">
                                 <div className="image">
                                     <figure>
-                                        <img alt="jobBox" src="assets/imgs/page/about/user2.png" />
+                                        <img alt="bugbear" src="assets/imgs/page/about/user2.png" />
                                     </figure>
                                 </div>
                                 <div className="card-profile">
@@ -58,7 +58,7 @@ const TestimonialSlider1 = () => {
                             <div className="card-image">
                                 <div className="image">
                                     <figure>
-                                        <img alt="jobBox" src="assets/imgs/page/about/user3.png" />
+                                        <img alt="bugbear" src="assets/imgs/page/about/user3.png" />
                                     </figure>
                                 </div>
                                 <div className="card-profile">

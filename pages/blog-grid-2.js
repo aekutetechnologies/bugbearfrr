@@ -35,7 +35,7 @@ export default function BlogGrid2() {
                                     <div className="col-lg-5 col-md-12 col-sm-12">
                                         <Link legacyBehavior href="blog-details">
                                             <a>
-                                                <img src="assets/imgs/page/job-single-2/img2.png" alt="jobBox" />
+                                                <img src="assets/imgs/page/job-single-2/img2.png" alt="bugbear" />
                                             </a>
                                         </Link>
                                     </div>
@@ -78,7 +78,7 @@ export default function BlogGrid2() {
                                                         <Link legacyBehavior href="blog-details">
                                                             <a>
                                                                 <figure>
-                                                                    <img alt="jobBox" src="assets/imgs/page/job-single-2/img3.png" />
+                                                                    <img alt="bugbear" src="assets/imgs/page/job-single-2/img3.png" />
                                                                 </figure>
                                                             </a>
                                                         </Link>
@@ -121,7 +121,7 @@ export default function BlogGrid2() {
                                                         <Link legacyBehavior href="blog-details">
                                                             <a>
                                                                 <figure>
-                                                                    <img alt="jobBox" src="assets/imgs/page/job-single-2/img4.png" />
+                                                                    <img alt="bugbear" src="assets/imgs/page/job-single-2/img4.png" />
                                                                 </figure>
                                                             </a>
                                                         </Link>
@@ -164,7 +164,7 @@ export default function BlogGrid2() {
                                                         <Link legacyBehavior href="blog-details">
                                                             <a>
                                                                 <figure>
-                                                                    <img alt="jobBox" src="assets/imgs/page/job-single-2/img5.png" />
+                                                                    <img alt="bugbear" src="assets/imgs/page/job-single-2/img5.png" />
                                                                 </figure>
                                                             </a>
                                                         </Link>
@@ -207,7 +207,7 @@ export default function BlogGrid2() {
                                                         <Link legacyBehavior href="blog-details">
                                                             <a>
                                                                 <figure>
-                                                                    <img alt="jobBox" src="assets/imgs/page/job-single-2/img6.png" />
+                                                                    <img alt="bugbear" src="assets/imgs/page/job-single-2/img6.png" />
                                                                 </figure>
                                                             </a>
                                                         </Link>
@@ -250,7 +250,7 @@ export default function BlogGrid2() {
                                                         <Link legacyBehavior href="blog-details">
                                                             <a>
                                                                 <figure>
-                                                                    <img alt="jobBox" src="assets/imgs/page/job-single-2/img7.png" />
+                                                                    <img alt="bugbear" src="assets/imgs/page/job-single-2/img7.png" />
                                                                 </figure>
                                                             </a>
                                                         </Link>
@@ -293,7 +293,7 @@ export default function BlogGrid2() {
                                                         <Link legacyBehavior href="blog-details">
                                                             <a>
                                                                 <figure>
-                                                                    <img alt="jobBox" src="assets/imgs/page/job-single-2/img8.png" />
+                                                                    <img alt="bugbear" src="assets/imgs/page/job-single-2/img8.png" />
                                                                 </figure>
                                                             </a>
                                                         </Link>
@@ -336,7 +336,7 @@ export default function BlogGrid2() {
                                                         <Link legacyBehavior href="blog-details">
                                                             <a>
                                                                 <figure>
-                                                                    <img alt="jobBox" src="assets/imgs/page/job-single-2/img4.png" />
+                                                                    <img alt="bugbear" src="assets/imgs/page/job-single-2/img4.png" />
                                                                 </figure>
                                                             </a>
                                                         </Link>
@@ -379,7 +379,7 @@ export default function BlogGrid2() {
                                                         <Link legacyBehavior href="blog-details">
                                                             <a>
                                                                 <figure>
-                                                                    <img alt="jobBox" src="assets/imgs/page/job-single-2/img5.png" />
+                                                                    <img alt="bugbear" src="assets/imgs/page/job-single-2/img5.png" />
                                                                 </figure>
                                                             </a>
                                                         </Link>
@@ -480,7 +480,7 @@ export default function BlogGrid2() {
                                                 <div className="post-list-small-item d-flex align-items-center">
                                                     <figure className="thumb mr-15">
                                                         <a href="/blog-details">
-                                                            <img src="assets/imgs/page/blog/img-trending.png" alt="jobBox" />
+                                                            <img src="assets/imgs/page/blog/img-trending.png" alt="bugbear" />
                                                         </a>
                                                     </figure>
                                                     <div className="content">
@@ -489,7 +489,7 @@ export default function BlogGrid2() {
                                                         </h5>
                                                         <div className="post-meta text-muted d-flex align-items-center mb-15">
                                                             <div className="author d-flex align-items-center mr-20">
-                                                                <img alt="jobBox" src="assets/imgs/page/homepage1/user1.png" />
+                                                                <img alt="bugbear" src="assets/imgs/page/homepage1/user1.png" />
                                                                 <span>Sugar Rosie</span>
                                                             </div>
                                                         </div>
@@ -507,7 +507,7 @@ export default function BlogGrid2() {
                                                         </h5>
                                                         <div className="post-meta text-muted d-flex align-items-center mb-15">
                                                             <div className="author d-flex align-items-center mr-20">
-                                                                <img alt="jobBox" src="assets/imgs/page/homepage1/user3.png" />
+                                                                <img alt="bugbear" src="assets/imgs/page/homepage1/user3.png" />
                                                                 <span>Harding</span>
                                                             </div>
                                                             <div className="date">
@@ -528,7 +528,7 @@ export default function BlogGrid2() {
                                                         </h5>
                                                         <div className="post-meta text-muted d-flex align-items-center mb-15">
                                                             <div className="author d-flex align-items-center mr-20">
-                                                                <img alt="jobBox" src="assets/imgs/page/homepage1/user2.png" />
+                                                                <img alt="bugbear" src="assets/imgs/page/homepage1/user2.png" />
                                                                 <span>Steven</span>
                                                             </div>
                                                             <div className="date">
@@ -549,7 +549,7 @@ export default function BlogGrid2() {
                                                         </h5>
                                                         <div className="post-meta text-muted d-flex align-items-center mb-15">
                                                             <div className="author d-flex align-items-center mr-20">
-                                                                <img alt="jobBox" src="assets/imgs/page/homepage1/user3.png" />
+                                                                <img alt="bugbear" src="assets/imgs/page/homepage1/user3.png" />
                                                                 <span>Merias</span>
                                                             </div>
                                                             <div className="date">
@@ -568,7 +568,7 @@ export default function BlogGrid2() {
                                                         <h5> <a href="/blog-details">How to Land Your Dream Marketing Job</a></h5>
                                                         <div className="post-meta text-muted d-flex align-items-center mb-15">
                                                             <div className="author d-flex align-items-center mr-20">
-                                                                <img alt="jobBox" src="assets/imgs/page/homepage1/user1.png" />
+                                                                <img alt="bugbear" src="assets/imgs/page/homepage1/user1.png" />
                                                                 <span>Rosie</span>
                                                             </div>
                                                             <div className="date">

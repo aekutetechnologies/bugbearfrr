@@ -13,11 +13,11 @@ export default function CandidateDetails() {
                 <section className="section-box-2">
                     <div className="container">
                         <div className="banner-hero banner-image-single">
-                            <img src="assets/imgs/page/candidates/img.png" alt="jobbox" />
+                            <img src="assets/imgs/page/candidates/img.png" alt="bugbear" />
                         </div>
                         <div className="box-company-profile">
                             <div className="image-compay">
-                                <img src="assets/imgs/page/candidates/candidate-profile.png" alt="jobbox" />
+                                <img src="assets/imgs/page/candidates/candidate-profile.png" alt="bugbear" />
                             </div>
                             <div className="row mt-10">
                                 <div className="col-lg-8 col-md-12">
@@ -26,13 +26,13 @@ export default function CandidateDetails() {
                                     </h5>
                                     <p className="mt-0 font-md color-text-paragraph-2 mb-15">UI/UX Designer. Front end Developer</p>
                                     <div className="mt-10 mb-15">
-                                        <img src="assets/imgs/template/icons/star.svg" alt="jobbox" />
-                                        <img src="assets/imgs/template/icons/star.svg" alt="jobbox" />
-                                        <img src="assets/imgs/template/icons/star.svg" alt="jobbox" />
-                                        <img src="assets/imgs/template/icons/star.svg" alt="jobbox" />
-                                        <img src="assets/imgs/template/icons/star.svg" alt="jobbox" />
+                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
+                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
+                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
+                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
+                                        <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                         <span className="font-xs color-text-mutted ml-10">(66)</span>
-                                        <img className="ml-30" src="assets/imgs/page/candidates/verified.png" alt="jobbox" />
+                                        <img className="ml-30" src="assets/imgs/page/candidates/verified.png" alt="bugbear" />
                                     </div>
                                 </div>
                                 <div className="col-lg-4 col-md-12 text-lg-end">
@@ -167,7 +167,7 @@ export default function CandidateDetails() {
                         <div className="box-newsletter">
                             <div className="row">
                                 <div className="col-xl-3 col-12 text-center d-none d-xl-block">
-                                    <img src="assets/imgs/template/newsletter-left.png" alt="jobbox" />
+                                    <img src="assets/imgs/template/newsletter-left.png" alt="bugbear" />
                                 </div>
                                 <div className="col-lg-12 col-xl-6 col-12">
                                     <h2 className="text-md-newsletter text-center">
@@ -181,7 +181,7 @@ export default function CandidateDetails() {
                                     </div>
                                 </div>
                                 <div className="col-xl-3 col-12 text-center d-none d-xl-block">
-                                    <img src="assets/imgs/template/newsletter-right.png" alt="jobbox" />
+                                    <img src="assets/imgs/template/newsletter-right.png" alt="bugbear" />
                                 </div>
                             </div>
                         </div>

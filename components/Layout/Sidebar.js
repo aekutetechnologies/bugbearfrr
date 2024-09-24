@@ -183,7 +183,7 @@ const Sidebar = ({ openClass }) => {
                                         </li>
                                 </ul>
                             </div>
-                            <div className="site-copyright">Copyright 2022 © JobBox. <br />Designed by AliThemes.</div>
+                            <div className="site-copyright">Copyright 2022 © bugbear. <br />Designed by AliThemes.</div>
                         </div>
                     </div>
                 </div>

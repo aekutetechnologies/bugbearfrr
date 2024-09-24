@@ -13,32 +13,32 @@ const CategoryTab = () => {
                 <ul className="nav nav-tabs" role="tablist">
                     <li>
                         <a className={active === 1 ? "active" : ""} onClick={() => handleOnClick(1)}>
-                            <img src="/assets/imgs/page/homepage1/management.svg" alt="jobBox" /> Management
+                            <img src="/assets/imgs/page/homepage1/management.svg" alt="bugbear" /> Management
                         </a>
                     </li>
                     <li>
                         <a className={active === 2 ? "active" : ""} onClick={() => handleOnClick(2)}>
-                            <img src="/assets/imgs/page/homepage1/marketing.svg" alt="jobBox" /> Marketing &amp; Sale
+                            <img src="/assets/imgs/page/homepage1/marketing.svg" alt="bugbear" /> Marketing &amp; Sale
                         </a>
                     </li>
                     <li>
                         <a className={active === 3 ? "active" : ""} onClick={() => handleOnClick(3)}>
-                            <img src="/assets/imgs/page/homepage1/finance.svg" alt="jobBox" /> Finance
+                            <img src="/assets/imgs/page/homepage1/finance.svg" alt="bugbear" /> Finance
                         </a>
                     </li>
                     <li>
                         <a className={active === 4 ? "active" : ""} onClick={() => handleOnClick(4)}>
-                            <img src="/assets/imgs/page/homepage1/human.svg" alt="jobBox" /> Human Resource
+                            <img src="/assets/imgs/page/homepage1/human.svg" alt="bugbear" /> Human Resource
                         </a>
                     </li>
                     <li>
                         <a className={active === 5 ? "active" : ""} onClick={() => handleOnClick(5)}>
-                            <img src="/assets/imgs/page/homepage1/retail.svg" alt="jobBox" /> Retail &amp; Products
+                            <img src="/assets/imgs/page/homepage1/retail.svg" alt="bugbear" /> Retail &amp; Products
                         </a>
                     </li>
                     <li>
                         <a className={active === 6 ? "active" : ""} onClick={() => handleOnClick(6)}>
-                            <img src="/assets/imgs/page/homepage1/content.svg" alt="jobBox" /> Content Writer
+                            <img src="/assets/imgs/page/homepage1/content.svg" alt="bugbear" /> Content Writer
                         </a>
                     </li>
                 </ul>
@@ -51,7 +51,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-1.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-1.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -107,7 +107,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-2.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-2.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -159,7 +159,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-3.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-3.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -215,7 +215,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-4.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-4.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -267,7 +267,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-5.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-5.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -315,7 +315,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-6.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-6.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -367,7 +367,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-7.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-7.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -419,7 +419,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-8.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-8.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -479,7 +479,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-7.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-7.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -531,7 +531,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-4.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-4.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -583,7 +583,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-5.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-5.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -631,7 +631,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-8.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-8.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -687,7 +687,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-1.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-1.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -743,7 +743,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-2.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-2.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -795,7 +795,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-3.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-3.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -851,7 +851,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-6.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-6.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -907,7 +907,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-4.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-4.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -959,7 +959,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-5.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-5.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -1007,7 +1007,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-6.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-6.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -1059,7 +1059,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-7.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-7.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -1111,7 +1111,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-8.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-8.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -1167,7 +1167,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-1.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-1.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -1223,7 +1223,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-2.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-2.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -1275,7 +1275,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-3.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-3.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -1335,7 +1335,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-7.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-7.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -1387,7 +1387,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-8.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-8.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -1443,7 +1443,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-4.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-4.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -1495,7 +1495,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-5.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-5.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -1543,7 +1543,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-6.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-6.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -1595,7 +1595,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-1.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-1.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -1651,7 +1651,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-2.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-2.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -1703,7 +1703,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-3.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-3.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -1763,7 +1763,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-8.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-8.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -1819,7 +1819,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-1.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-1.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -1875,7 +1875,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-4.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-4.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -1927,7 +1927,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-5.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-5.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -1975,7 +1975,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-6.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-6.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -2027,7 +2027,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-7.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-7.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -2079,7 +2079,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-2.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-2.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -2131,7 +2131,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-3.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-3.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -2191,7 +2191,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-8.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-8.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -2247,7 +2247,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-1.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-1.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -2303,7 +2303,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-2.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-2.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -2355,7 +2355,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-3.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-3.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -2411,7 +2411,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-4.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-4.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -2463,7 +2463,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-5.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-5.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -2511,7 +2511,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-6.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-6.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">
@@ -2563,7 +2563,7 @@ const CategoryTab = () => {
                                 <div className="card-grid-2-image-left">
                                     <span className="flash" />
                                     <div className="image-box">
-                                        <img src="assets/imgs/brands/brand-7.png" alt="jobBox" />
+                                        <img src="assets/imgs/brands/brand-7.png" alt="bugbear" />
                                     </div>
                                     <div className="right-info">
                                         <Link legacyBehavior href="company-details">

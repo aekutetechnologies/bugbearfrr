@@ -1,66 +1,31 @@
 import Link from "next/link";
 import SwiperCore, { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useState, useEffect } from "react";
 
 SwiperCore.use([Navigation]);
 
 import "swiper/css/grid";
 import { Grid } from "swiper";
 
-const data = [
-    {
-        icon: "marketing.svg",
-        title: "Marketing & Sale",
-        count: 1526
-    },
-    {
-        icon: "customer.svg",
-        title: "Customer Help",
-        count: 185
-    },
-    {
-        icon: "finance.svg",
-        title: "Finance",
-        count: 168
-    },
-    {
-        icon: "lightning.svg",
-        title: "Software",
-        count: 1856
-    },
-    {
-        icon: "human.svg",
-        title: "Human Resource",
-        count: 165
-    },
-    {
-        icon: "management.svg",
-        title: "Management",
-        count: 965
-    },
-    {
-        icon: "retail.svg",
-        title: "Retail & Products",
-        count: 563
-    },
-    {
-        icon: "security.svg",
-        title: "Security Analyst",
-        count: 254
-    },
-    {
-        icon: "content.svg",
-        title: "Content Writer",
-        count: 142
-    },
-    {
-        icon: "research.svg",
-        title: "Market Research",
-        count: 532
-    }
-];
-
 const CategorySlider = () => {
+    const [categories, setCategories] = useState([]);
+
+    // Fetch data from backend API
+    useEffect(() => {
+        const fetchCategories = async () => {
+            try {
+                const response = await fetch("http://127.0.0.1:8000/api/jobs/categories"); // Update this URL to match your backend endpoint
+                const data = await response.json();
+                setCategories(data);
+            } catch (error) {
+                console.error("Error fetching categories:", error);
+            }
+        };
+
+        fetchCategories();
+    }, []);
+
     return (
         <>
             <div className="swiper-container swiper-group-5">
@@ -95,24 +60,30 @@ const CategorySlider = () => {
                     }}
                     className="swiper-wrapper pb-70 pt-5 swiper-grid-jobobx"
                 >
-                    {data.map((item, i) => (
+                    {categories.map((item, i) => (
                         <SwiperSlide key={i}>
-                            <div className="swiper-slide hover-up">
-                                <Link legacyBehavior href="/jobs-list">
-                                    <a>
-                                        <div className="item-logo">
-                                            <div className="image-left">
-                                                <img alt="jobBox" src={`assets/imgs/page/homepage1/${item.icon}`} />
-                                            </div>
-                                            <div className="text-info-right">
-                                                <h4>{item.title}</h4>
-                                                <p className="font-xs">
-                                                    {item.count}
-                                                    <span> Jobs Available</span>
-                                                </p>
-                                            </div>
+                            <div className="swiper-slide hover-up" style={{ height: '200px' }}> {/* Set fixed height to maintain uniform size */}
+                                <Link href="/jobs-list">
+                                    <div className="item-logo" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%' }}>
+                                        {/* Optional image section can be uncommented */}
+                                        <div className="image-left">
+                                            <img alt="category" src="assets/imgs/page/homepage1/lightning.svg" />
                                         </div>
-                                    </a>
+                                        <div className="text-info-right">
+                                            <h4 style={{ 
+                                                whiteSpace: 'nowrap', 
+                                                overflow: 'hidden', 
+                                                textOverflow: 'ellipsis', 
+                                                maxWidth: '150px' /* Adjust as needed to control max width */
+                                            }}>
+                                                {item.name}
+                                            </h4>
+                                            <p className="font-xs">
+                                                {item.job_count}
+                                                <span> Jobs Available</span>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </Link>
                             </div>
                         </SwiperSlide>

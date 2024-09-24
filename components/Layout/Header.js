@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { FaUserCircle, FaCog, FaSignOutAlt } from 'react-icons/fa';
 import Sidebar from '../../components/elements/Sidebar'; // Import the sidebar component
 import Cookies from 'js-cookie';
+import { useRouter } from 'next/router';
 
 const Header = ({ handleOpen, handleRemove, openClass }) => {
     const [scroll, setScroll] = useState(false);
@@ -11,7 +12,9 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [isSidebarOpen, setSidebarOpen] = useState(false);
-    const [userType, setUserType] = useState(null); // Added userType state
+    const [userType, setUserType] = useState(null);
+
+    const router = useRouter();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -29,14 +32,13 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
             fetchProfileData(token);
         }
 
-        // Cleanup the event listener on component unmount
         return () => {
             document.removeEventListener('scroll', handleScroll);
         };
     }, [scroll]);
 
     const toggleSidebar = () => {
-        setSidebarOpen(!isSidebarOpen); // Toggle sidebar
+        setSidebarOpen(!isSidebarOpen);
     };
 
     const fetchProfileData = async (token) => {
@@ -51,7 +53,7 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
                 const data = await response.json();
                 setProfileData(data);
                 setIsLoggedIn(true);
-                setUserType(localStorage.getItem('userType')); // Set userType from localStorage
+                setUserType(localStorage.getItem('userType'));
             }
         } catch (error) {
             console.error("Error fetching profile data:", error);
@@ -66,6 +68,8 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
         setIsLoggedIn(false);
         setProfileData(null);
         setUserType(null);
+
+        router.push('/login');
     };
 
     const toggleDropdown = () => {
@@ -80,13 +84,14 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
                         <div className="header-left">
                             <div className="header-logo">
                                 <Link href="/" className="d-flex">
-                                    <img alt="jobBox" src="/assets/imgs/template/jobhub-logo.svg" />
+                                    <img alt="bugbear" src="/assets/imgs/template/jobhub-logo.svg" />
                                 </Link>
                             </div>
                         </div>
                         <div className="header-nav">
                             <nav className="nav-main-menu">
                                 <ul>
+                                    {/* Dashboard for userType 3 (recruiter) */}
                                     {isLoggedIn && userType === "3" && (
                                         <li>
                                             <Link href="/dashboard" className="nav-link">
@@ -94,7 +99,27 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
                                             </Link>
                                         </li>
                                     )}
-                                    {/* Add more navigation links here if needed */}
+
+                                    {/* Search Jobs, My Jobs, Saved Jobs for userType 1 or 2 (job seekers) */}
+                                    {isLoggedIn && (userType === "1" || userType === "2") && (
+                                        <>
+                                            <li>
+                                                <Link href="/jobs-list" className="nav-link">
+                                                    Search Jobs
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                <Link href="/applied-jobs" className="nav-link">
+                                                    My Jobs
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                <Link href="/saved-jobs" className="nav-link">
+                                                    Saved Jobs
+                                                </Link>
+                                            </li>
+                                        </>
+                                    )}
                                 </ul>
                             </nav>
                             <div
@@ -111,41 +136,29 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
                                         <div
                                             className="profile-header"
                                             onClick={toggleDropdown}
-                                            style={{
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                cursor: 'pointer',
-                                            }}
                                         >
                                             <img
                                                 src={profileData?.profile_pic_url || '/assets/imgs/default-profile-pic.png'}
                                                 alt="Profile"
-                                                style={{
-                                                    width: '40px',
-                                                    height: '40px',
-                                                    borderRadius: '50%',
-                                                    marginRight: '10px',
-                                                }}
                                             />
                                             <span>{`Hi, ${profileData?.first_name || 'User'}`}</span>
-                                            <i className="dropdown-icon" style={{ marginLeft: '10px' }}>&#9662;</i>
+                                            <i className="dropdown-icon">&#9662;</i>
                                         </div>
 
-                                        {/* Dropdown menu */}
                                         {dropdownOpen && (
-                                            <div className="profile-dropdown-menu">
-                                                <Link href={userType === "3" ? "/recruiter-profile" : "/candidate-profile"}>
-                                                    <div className="dropdown-item">
-                                                        <FaUserCircle className="icon" /> View Profile
-                                                    </div>
-                                                </Link>
-                                                <div className="dropdown-item" onClick={toggleSidebar}>
-                                                    <FaCog className="icon" /> My Account
-                                                </div>
-                                                <div className="dropdown-item" onClick={handleLogout}>
-                                                    <FaSignOutAlt className="icon" /> Logout
-                                                </div>
-                                            </div>
+                                           <div className="profile-dropdown-menu">
+                                           <Link href={userType === "3" ? "/recruiter-profile" : "/candidate-profile"}>
+                                               <div className="dropdown-item" style={{ display: 'flex', alignItems: 'center', padding: '10px', cursor: 'pointer' }}>
+                                                   <FaUserCircle style={{ marginRight: '10px', fontSize: '1.2rem' }} /> View Profile
+                                               </div>
+                                           </Link>
+                                           <div className="dropdown-item" onClick={toggleSidebar} style={{ display: 'flex', alignItems: 'center', padding: '10px', cursor: 'pointer' }}>
+                                               <FaCog style={{ marginRight: '10px', fontSize: '1.2rem' }} /> My Account
+                                           </div>
+                                           <div className="dropdown-item" onClick={handleLogout} style={{ display: 'flex', alignItems: 'center', padding: '10px', cursor: 'pointer' }}>
+                                               <FaSignOutAlt style={{ marginRight: '10px', fontSize: '1.2rem' }} /> Logout
+                                           </div>
+                                       </div>
                                         )}
                                     </div>
                                 ) : (
@@ -163,6 +176,28 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
             <style jsx>{`
                 .profile-dropdown {
                     position: relative;
+                }
+
+                .profile-header {
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+                    padding: 10px;
+                }
+
+                .profile-header img {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    margin-right: 10px;
+                }
+
+                .profile-header span {
+                    margin-left: 10px;
+                }
+
+                .dropdown-icon {
+                    margin-left: 10px;
                 }
 
                 .profile-dropdown-menu {
@@ -191,6 +226,7 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
 
                 .icon {
                     margin-right: 10px;
+                    font-size: 1.2rem;
                 }
 
                 .nav-main-menu ul {
@@ -213,9 +249,20 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
                 }
 
                 .nav-link:hover {
-                    color: #0070f3; /* Change to desired hover color */
+                    color: #0070f3;
+                }
+
+                .burger-icon {
+                    cursor: pointer;
+                }
+
+                .burger-close .burger-icon-top,
+                .burger-close .burger-icon-mid,
+                .burger-close .burger-icon-bottom {
+                    background-color: transparent;
                 }
             `}</style>
+
             {isSidebarOpen && <Sidebar closeSidebar={toggleSidebar} />}
         </>
     );

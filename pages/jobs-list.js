@@ -3,6 +3,7 @@ import Link from "next/link";
 import Layout from "../components/Layout/Layout";
 import BlogSlider from "./../components/sliders/Blog";
 import { useRouter } from "next/router";
+import { formatDistanceToNow } from 'date-fns';
 
 export default function JobList() {
     const [jobs, setJobs] = useState([]);
@@ -172,7 +173,7 @@ export default function JobList() {
                                                                     <div className="col-lg-6 col-md-6 col-sm-12">
                                                                         <div className="card-grid-2-image-left">
                                                                             <div className="image-box">
-                                                                                <img src="assets/imgs/brands/brand-1.png" alt="jobBox" />
+                                                                                <img src="assets/imgs/brands/brand-1.png" alt="bugbear" />
                                                                             </div>
                                                                             <div className="right-info">
                                                                                 <Link href={`/job-details/${job.id}`} className="name-job">
@@ -375,7 +376,7 @@ export default function JobList() {
                         </div>
                     </section>
 
-                    {/* News and Blog */}
+                    {/* News and Blog
                     <section className="section-box mt-50 mb-50">
                         <div className="container">
                             <div className="text-start">
@@ -393,7 +394,7 @@ export default function JobList() {
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </section> */}
 
                     {/* Newsletter */}
                     <section className="section-box mt-50 mb-20">
@@ -401,7 +402,7 @@ export default function JobList() {
                             <div className="box-newsletter">
                                 <div className="row">
                                     <div className="col-xl-3 col-12 text-center d-none d-xl-block">
-                                        <img src="assets/imgs/template/newsletter-left.png" alt="jobBox" />
+                                        <img src="assets/imgs/template/newsletter-left.png" alt="bugbear" />
                                     </div>
                                     <div className="col-lg-12 col-xl-6 col-12">
                                         <h2 className="text-md-newsletter text-center">
@@ -416,7 +417,7 @@ export default function JobList() {
                                         </div>
                                     </div>
                                     <div className="col-xl-3 col-12 text-center d-none d-xl-block">
-                                        <img src="assets/imgs/template/newsletter-right.png" alt="jobBox" />
+                                        <img src="assets/imgs/template/newsletter-right.png" alt="bugbear" />
                                     </div>
                                 </div>
                             </div>
