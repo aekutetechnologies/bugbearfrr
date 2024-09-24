@@ -10,7 +10,7 @@ export default function Protected() {
                         <div className="row login-register-cover pb-250">
                             <div className="col-lg-4 col-md-6 col-sm-12 mx-auto">
                                 <div className="text-center">
-                                    <img src="assets/imgs/page/login-register/img-6.svg" alt="JobBox" />
+                                    <img src="assets/imgs/page/login-register/img-6.svg" alt="bugbear" />
                                     <h2 className="mt-10 mb-5 text-brand-1">Protected Content</h2>
                                     <p className="font-sm text-muted mb-30">This content is password protected. To view it please enter your password below</p>
                                 </div>

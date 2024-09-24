@@ -49,7 +49,7 @@ const CandidateCard = ({ candidate }) => {
                         <Link legacyBehavior href="/candidate-details">
                             <a>
                                 <figure>
-                                    <img alt="jobBox" src={candidate.imageUrl} />
+                                    <img alt="bugbear" src={candidate.imageUrl} />
                                 </figure>
                             </a>
                         </Link>
@@ -64,7 +64,7 @@ const CandidateCard = ({ candidate }) => {
                         <div className="rate-reviews-small pt-5">
                             {[...Array(candidate.rating)].map((_, i) => (
                                 <span key={i}>
-                                    <img src="assets/imgs/template/icons/star.svg" alt="jobBox" />
+                                    <img src="assets/imgs/template/icons/star.svg" alt="bugbear" />
                                 </span>
                             ))}
                             <span className="ml-10 color-text-mutted font-xs">({candidate.reviews})</span>

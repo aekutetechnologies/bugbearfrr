@@ -138,7 +138,7 @@ export default function CreateJob() {
     
             if (response.ok) {
                 toast.success(isEditing ? "Job updated successfully!" : "Job created successfully!");
-                router.push("/jobs"); // Redirect to job listing page after success
+                router.push("/dashboard"); // Redirect to job listing page after success
             } else {
                 toast.error("Something went wrong!");
             }

@@ -7,6 +7,7 @@ import { FaIndustry, FaMoneyBillWave, FaClock, FaMapMarkerAlt, FaStar, FaCheckCi
 import { useState } from "react";  // Import useState for managing button clicks
 import { ToastContainer, toast } from 'react-toastify'; // Import toast notifications
 import 'react-toastify/dist/ReactToastify.css'; // Import styles for toast notifications
+import cookie from 'cookie'; // Import cookie module
 
 export default function JobDetails({ job, featuredJobs }) {
     const [isApplying, setIsApplying] = useState(false);
@@ -79,6 +80,13 @@ export default function JobDetails({ job, featuredJobs }) {
         }
     };
 
+    // Function to handle "Connect VDI"
+    const handleConnectVDI = () => {
+        // Add the functionality for connecting VDI here.
+        // For example, redirecting to a VDI-related page or opening a VDI connection
+        toast.info("Connecting to VDI...");
+    };
+
     return (
         <>
             <Layout>
@@ -87,7 +95,7 @@ export default function JobDetails({ job, featuredJobs }) {
                     <section className="section-box-2">
                         <div className="container">
                             <div className="banner-hero banner-image-single">
-                                <img src="/assets/imgs/page/job-single/thumb.png" alt="jobBox" />
+                                <img src="/assets/imgs/page/job-single/thumb.png" alt="bugbear" />
                             </div>
                             <div className="row mt-10">
                                 <div className="col-lg-8 col-md-12">
@@ -99,19 +107,27 @@ export default function JobDetails({ job, featuredJobs }) {
                                     </div>
                                 </div>
                                 <div className="col-lg-4 col-md-12 text-lg-end">
-                                    <button
-                                        className="btn btn-apply-icon btn-apply btn-apply-big hover-up"
-                                        disabled={isApplying || job.applied}
-                                        onClick={handleApply}
-                                    >
-                                        {job.applied ? "Applied" : isApplying ? "Applying..." : "Apply now"}
-                                    </button>
-                                    <FaStar
-                                        size={24}
-                                        color={saved ? "yellow" : "gray"}  // Yellow if saved, gray if not saved
-                                        style={{ cursor: "pointer", marginLeft: "10px" }}
-                                        onClick={handleSave}
-                                    />
+                                    <div style={{ display: "flex", justifyContent: "flex-end", alignItems: "center" }}>
+                                        {job.is_approved && (
+                                            <button className="btn btn-connect-vdi hover-up" style={{ marginRight: "10px" }} onClick={handleConnectVDI}>
+                                                Connect VDI
+                                            </button>
+                                        )}
+
+                                        <button
+                                            className="btn btn-apply-icon btn-apply btn-apply-big hover-up"
+                                            disabled={isApplying || job.applied}
+                                            onClick={handleApply}
+                                        >
+                                            {job.applied ? "Applied" : isApplying ? "Applying..." : "Apply now"}
+                                        </button>
+                                        <FaStar
+                                            size={24}
+                                            color={saved ? "yellow" : "gray"}  // Yellow if saved, gray if not saved
+                                            style={{ cursor: "pointer", marginLeft: "10px" }}
+                                            onClick={handleSave}
+                                        />
+                                    </div>
                                 </div>
                             </div>
                             <div className="border-bottom pt-10 pb-10" />
@@ -239,8 +255,6 @@ export default function JobDetails({ job, featuredJobs }) {
 }
 
 
-import cookie from 'cookie';
-
 // Fetch data from the API
 export async function getServerSideProps(context) {
     const { id } = context.query;
@@ -262,6 +276,7 @@ export async function getServerSideProps(context) {
         }
 
         const job = await res.json();
+        console.log(job);
 
         // Fetch featured jobs with POST request
         const featuredRes = await fetch(`http://127.0.0.1:8000/api/jobs/search/`, {
@@ -286,8 +301,6 @@ export async function getServerSideProps(context) {
 
         const featuredJobs = await featuredRes.json();
 
-        console.log("Featured jobs:", featuredJobs);
-
         return {
             props: { job, featuredJobs: featuredJobs.results || [] },
         };
@@ -299,4 +312,3 @@ export async function getServerSideProps(context) {
         };
     }
 }
-

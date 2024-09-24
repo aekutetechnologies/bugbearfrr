@@ -37,10 +37,10 @@ export default function Reset() {
                                 </form>
                             </div>
                             <div className="img-1 d-none d-lg-block">
-                                <img className="shape-1" src="assets/imgs/page/login-register/img-5.svg" alt="JobBox" />
+                                <img className="shape-1" src="assets/imgs/page/login-register/img-5.svg" alt="bugbear" />
                             </div>
                             <div className="img-2">
-                                <img src="assets/imgs/page/login-register/img-3.svg" alt="JobBox" />
+                                <img src="assets/imgs/page/login-register/img-3.svg" alt="bugbear" />
                             </div>
                         </div>
                     </div>

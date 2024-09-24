@@ -21,7 +21,7 @@ export default function BlogDetails() {
                                     <h2 className="mb-30 mt-20 text-center">11 Tips to Help You Get New Clients Through Cold Calling</h2>
                                     <div className="post-meta text-muted d-flex align-items-center mx-auto justify-content-center">
                                         <div className="author d-flex align-items-center mr-30">
-                                            <img alt="jobBox" src="assets/imgs/page/homepage1/user3.png" />
+                                            <img alt="bugbear" src="assets/imgs/page/homepage1/user3.png" />
                                             <span>Sarah Harding</span>
                                         </div>
                                         <div className="date">
@@ -89,19 +89,19 @@ export default function BlogDetails() {
                                                     <h6 className="color-text-paragraph-2 d-inline-block d-baseline mr-20 mt-10">Share</h6>
                                                     <Link legacyBehavior href="#">
                                                         <a className="mr-20 d-inline-block d-middle hover-up">
-                                                            <img alt="jobBox" src="assets/imgs/page/blog/fb.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/page/blog/fb.svg" />
                                                         </a>
                                                     </Link>
 
                                                     <Link legacyBehavior href="#">
                                                         <a className="mr-20 d-inline-block d-middle hover-up">
-                                                            <img alt="jobBox" src="assets/imgs/page/blog/tw.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/page/blog/tw.svg" />
                                                         </a>
                                                     </Link>
 
                                                     <Link legacyBehavior href="#">
                                                         <a className="mr-0 d-inline-block d-middle hover-up">
-                                                            <img alt="jobBox" src="assets/imgs/page/blog/pi.svg" />
+                                                            <img alt="bugbear" src="assets/imgs/page/blog/pi.svg" />
                                                         </a>
                                                     </Link>
                                                 </div>

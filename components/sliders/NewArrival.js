@@ -23,7 +23,7 @@ const NewArrivalSlider = ({ products }) => {
                             <div className="card-grid-2-image-left">
                                 <span className="flash" />
                                 <div className="image-box">
-                                    <img src="/assets/imgs/brands/brand-6.png" alt="jobBox" />
+                                    <img src="/assets/imgs/brands/brand-6.png" alt="bugbear" />
                                 </div>
                                 <div className="right-info">
                                     <Link legacyBehavior href="/company-details">
@@ -75,7 +75,7 @@ const NewArrivalSlider = ({ products }) => {
                             <div className="card-grid-2-image-left">
                                 <span className="flash" />
                                 <div className="image-box">
-                                    <img src="/assets/imgs/brands/brand-4.png" alt="jobBox" />
+                                    <img src="/assets/imgs/brands/brand-4.png" alt="bugbear" />
                                 </div>
                                 <div className="right-info">
                                     <Link legacyBehavior href="/company-details">
@@ -127,7 +127,7 @@ const NewArrivalSlider = ({ products }) => {
                             <div className="card-grid-2-image-left">
                                 <span className="flash" />
                                 <div className="image-box">
-                                    <img src="/assets/imgs/brands/brand-8.png" alt="jobBox" />
+                                    <img src="/assets/imgs/brands/brand-8.png" alt="bugbear" />
                                 </div>
                                 <div className="right-info">
                                     <Link legacyBehavior href="/company-details">
@@ -183,7 +183,7 @@ const NewArrivalSlider = ({ products }) => {
                             <div className="card-grid-2-image-left">
                                 <span className="flash" />
                                 <div className="image-box">
-                                    <img src="/assets/imgs/brands/brand-4.png" alt="jobBox" />
+                                    <img src="/assets/imgs/brands/brand-4.png" alt="bugbear" />
                                 </div>
                                 <div className="right-info">
                                     <Link legacyBehavior href="/company-details">

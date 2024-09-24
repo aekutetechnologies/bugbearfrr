@@ -99,7 +99,7 @@ const CategorySlider3 = () => {
                                 <a>
                                     <div className="item-logo">
                                         <div className="image-left">
-                                            <img alt="jobBox" src={`assets/imgs/page/homepage1/${item.icon}`} />
+                                            <img alt="bugbear" src={`assets/imgs/page/homepage1/${item.icon}`} />
                                         </div>
                                         <div className="text-info-right">
                                             <h4>Marketing &amp; Sale</h4>
