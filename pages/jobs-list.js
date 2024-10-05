@@ -199,9 +199,10 @@ export default function JobList() {
                                                                             <span>{job.created_at}</span>
                                                                         </span>
                                                                     </div>
-                                                                    <p className="font-sm color-text-paragraph mt-10">
+                                                                    {/* <p className="font-sm color-text-paragraph mt-10">
                                                                         {job.description}
-                                                                    </p>
+                                                                    </p> */}
+                                                                    <p dangerouslySetInnerHTML={{ __html: job.description || "Job description not available." }} />
                                                                     <div className="card-2-bottom mt-20">
                                                                         <div className="row">
                                                                             <div className="col-lg-7 col-7">

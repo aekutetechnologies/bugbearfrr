@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from "chart.js";
 import Layout from "../components/Layout/Layout";
 
+import dynamic from "next/dynamic";
 // Register chart.js components
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
@@ -99,6 +100,7 @@ export default function DashboardWithSidebar() {
         }
     };
 
+    const LineChart = dynamic(() => import("react-chartjs-2").then(mod => mod.Line), { ssr: false });
     // Data for the chart
     const chartData = {
         labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
@@ -134,8 +136,8 @@ export default function DashboardWithSidebar() {
                         <div className="dashboard-header">
                             <h3 className="dashboard-title">Dashboard</h3>
                             <div style={{ display: "flex", gap: "20px" }}>
-                                <Link href="/create-job">
-                                    <button className="btn btn-default btn-shadow hover-up">Create Job</button>
+                                <Link href="/create-job" className="hover:bg-gray-700">
+                                    <button className="px-4 py-2 rounded text-gray-700 bg-gray-900 hover:bg-gray-700 hover:text-gray-200 shadow-md hover:-translate-y-1 transition-transform outline-none border">Create Job</button>
                                 </Link>
                                 <button className="btn btn-default btn-shadow hover-up" onClick={() => setShowModal(true)}>
                                     Create VDI
@@ -181,9 +183,11 @@ export default function DashboardWithSidebar() {
                             </div>
                         )}
 
+                        #Graph
                         <div className="dashboard-graph">
                             <h3 className="dashboard-section-title">Jobs Created Over the Week</h3>
                             <Line data={chartData} options={chartOptions} />
+                            <LineChart data={chartData} options={chartOptions} />
                         </div>
                     </main>
                 </div>
