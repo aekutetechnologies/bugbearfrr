@@ -9,3 +9,7 @@
   /* background: #eee; */
   height: calc((100% - 30px) / 2) !important;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -209,10 +209,12 @@ export default function JobDetails({ job, featuredJobs }) {
                                     {/* Job Description */}
                                     <div className="content-single">
                                         <h4>Job Description</h4>
-                                        <p>{job.responsibilities || "Job description not available."}</p>
+                                        {/* <p>{job.responsibilities || "Job description not available."}</p> */}
+                                        <p dangerouslySetInnerHTML={{ __html: job.responsibilities || "Job description not available." }} />
 
                                         <h4>Essential Knowledge, Skills, and Experience</h4>
-                                        <ul>
+                                        <p dangerouslySetInnerHTML={{ __html: job.skills || "Skills not provided." }} />
+                                        {/* <ul>
                                             {job.skills && job.skills.length > 0 ? (
                                                 job.skills.split(",").map((skill, index) => (
                                                     <li key={index}>{skill.trim()}</li>
@@ -220,10 +222,11 @@ export default function JobDetails({ job, featuredJobs }) {
                                             ) : (
                                                 <li>Skills not provided</li>
                                             )}
-                                        </ul>
+                                        </ul> */}
 
                                         <h4>Qualifications</h4>
-                                        <p>{job.qualifications || "No qualifications provided."}</p>
+                                        <p dangerouslySetInnerHTML={{ __html: job.qualifications || "No qualifications provided." }} />
+                                        {/* <p>{job.qualifications || "No qualifications provided."}</p> */}
                                     </div>
                                 </div>
 
