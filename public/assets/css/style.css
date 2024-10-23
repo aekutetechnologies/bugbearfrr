@@ -3098,9 +3098,11 @@ ul li:last-child .card-list-4 {
   align-items: center;
 }
 .header .main-header .header-right {
-  display: inline-block;
-  min-width: 215px;
-  text-align: right;
+  background-color: #0056b3;
+  display: flex;
+  /* width: 50%; */
+  /* min-width: 15px; */
+  /* text-align: right; */
 }
 .header .main-header .header-nav {
   display: inline-block;
@@ -3270,25 +3272,25 @@ ul li:last-child .card-list-4 {
 
 .sticky-bar.stick {
   animation: 700ms ease-in-out 0s normal none 1 running fadeInDown;
-  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.05);
+  /* box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.05); */
   position: fixed;
-  top: 0;
+  top: 10;
   width: 100%;
   z-index: 999;
   left: 0;
   transition: all 0.3s ease 0s;
-  border-bottom: 1px solid #E0E6F6;
-  background: #fff;
+  /* border-bottom: 1px solid #E0E6F6; */
+  /* background: #fff; */
 }
-.sticky-bar.stick.sticky-white-bg {
+/* .sticky-bar.stick.sticky-white-bg {
   background-color: #fff;
 }
 .sticky-bar.stick.sticky-blue-bg {
   background-color: #3286e0;
-}
-.sticky-bar.stick .burger-icon {
+} */
+/* .sticky-bar.stick .burger-icon {
   top: 7px;
-}
+} */
 
 .header-brand-2 {
   background: #3C65F5;

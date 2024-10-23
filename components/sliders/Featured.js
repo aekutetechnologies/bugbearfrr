@@ -11,165 +11,111 @@ const FeaturedSlider = ({ featuredJobs }) => {
         return formatDistanceToNow(jobDate, { addSuffix: true }); // Get relative time (e.g., '3 days ago')
     };
 
+    function formatSalary(amount) {
+        if (amount >= 1000 && amount < 100000) {
+            return (amount / 1000).toFixed(0) + 'k'; // For amounts in thousands (e.g., 10k, 15k)
+        } else if (amount >= 100000) {
+            return (amount / 100000).toFixed(0) + 'L'; // For lakhs if needed
+        }
+        return amount; // Return the original amount if it doesn't meet conditions
+    }
+
     return (
-        <>
-            <div className="swiper-container swiper-group-4">
-                <Swiper
-                    slidesPerView={4}
-                    spaceBetween={30}
-                    loop={true}
-                    navigation={{
-                        prevEl: ".swiper-button-prev-4",
-                        nextEl: ".swiper-button-next-4"
-                    }}
-                    className="swiper-wrapper pb-10 pt-5"
-                >
-                    {featuredJobs && featuredJobs.length > 0 ? (
-                        featuredJobs.map((job) => (
-                            <SwiperSlide key={job.id}>
-                                <div className="card-grid-2 hover-up wow animate__animated animate__fadeIn">
-                                    <div className="card-grid-2-image-left">
-                                        <span className="flash" />
-                                        <div className="image-box logo-background">
-                                            <img
-                                                src={job.company_logo || "/assets/imgs/brands/default-logo.png"}
-                                                alt="bugbear"
-                                                className="company-logo-img"
-                                            />
-                                        </div>
-                                        <div className="right-info">
-                                            <Link href={`/company-details/${job.companyId}`} legacyBehavior>
-                                                <a className="name-job">{job.company_name || "Company Name"}</a>
-                                            </Link>
-                                            <span className="location-small">{job.location || "Location not provided"}</span>
-                                        </div>
-                                    </div>
-                                    <div className="card-block-info">
-                                        <h6>
-                                            <Link href={`/job-details/${job.id}`} legacyBehavior>
-                                                <a>{job.title || "Job Title"}</a>
-                                            </Link>
-                                        </h6>
-                                        <div className="mt-5">
-                                            <span className="card-briefcase">{job.jobType || "Full time"}</span>
-                                            <span className="card-time">
-                                                {getRelativeTime(job.job_created)} {/* Dynamic time ago */}
-                                            </span>
-                                        </div>
-                                        {/* <p className="font-sm color-text-paragraph mt-15">{job.description || "No description available."}</p> */}
-                                        <p dangerouslySetInnerHTML={{ __html: job.description || "Job description not available." }} />
-                                        <div className="mt-30">
-                                            {/* {job.skills && job.skills.map((skill, index) => (
-                                                <Link href={`/jobs-grid?skill=${skill}`} key={index} legacyBehavior>
-                                                    <a className="btn btn-grey-small mr-5">{skill}</a>
-                                                </Link>
-                                            ))} */}
-                                            <p dangerouslySetInnerHTML={{ __html: job.skills || "Skills not provided." }} />
-                                        </div>
-                                        <div className="card-2-bottom mt-30">
-                                            <div className="row">
-                                                <div className="col-lg-7 col-7">
-                                                    <span className="card-text-price">${job.salary_min || "Not provided"} - </span>
-                                                    <span className="card-text-price">${job.salary_max || "Not provided"}</span>
-                                                </div>
-                                                <div className="col-lg-5 col-5 text-end">
-                                                    <Link href={`/job-details/${job.id}`} legacyBehavior>
-                                                        <a className="btn btn-apply-now">Apply now</a>
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                        </div>
+
+        <div className="swiper-container swiper-group-4">
+        <Swiper
+            spaceBetween={30}
+            loop={true}
+            navigation={{
+                prevEl: ".swiper-button-prev-4",
+                nextEl: ".swiper-button-next-4",
+            }}
+            className="pb-10 pt-5"
+            breakpoints={{
+                320: { // Small devices (phones, portrait)
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                },
+                640: { // Small devices (phones, landscape)
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                768: { // Medium devices (tablets)
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+                1024: { // Large devices (desktops)
+                    slidesPerView: 4,
+                    spaceBetween: 30,
+                },
+            }}
+        >
+            {featuredJobs && featuredJobs.length > 0 ? (
+                featuredJobs.map((job) => (
+                    <SwiperSlide key={job.id}>
+                        <div className="h-fit flex flex-col bg-white shadow-md shadow-blue-200 rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                            <div className="flex items-center p-4">
+                                <span className="flash" />
+                                <div className="relative w-20 h-12 mr-4">
+                                    <div className="absolute inset-0 bg-gray-200 rounded-md overflow-hidden">
+                                        <img
+                                            src={job.company_logo || "/assets/imgs/brands/default-logo.png"}
+                                            alt="Company Logo"
+                                            className="object-cover w-full h-full"
+                                        />
                                     </div>
                                 </div>
-                            </SwiperSlide>
-                        ))
-                    ) : (
-                        <div>No featured jobs available</div>
-                    )}
-                </Swiper>
+                                <div className="flex flex-col">
+                                    <Link href={`/company-details/${job.companyId}`} legacyBehavior>
+                                        <a className="text-lg font-semibold text-blue-600 hover:underline">
+                                            {job.company_name || "Company Name"}
+                                        </a>
+                                    </Link>
+                                    <span className="text-sm text-gray-500">
+                                        {job.location || "Location not provided"}
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="flex flex-col p-4">
+                                <div className="h-[100px]">
+                                    <Link href={`/job-details/${job.id}`} legacyBehavior>
+                                        <a className="text-lg font-bold py-2 hover:text-blue-700 transition-colors duration-300">
+                                            {job.title || "Job Title"}
+                                        </a>
+                                    </Link>
+                                </div>
+                                <div className="mt-5 flex justify-between text-sm text-gray-700">
+                                    <span>{job.jobType || "Full time"}</span>
+                                    <span className="text-gray-500">
+                                        {getRelativeTime(job.job_created)}
+                                    </span>
+                                </div>
+                                <div className="mt-6 flex justify-between">
+                                    <span className="font-semibold">
+                                        ₹{formatSalary(job.salary_min)} - ₹{formatSalary(job.salary_max)}
+                                    </span>
+                                    <Link href={`/job-details/${job.id}`} legacyBehavior>
+                                        <a className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300">
+                                            Apply now
+                                        </a>
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                ))
+            ) : (
+                <div className="text-center text-gray-500">
+                    No featured jobs available
+                </div>
+            )}
+        </Swiper>
+    
+        <div className="swiper-button-next swiper-button-next-4" />
+        <div className="swiper-button-prev swiper-button-prev-4" />
+    </div>
+    
 
-                <div className="swiper-button-next swiper-button-next-4" />
-                <div className="swiper-button-prev swiper-button-prev-4" />
-            </div>
-
-            {/* Styled JSX for adding styles in the same file */}
-            <style jsx>{`
-                .card-grid-2-image-left {
-                    display: flex;
-                    align-items: flex-start; /* Aligns the top of the logo with the text */
-                }
-
-                .logo-background {
-                    background-color: #ffffff; /* Match the card background color for blending */
-                    padding: 10px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    border-radius: 8px;
-                    border: 1px solid #ddd;
-                    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-                    width: 80px; /* Adjust width for better alignment */
-                    height: 80px; /* Adjust height for better alignment */
-                    margin-right: 20px; /* Space between logo and text */
-                }
-
-                .company-logo-img {
-                    max-width: 100%;
-                    max-height: 100%;
-                    object-fit: contain;
-                    background-color: transparent;
-                }
-
-                .card-grid-2 {
-                    background-color: #ffffff;
-                    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-                    border-radius: 10px;
-                    overflow: hidden;
-                    transition: all 0.3s ease;
-                }
-
-                .card-grid-2:hover {
-                    transform: translateY(-10px); /* Slight hover effect for card */
-                }
-
-                .card-block-info {
-                    padding: 15px; /* Card content padding */
-                }
-
-                .right-info {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    margin-top: 10px; /* Ensure alignment with logo */
-                }
-
-                .name-job {
-                    font-weight: bold;
-                    margin-bottom: 5px; /* Adds spacing between company name and location */
-                }
-
-                .location-small {
-                    font-size: 0.875rem;
-                    color: #6c757d;
-                }
-
-                .card-briefcase {
-                    font-size: 0.875rem;
-                    color: #6c757d;
-                }
-
-                .card-time {
-                    font-size: 0.875rem;
-                    color: #6c757d;
-                }
-
-                .card-text-price {
-                    font-size: 0.75rem; /* Further reduce the font size of the salary */
-                    font-weight: bold;
-                    color: #333;
-                }
-            `}</style>
-        </>
     );
 };
 

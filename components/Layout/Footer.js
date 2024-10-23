@@ -4,91 +4,71 @@ import Link from "next/link";
 
 const Footer = () => {
     return (
-        <footer className="footer mt-50">
-            <div className="container">
-                <div className="row">
-                    <div className="footer-col-1 col-md-3 col-sm-12">
-                        <Link legacyBehavior href="/"><a><img alt="bugbear" src="assets/imgs/template/jobhub-logo.svg" /></a></Link>
-                        <div className="mt-20 mb-20 font-xs color-text-paragraph-2">bugbear is the heart of the design community and the best resource to discover and connect with designers and jobs worldwide.</div>
-                        <div className="footer-social">
-                            <a className="icon-socials icon-facebook" href="#" />
-                            <a className="icon-socials icon-twitter" href="#" />
-                            <a className="icon-socials icon-linkedin" href="#" /></div>
+        <footer className="bg-gray-200 text-white mt-12">
+            <div className="container mx-24 px-4 py-8">
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+                    <div className="footer-col-1 col-span-1 md:col-span-2">
+                        <Link legacyBehavior href="/">
+                            {/* <img alt="bugbear" src="assets/imgs/template/jobhub-logo.svg" className="mb-4" /> */}
+                            <img alt="bugbear" src="/assets/imgs/template/jobhub-logo.svg" className="mb-4" />
+                        </Link>
+                        <p className="mt-5 mb-5 text-sm text-gray-400">
+                            bugbear is the heart of the design community and the best resource to discover and connect with designers and jobs worldwide.
+                        </p>
+                        <div className="footer-social flex space-x-4">
+                            <span className="icon-socials icon-facebook cursor-pointer" aria-label="Facebook" />
+                            <span className="icon-socials icon-twitter cursor-pointer" aria-label="Twitter" />
+                            <span className="icon-socials icon-linkedin cursor-pointer" aria-label="LinkedIn" />
+                        </div>
                     </div>
-                    <div className="footer-col-2 col-md-2 col-xs-6">
-                        <h6 className="mb-20">Resources</h6>
-                        <ul className="menu-footer">
-                            <li>
-                                <a href="#">About us</a></li>
-                            <li>
-                                <a href="#">Our Team</a></li>
-                            <li>
-                                <a href="#">Products</a></li>
-                            <li>
-                                <a href="#">Contact</a></li>
+
+                    <div className="footer-col-2">
+                        <h6 className="mb-4 font-semibold">Resources</h6>
+                        <ul className="menu-footer space-y-2">
+                            <li><Link href="#" className="text-gray-400 hover:underline">About us</Link></li>
+                            <li><Link href="#" className="text-gray-400 hover:underline">Our Team</Link></li>
+                            <li><Link href="#" className="text-gray-400 hover:underline">Products</Link></li>
+                            <li><Link href="#" className="text-gray-400 hover:underline">Contact</Link></li>
                         </ul>
                     </div>
-                    <div className="footer-col-3 col-md-2 col-xs-6">
-                        <h6 className="mb-20">Community</h6>
-                        <ul className="menu-footer">
-                            <li>
-                                <a href="#">Feature</a></li>
-                            <li>
-                                <a href="#">Pricing</a></li>
-                            <li>
-                                <a href="#">Credit</a></li>
-                            <li>
-                                <a href="#">FAQ</a></li>
+
+                    <div className="footer-col-3">
+                        <h6 className="mb-4 font-semibold">Community</h6>
+                        <ul className="menu-footer space-y-2">
+                            <li><Link href="#" className="text-gray-400 hover:underline">Feature</Link></li>
+                            <li><Link href="#" className="text-gray-400 hover:underline">Pricing</Link></li>
+                            <li><Link href="#" className="text-gray-400 hover:underline">Credit</Link></li>
+                            <li><Link href="#" className="text-gray-400 hover:underline">FAQ</Link></li>
                         </ul>
                     </div>
-                    <div className="footer-col-4 col-md-2 col-xs-6">
-                        <h6 className="mb-20">Quick links</h6>
-                        <ul className="menu-footer">
-                            <li>
-                                <a href="#">iOS</a></li>
-                            <li>
-                                <a href="#">Android</a></li>
-                            <li>
-                                <a href="#">Microsoft</a></li>
-                            <li>
-                                <a href="#">Desktop</a></li>
+
+                    <div className="footer-col-5">
+                        <h6 className="mb-4 font-semibold">More</h6>
+                        <ul className="menu-footer space-y-2">
+                            <li><Link href="#" className="text-gray-400 hover:underline">Privacy</Link></li>
+                            <li><Link href="#" className="text-gray-400 hover:underline">Help</Link></li>
+                            <li><Link href="#" className="text-gray-400 hover:underline">Terms</Link></li>
+                            <li><Link href="#" className="text-gray-400 hover:underline">FAQ</Link></li>
                         </ul>
-                    </div>
-                    <div className="footer-col-5 col-md-2 col-xs-6">
-                        <h6 className="mb-20">More</h6>
-                        <ul className="menu-footer">
-                            <li>
-                                <a href="#">Privacy</a></li>
-                            <li>
-                                <a href="#">Help</a></li>
-                            <li>
-                                <a href="#">Terms</a></li>
-                            <li>
-                                <a href="#">FAQ</a></li>
-                        </ul>
-                    </div>
-                    <div className="footer-col-6 col-md-3 col-sm-12">
-                        <h6 className="mb-20">Download App</h6>
-                        <p className="color-text-paragraph-2 font-xs">Download our Apps and get extra 15% Discount on your first Order…!</p>
-                        <div className="mt-15">
-                            <a className="mr-5" href="#"><img src="assets/imgs/template/icons/app-store.png" alt="joxBox" /></a>
-                            <a href="#"><img src="assets/imgs/template/icons/android.png" alt="joxBox" /></a></div>
                     </div>
                 </div>
-                <div className="footer-bottom mt-50">
-                    <div className="row">
-                        <div className="col-md-6"><span className="font-xs color-text-paragraph">Copyright © 2022. bugbear all right reserved</span></div>
-                        <div className="col-md-6 text-md-end text-start">
-                            <div className="footer-social">
-                                <a className="font-xs color-text-paragraph" href="#">Privacy Policy</a>
-                                <a className="font-xs color-text-paragraph mr-30 ml-30" href="#">Terms &amp; Conditions</a>
-                                <a className="font-xs color-text-paragraph" href="#">Security</a></div>
+
+                <hr className="border-t-2 border-black my-4 mx-auto w-3/4" />
+
+                <div className="footer-bottom mt-8">
+                    <div className="flex justify-between items-center">
+                        <div>
+                            <span className="text-sm text-gray-400">Copyright © 2024. bugbear all rights reserved</span>
+                        </div>
+                        <div className="footer-social flex space-x-6">
+                            <Link className="text-sm text-gray-400 hover:underline" href="#">Privacy Policy</Link>
+                            <Link className="text-sm text-gray-400 mx-3 hover:underline" href="#">Terms &amp; Conditions</Link>
+                            <Link className="text-sm text-gray-400 hover:underline" href="#">Security</Link>
                         </div>
                     </div>
                 </div>
             </div>
         </footer>
-
     );
 };
 

@@ -64,6 +64,7 @@ export default function JobList() {
             if (data && data.results) {
                 setJobs(data.results);
                 setJobCount(data.count);
+                console.log(data.results)
             } else {
                 setJobs([]);
             }
@@ -119,6 +120,21 @@ export default function JobList() {
     const handleApplyNowClick = (jobId) => {
         router.push(`/job-details/${jobId}`);
     };
+
+    const getRelativeTime = (jobCreated) => {
+        const jobDate = new Date(jobCreated); // Parse job creation date
+        return formatDistanceToNow(jobDate, { addSuffix: true }); // Get relative time (e.g., '3 days ago')
+    };
+
+    function formatSalary(amount) {
+        if (amount >= 1000 && amount < 100000) {
+            return (amount / 1000).toFixed(0) + 'k'; // For amounts in thousands (e.g., 10k, 15k)
+        } else if (amount >= 100000) {
+            return (amount / 100000).toFixed(0) + 'L'; // For lakhs if needed
+        }
+        return amount; // Return the original amount if it doesn't meet conditions
+    }
+
 
     return (
         <>
@@ -177,7 +193,7 @@ export default function JobList() {
                                                                             </div>
                                                                             <div className="right-info">
                                                                                 <Link href={`/job-details/${job.id}`} className="name-job">
-                                                                                    {job.company}
+                                                                                    {job.company_name}
                                                                                 </Link>
                                                                                 <span className="location-small">{job.location}</span>
                                                                             </div>
@@ -196,20 +212,21 @@ export default function JobList() {
                                                                     <div className="mt-5">
                                                                         <span className="card-briefcase">{job.job_type}</span>
                                                                         <span className="card-time">
-                                                                            <span>{job.created_at}</span>
+                                                                            <span>{getRelativeTime(job.job_created)}</span>
                                                                         </span>
                                                                     </div>
                                                                     {/* <p className="font-sm color-text-paragraph mt-10">
                                                                         {job.description}
                                                                     </p> */}
-                                                                    <p dangerouslySetInnerHTML={{ __html: job.description || "Job description not available." }} />
+                                                                    {/* <p dangerouslySetInnerHTML={{ __html: job.description || "Job description not available." }} /> */}
                                                                     <div className="card-2-bottom mt-20">
                                                                         <div className="row">
                                                                             <div className="col-lg-7 col-7">
-                                                                                <span className="card-text-price">${job.salary_min}</span>
+                                                                                <span className="card-text-price">₹{formatSalary(job.salary_min)}</span>
                                                                                 <span className="text-muted">-</span>
-                                                                                <span className="card-text-price">${job.salary_max}</span>
+                                                                                <span className="card-text-price">₹{formatSalary(job.salary_max)}</span>
                                                                             </div>
+
                                                                             <div className="col-lg-5 col-5 text-end">
                                                                                 <button
                                                                                     className="btn btn-apply-now"
@@ -286,7 +303,7 @@ export default function JobList() {
                                                                     type="checkbox"
                                                                     name="category"
                                                                     value={category}
-                                                                    checked={filters.category.includes(category)} 
+                                                                    checked={filters.category.includes(category)}
                                                                     onChange={handleFilterChange}
                                                                 />
                                                                 <span className="text-small">{category}</span>
@@ -315,7 +332,7 @@ export default function JobList() {
                                                                     type="checkbox"
                                                                     name="salaryRange"
                                                                     value={range.value}
-                                                                    checked={filters.salaryRange.includes(range.value)} 
+                                                                    checked={filters.salaryRange.includes(range.value)}
                                                                     onChange={handleFilterChange}
                                                                 />
                                                                 <span className="text-small">{range.label}</span>
@@ -337,7 +354,7 @@ export default function JobList() {
                                                                     type="checkbox"
                                                                     name="experienceLevel"
                                                                     value={level}
-                                                                    checked={filters.experienceLevel.includes(level)} 
+                                                                    checked={filters.experienceLevel.includes(level)}
                                                                     onChange={handleFilterChange}
                                                                 />
                                                                 <span className="text-small">{level}</span>
@@ -359,7 +376,7 @@ export default function JobList() {
                                                                     type="checkbox"
                                                                     name="jobType"
                                                                     value={type}
-                                                                    checked={filters.jobType.includes(type)} 
+                                                                    checked={filters.jobType.includes(type)}
                                                                     onChange={handleFilterChange}
                                                                 />
                                                                 <span className="text-small">{type}</span>
@@ -398,7 +415,7 @@ export default function JobList() {
                     </section> */}
 
                     {/* Newsletter */}
-                    <section className="section-box mt-50 mb-20">
+                    {/* <section className="section-box mt-50 mb-20">
                         <div className="container">
                             <div className="box-newsletter">
                                 <div className="row">
@@ -423,7 +440,7 @@ export default function JobList() {
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </section> */}
                 </div>
             </Layout>
         </>

@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Layout from "../components/Layout/Layout";
+import { formatDistanceToNow } from 'date-fns';
+import Loader from "../components/elements/Loader";
 
 export default function JobGrid() {
     const [jobs, setJobs] = useState([]);
@@ -38,6 +40,8 @@ export default function JobGrid() {
 
                 const data = await response.json();
                 setJobs(data); // Assume this is an array of jobs
+                console.log(data);
+                
                 setLoading(false);
             } catch (err) {
                 setError(err.message);
@@ -84,7 +88,9 @@ export default function JobGrid() {
 
     // Loading state
     if (loading) {
-        return <div>Loading...</div>;
+        return <div>
+            <Loader/>
+        </div>;
     }
 
     // Error state
@@ -92,106 +98,13 @@ export default function JobGrid() {
         return <div>Error: {error}</div>;
     }
 
+    const getRelativeTime = (jobCreated) => {
+        const jobDate = new Date(jobCreated); // Parse job creation date
+        return formatDistanceToNow(jobDate, { addSuffix: true }); // Get relative time (e.g., '3 days ago')
+    };
+
     return (
         <>
-            <style jsx>{`
-                /* Styling the grid to have 4 cards per row with reduced spacing */
-                .job-grid .col-xl-3,
-                .job-grid .col-lg-4,
-                .job-grid .col-md-6,
-                .job-grid .col-sm-12,
-                .job-grid .col-12 {
-                    padding-left: 5px; /* Reduce left padding */
-                    padding-right: 5px; /* Reduce right padding */
-                    margin-bottom: 15px; /* Reduce bottom margin between cards */
-                }
-
-                /* Ensure the company logo is square and properly sized */
-                .company-logo {
-                    width: 100px;
-                    height: 100px;
-                    object-fit: contain; /* Contain the logo within the box without distortion */
-                    background-color: rgba(255, 255, 255, 0.2); /* Blending the logo with the background */
-                    padding: 10px;
-                    border-radius: 10px;
-                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                }
-
-                /* Pagination container */
-                .paginations .pager {
-                    display: flex;
-                    justify-content: center;
-                    list-style: none;
-                    padding-left: 0;
-                    margin-top: 20px;
-                }
-
-                .pager li {
-                    margin-right: 5px;
-                }
-
-                /* Page number buttons */
-                .pager .pager-number {
-                    padding: 8px 15px;
-                    border: 1px solid #ddd;
-                    background-color: transparent; /* Transparent background for inactive buttons */
-                    color: #007bff; /* Blue color for the text */
-                    font-size: 14px;
-                    cursor: pointer;
-                    border-radius: 4px; /* Rounded corners */
-                    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-                }
-
-                .pager .pager-number:hover {
-                    background-color: #007bff;
-                    color: #fff;
-                    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.3); /* Subtle shadow on hover */
-                }
-
-                /* Highlight the current page number */
-                .pager .pager-number.active {
-                    background-color: #007bff;
-                    color: #fff; /* White text on the active page */
-                    border-color: #007bff;
-                    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.4); /* Slight shadow on active button */
-                }
-
-                /* Disabled state for "Next" and "Previous" buttons */
-                .pager .pager-number:disabled {
-                    background-color: transparent;
-                    color: #aaa;
-                    cursor: not-allowed;
-                    border-color: #ddd;
-                }
-
-                .pager-prev,
-                .pager-next {
-                    padding: 8px 15px;
-                    border: 1px solid #ddd;
-                    background-color: #f5f5f5;
-                    font-size: 14px;
-                    color: #007bff;
-                    cursor: pointer;
-                    border-radius: 4px;
-                    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-                }
-
-                .pager-prev:hover,
-                .pager-next:hover {
-                    background-color: #007bff;
-                    color: #fff;
-                    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.3);
-                }
-
-                /* Disabled state for prev/next buttons */
-                .pager-prev:disabled,
-                .pager-next:disabled {
-                    background-color: #f5f5f5;
-                    color: #aaa;
-                    cursor: not-allowed;
-                    border-color: #ddd;
-                }
-            `}</style>
             <Layout>
                 <div>
                     <section className="section-box mt-30">
@@ -200,55 +113,54 @@ export default function JobGrid() {
                                 <div className="col-lg-12 col-md-12 col-sm-12 col-12">
                                     <div className="content-page">
                                         <div className="box-filters-job">
-                                            <div className="row">
-                                                <div className="col-xl-6 col-lg-5">
-                                                    <span className="text-small text-showing">
+                                            <div className="flex justify-between">
+                                                <div className="flex items-center">
+                                                    <span className="text-sm">
                                                         Showing page <strong>{currentPage}</strong> of <strong>{totalPages}</strong> pages
                                                     </span>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="row job-grid">
+                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-4">
                                             {/* Loop through current jobs and display */}
                                             {currentJobs.map((job) => (
-                                                <div key={job.id} className="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12">
-                                                    <div className="card-grid-2 hover-up">
-                                                        <div className="card-grid-2-image-left">
-                                                            <div className="image-box">
-                                                                <img src={job.company_logo || "assets/imgs/brands/brand-1.png"} alt={job.company_name} className="company-logo" />
+                                                <div key={job.id} className="p-2">
+                                                    <div className="bg-white shadow-md shadow-blue-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                                                        <div className="flex items-start">
+                                                            <div className="flex-none p-4">
+                                                                <img
+                                                                    src={job.company_logo || "assets/imgs/brands/brand-1.png"}
+                                                                    alt={job.company_name}
+                                                                    className="w-16 h-16 object-contain border rounded-md"
+                                                                />
                                                             </div>
-                                                            <div className="right-info">
+                                                            <div className="flex-grow p-4 flex flex-col">
                                                                 <Link href={`/company-details/${job.company_id}`} legacyBehavior>
-                                                                    <a className="name-job">{job.company_name}</a>
+                                                                    <a className="text-lg font-semibold hover:text-blue-600 transition-colors duration-200">{job.company_name}</a>
                                                                 </Link>
-                                                                <span className="location-small">{job.location}</span>
+                                                                <span className="text-sm text-gray-500">{job.location}</span>
                                                             </div>
                                                         </div>
-                                                        <div className="card-block-info">
+                                                        <div className="px-4 py-2 flex flex-col gap-3">
                                                             <h6>
                                                                 <Link href={`/job-details/${job.id}`} legacyBehavior>
-                                                                    <a>{job.title}</a>
+                                                                    <a className="font-medium text-lg hover:text-blue-600 transition-colors duration-200">{job.job_title}</a>
                                                                 </Link>
                                                             </h6>
-                                                            <div className="mt-5">
-                                                                <span className="card-briefcase">{job.job_type}</span>
-                                                                <span className="card-time">
-                                                                    {job.posted_time}
-                                                                </span>
+                                                            <div className="mt-2 flex items-center justify-between text-sm text-gray-600">
+                                                                <span>{job.job_type}</span>
+                                                                <span>{getRelativeTime(job.job_created)}</span>
                                                             </div>
-                                                            <p className="font-sm color-text-paragraph mt-15">{job.description}</p>
-                                                            <div className="card-2-bottom mt-30">
-                                                                <div className="row">
-                                                                    <div className="col-lg-7 col-7">
-                                                                        <span className="card-text-price">{formatSalary(job.salary_min)} - </span>
-                                                                        <span className="card-text-price">{formatSalary(job.salary_max)}</span>
-                                                                    </div>
-                                                                    <div className="col-lg-5 col-5 text-end">
-                                                                        <div className="btn btn-apply-now" data-bs-toggle="modal" data-bs-target="#ModalApplyJobForm">
-                                                                            Apply now
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
+                                                            {/* Uncomment if you want to display the job description */}
+                                                            {/* <p className="text-sm text-gray-600 mt-2">{job.description}</p> */}
+                                                            <div className="mt-4 flex justify-between items-center">
+                                                                <span className="text-lg font-bold">{formatSalary(job.salary_min)} - {formatSalary(job.salary_max)}</span>
+                                                                <button
+                                                                    className="bg-blue-500 text-white rounded-lg py-2 px-4 hover:bg-blue-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                                                    onClick={() => handleApplyNowClick(job.id)}
+                                                                >
+                                                                    Apply now
+                                                                </button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -257,15 +169,17 @@ export default function JobGrid() {
                                         </div>
                                     </div>
 
+
                                     {/* Pagination Controls */}
-                                    <div className="paginations">
-                                        <ul className="pager">
+                                    <div className="flex justify-center mt-5">
+                                        <ul className="flex items-center space-x-2">
                                             <li>
                                                 <button
-                                                    className="pager-prev"
+                                                    className={`px-4 py-2 border rounded ${currentPage === 1 ? 'bg-gray-200 text-gray-500 cursor-not-allowed' : 'bg-white text-blue-500 hover:bg-blue-500 hover:text-white'}`}
                                                     onClick={handlePreviousPage}
                                                     disabled={currentPage === 1} // Disable if on the first page
                                                 >
+                                                    Prev
                                                 </button>
                                             </li>
 
@@ -273,7 +187,7 @@ export default function JobGrid() {
                                             {Array.from({ length: totalPages }, (_, index) => (
                                                 <li key={index + 1}>
                                                     <button
-                                                        className={`pager-number ${currentPage === index + 1 ? "active" : ""}`}
+                                                        className={`px-4 py-2 border rounded ${currentPage === index + 1 ? 'bg-blue-500 text-white' : 'bg-white text-blue-500 hover:bg-blue-500 hover:text-white'}`}
                                                         onClick={() => goToPage(index + 1)}
                                                     >
                                                         {index + 1}
@@ -283,10 +197,11 @@ export default function JobGrid() {
 
                                             <li>
                                                 <button
-                                                    className="pager-next"
+                                                    className={`px-4 py-2 border rounded ${currentPage === totalPages ? 'bg-gray-200 text-gray-500 cursor-not-allowed' : 'bg-white text-blue-500 hover:bg-blue-500 hover:text-white'}`}
                                                     onClick={handleNextPage}
                                                     disabled={currentPage === totalPages} // Disable if on the last page
                                                 >
+                                                    Next
                                                 </button>
                                             </li>
                                         </ul>
@@ -296,33 +211,6 @@ export default function JobGrid() {
                         </div>
                     </section>
 
-                    {/* Newsletter Section */}
-                    <section className="section-box mt-50 mb-20">
-                        <div className="container">
-                            <div className="box-newsletter">
-                                <div className="row">
-                                    <div className="col-xl-3 col-12 text-center d-none d-xl-block">
-                                        <img src="assets/imgs/template/newsletter-left.png" alt="joxBox" />
-                                    </div>
-                                    <div className="col-lg-12 col-xl-6 col-12">
-                                        <h2 className="text-md-newsletter text-center">
-                                            New Things Will Always
-                                            <br /> Update Regularly
-                                        </h2>
-                                        <div className="box-form-newsletter mt-40">
-                                            <form className="form-newsletter">
-                                                <input className="input-newsletter" type="text" placeholder="Enter your email here" />
-                                                <button className="btn btn-default font-heading icon-send-letter">Subscribe</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div className="col-xl-3 col-12 text-center d-none d-xl-block">
-                                        <img src="assets/imgs/template/newsletter-right.png" alt="joxBox" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
                 </div>
             </Layout>
         </>

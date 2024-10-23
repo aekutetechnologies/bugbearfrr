@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+1/* eslint-disable @next/next/no-img-element */
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Line } from "react-chartjs-2";
@@ -6,7 +6,8 @@ import { useRouter } from "next/router";
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from "chart.js";
 import Layout from "../components/Layout/Layout";
 
-import dynamic from "next/dynamic";
+import JobStats from "../components/elements/jobStats";
+import VdiStats from "../components/elements/vdiStats";
 // Register chart.js components
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
@@ -100,115 +101,219 @@ export default function DashboardWithSidebar() {
         }
     };
 
-    const LineChart = dynamic(() => import("react-chartjs-2").then(mod => mod.Line), { ssr: false });
-    // Data for the chart
-    const chartData = {
-        labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        datasets: [
-            {
-                label: "Jobs Created",
-                data: stats.jobs_over_week,
-                fill: false,
-                borderColor: "#007bff",
-                tension: 0.1,
-            },
-        ],
-    };
-
-    const chartOptions = {
-        responsive: true,
-        plugins: {
-            legend: {
-                position: "top",
-            },
-            title: {
-                display: true,
-                text: "Jobs Created Over the Week",
-            },
-        },
-    };
 
     return (
         <Layout>
-            <div className="container">
-                <div className="dashboard-container">
-                    <main className="dashboard-main">
+            <div className="">
+                <div className="">
+                    <main className="py-3">
                         <div className="dashboard-header">
                             <h3 className="dashboard-title">Dashboard</h3>
                             <div style={{ display: "flex", gap: "20px" }}>
-                                <Link href="/create-job" className="hover:bg-gray-700">
-                                    <button className="px-4 py-2 rounded text-gray-700 bg-gray-900 hover:bg-gray-700 hover:text-gray-200 shadow-md hover:-translate-y-1 transition-transform outline-none border">Create Job</button>
+                                <Link href="/create-job" className="">
+                                    {/* <button className="px-4 py-2 rounded bg-blue-600 text-white text-lg">Create Job</button> */}
+                                    <button className="px-3 py-2 rounded-lg bg-blue-600 text-white text-lg hover:bg-blue-700 hover:text-black shadow-xl hover:-translate-y-1 transition-transorm ">Create Job</button>
                                 </Link>
-                                <button className="btn btn-default btn-shadow hover-up" onClick={() => setShowModal(true)}>
+                                <button className="px-3 py-2 rounded-lg bg-blue-600 text-white text-lg hover:bg-blue-700 hover:text-gray-200 shadow-xl hover:-translate-y-1 transition-transorm " onClick={() => setShowModal(true)}>
                                     Create VDI
                                 </button>
                             </div>
                         </div>
 
-                        {loading ? (
-                            <p>Loading stats...</p>
-                        ) : (
-                            <div className="dashboard-cards">
-                                <div className="dashboard-card" onClick={() => router.push("/admin-jobs?status=all")}>
-                                    <h3>Total Jobs</h3>
-                                    <p className="dashboard-stat">{stats.total_jobs}</p>
-                                    <span className="dashboard-green">+25%</span>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+                                <div
+                                    className="bg-white shadow-md shadow-blue-200 rounded-lg p-4 cursor-pointer hover:bg-gray-100 transition-colors"
+                                    onClick={() => router.push("/admin-jobs?status=all")}
+                                >
+                                    <h3 className="text-lg font-semibold">Total Jobs</h3>
+                                    <p className="text-2xl font-bold text-gray-800">{stats.total_jobs}</p>
+                                    <span className="text-green-600">+25%</span>
                                 </div>
-                                <div className="dashboard-card" onClick={() => router.push("/admin-jobs?status=open")}>
-                                    <h3>Open Jobs</h3>
-                                    <p className="dashboard-stat">{stats.open_jobs}</p>
-                                    <span className="dashboard-green">+5%</span>
+                                <div
+                                    className="bg-white shadow-md shadow-blue-200 rounded-lg p-4 cursor-pointer hover:bg-gray-100 transition-colors"
+                                    onClick={() => router.push("/admin-jobs?status=open")}
+                                >
+                                    <h3 className="text-lg font-semibold">Open Jobs</h3>
+                                    <p className="text-2xl font-bold text-gray-800">{stats.open_jobs}</p>
+                                    <span className="text-green-600">+5%</span>
                                 </div>
-                                <div className="dashboard-card" onClick={() => router.push("/admin-jobs?status=closed")}>
-                                    <h3>Closed Jobs</h3>
-                                    <p className="dashboard-stat">{stats.closed_jobs}</p>
-                                    <span className="dashboard-green">+12%</span>
+                                <div
+                                    className="bg-white shadow-md shadow-blue-200 rounded-lg p-4 cursor-pointer hover:bg-gray-100 transition-colors"
+                                    onClick={() => router.push("/admin-jobs?status=closed")}
+                                >
+                                    <h3 className="text-lg font-semibold">Closed Jobs</h3>
+                                    <p className="text-2xl font-bold text-gray-800">{stats.closed_jobs}</p>
+                                    <span className="text-green-600">+12%</span>
                                 </div>
-
-                                <div className="dashboard-card" onClick={() => router.push("/admin-vdi?status=all")}>
-                                    <h3>Total VDI</h3>
-                                    <p className="dashboard-stat">{stats.total_vdi}</p>
-                                    <span className="dashboard-green">+10%</span>
+                                <div
+                                    className="bg-white shadow-md shadow-blue-200 rounded-lg p-4 cursor-pointer hover:bg-gray-100 transition-colors"
+                                    onClick={() => router.push("/admin-vdi?status=all")}
+                                >
+                                    <h3 className="text-lg font-semibold">Total VDI</h3>
+                                    <p className="text-2xl font-bold text-gray-800">{stats.total_vdi}</p>
+                                    <span className="text-green-600">+10%</span>
                                 </div>
-                                <div className="dashboard-card" onClick={() => router.push("/admin-vdi?status=running")}>
-                                    <h3>Running VDI</h3>
-                                    <p className="dashboard-stat">{stats.running_vdi}</p>
-                                    <span className="dashboard-green">+8%</span>
+                                <div
+                                    className="bg-white shadow-md shadow-blue-200 rounded-lg p-4 cursor-pointer hover:bg-gray-100 transition-colors"
+                                    onClick={() => router.push("/admin-vdi?status=running")}
+                                >
+                                    <h3 className="text-lg font-semibold">Running VDI</h3>
+                                    <p className="text-2xl font-bold text-gray-800">{stats.running_vdi}</p>
+                                    <span className="text-green-600">+8%</span>
                                 </div>
-                                <div className="dashboard-card" onClick={() => router.push("/admin-vdi?status=closed")}>
-                                    <h3>Closed VDI</h3>
-                                    <p className="dashboard-stat">{stats.closed_vdi}</p>
-                                    <span className="dashboard-green">+15%</span>
+                                <div
+                                    className="bg-white shadow-md shadow-blue-200 rounded-lg p-4 cursor-pointer hover:bg-gray-100 transition-colors"
+                                    onClick={() => router.push("/admin-vdi?status=closed")}
+                                >
+                                    <h3 className="text-lg font-semibold">Closed VDI</h3>
+                                    <p className="text-2xl font-bold text-gray-800">{stats.closed_vdi}</p>
+                                    <span className="text-green-600">+15%</span>
                                 </div>
                             </div>
-                        )}
+                        {/* {loading ? (
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+                               
+                                <div className="bg-gray-200 rounded-lg p-4 animate-pulse">
+                                    <div className="h-4 bg-gray-300 rounded mb-2"></div>
+                                    <div className="h-10 bg-gray-300 rounded mb-1"></div>
+                                    <div className="h-4 bg-gray-300 rounded"></div>
+                                </div>
 
-                        #Graph
-                        <div className="dashboard-graph">
+                               
+                                <div className="bg-gray-200 rounded-lg p-4 animate-pulse">
+                                    <div className="h-4 bg-gray-300 rounded mb-2"></div>
+                                    <div className="h-10 bg-gray-300 rounded mb-1"></div>
+                                    <div className="h-4 bg-gray-300 rounded"></div>
+                                </div>
+
+                                <div className="bg-gray-200 rounded-lg p-4 animate-pulse">
+                                    <div className="h-4 bg-gray-300 rounded mb-2"></div>
+                                    <div className="h-10 bg-gray-300 rounded mb-1"></div>
+                                    <div className="h-4 bg-gray-300 rounded"></div>
+                                </div>
+
+                                <div className="bg-gray-200 rounded-lg p-4 animate-pulse">
+                                    <div className="h-4 bg-gray-300 rounded mb-2"></div>
+                                    <div className="h-10 bg-gray-300 rounded mb-1"></div>
+                                    <div className="h-4 bg-gray-300 rounded"></div>
+                                </div>
+
+                                <div className="bg-gray-200 rounded-lg p-4 animate-pulse">
+                                    <div className="h-4 bg-gray-300 rounded mb-2"></div>
+                                    <div className="h-10 bg-gray-300 rounded mb-1"></div>
+                                    <div className="h-4 bg-gray-300 rounded"></div>
+                                </div>
+
+                                <div className="bg-gray-200 rounded-lg p-4 animate-pulse">
+                                    <div className="h-4 bg-gray-300 rounded mb-2"></div>
+                                    <div className="h-10 bg-gray-300 rounded mb-1"></div>
+                                    <div className="h-4 bg-gray-300 rounded"></div>
+                                </div>
+                            </div>
+                        ) : (
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+                                <div
+                                    className="bg-white shadow-md shadow-blue-200 rounded-lg p-4 cursor-pointer hover:bg-gray-100 transition-colors"
+                                    onClick={() => router.push("/admin-jobs?status=all")}
+                                >
+                                    <h3 className="text-lg font-semibold">Total Jobs</h3>
+                                    <p className="text-2xl font-bold text-gray-800">{stats.total_jobs}</p>
+                                    <span className="text-green-600">+25%</span>
+                                </div>
+                                <div
+                                    className="bg-white shadow-md shadow-blue-200 rounded-lg p-4 cursor-pointer hover:bg-gray-100 transition-colors"
+                                    onClick={() => router.push("/admin-jobs?status=open")}
+                                >
+                                    <h3 className="text-lg font-semibold">Open Jobs</h3>
+                                    <p className="text-2xl font-bold text-gray-800">{stats.open_jobs}</p>
+                                    <span className="text-green-600">+5%</span>
+                                </div>
+                                <div
+                                    className="bg-white shadow-md shadow-blue-200 rounded-lg p-4 cursor-pointer hover:bg-gray-100 transition-colors"
+                                    onClick={() => router.push("/admin-jobs?status=closed")}
+                                >
+                                    <h3 className="text-lg font-semibold">Closed Jobs</h3>
+                                    <p className="text-2xl font-bold text-gray-800">{stats.closed_jobs}</p>
+                                    <span className="text-green-600">+12%</span>
+                                </div>
+                                <div
+                                    className="bg-white shadow-md shadow-blue-200 rounded-lg p-4 cursor-pointer hover:bg-gray-100 transition-colors"
+                                    onClick={() => router.push("/admin-vdi?status=all")}
+                                >
+                                    <h3 className="text-lg font-semibold">Total VDI</h3>
+                                    <p className="text-2xl font-bold text-gray-800">{stats.total_vdi}</p>
+                                    <span className="text-green-600">+10%</span>
+                                </div>
+                                <div
+                                    className="bg-white shadow-md shadow-blue-200 rounded-lg p-4 cursor-pointer hover:bg-gray-100 transition-colors"
+                                    onClick={() => router.push("/admin-vdi?status=running")}
+                                >
+                                    <h3 className="text-lg font-semibold">Running VDI</h3>
+                                    <p className="text-2xl font-bold text-gray-800">{stats.running_vdi}</p>
+                                    <span className="text-green-600">+8%</span>
+                                </div>
+                                <div
+                                    className="bg-white shadow-md shadow-blue-200 rounded-lg p-4 cursor-pointer hover:bg-gray-100 transition-colors"
+                                    onClick={() => router.push("/admin-vdi?status=closed")}
+                                >
+                                    <h3 className="text-lg font-semibold">Closed VDI</h3>
+                                    <p className="text-2xl font-bold text-gray-800">{stats.closed_vdi}</p>
+                                    <span className="text-green-600">+15%</span>
+                                </div>
+                            </div>
+                        )} */}
+
+                        {/* graph */}
+                        <div className="p-6 flex gap-10">
+                            <div className="w-1/2 p-4 bg-white shadow-md shadow-blue-200 rounded-lg">
+                                <h3 className="text-lg font-semibold mb-4 text-gray-800">Jobs Created Over the Week</h3>
+                                <JobStats
+                                    openJobs={stats.open_jobs}
+                                    closedJobs={stats.closed_jobs}
+                                />
+                            </div>
+                            <div className="w-1/2 p-4 bg-white shadow-md shadow-blue-200 rounded-lg">
+                                <h3 className="text-lg font-semibold mb-4 text-gray-800">VDIs Created Over the Week</h3>
+                                <VdiStats
+                                    runningvdi={5}
+                                    closedvdi={4}
+                                />
+                            </div>
+                        </div>
+
+
+                        {/* <div className="dashboard-graph">
                             <h3 className="dashboard-section-title">Jobs Created Over the Week</h3>
                             <Line data={chartData} options={chartOptions} />
                             <LineChart data={chartData} options={chartOptions} />
-                        </div>
+                        </div> */}
                     </main>
                 </div>
             </div>
 
             {showModal && (
-                <div className="modal">
-                    <div className="modal-content">
-                        <h3>Create VDI</h3>
+                <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+                    <div className="bg-white w-full max-w-md mx-auto p-6 rounded-lg shadow-lg">
+                        <h3 className="text-xl font-bold mb-4">Create VDI</h3>
                         <input
                             type="text"
                             value={vdiName}
                             onChange={(e) => setVdiName(e.target.value)}
                             placeholder="Enter VDI Name"
-                            className="input"
+                            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4"
                         />
-                        <div className="modal-actions">
-                            <button className="btn btn-default" onClick={() => setShowModal(false)}>
+                        <div className="flex justify-end space-x-4">
+                            <button
+                                className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300"
+                                onClick={() => setShowModal(false)}
+                            >
                                 Cancel
                             </button>
-                            <button className="btn btn-primary" onClick={handleCreateVDI} disabled={isCreatingVDI}>
+                            <button
+                                className={`px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 ${isCreatingVDI ? 'cursor-not-allowed opacity-50' : ''}`}
+                                onClick={handleCreateVDI}
+                                disabled={isCreatingVDI}
+                            >
                                 {isCreatingVDI ? "Creating..." : "Create"}
                             </button>
                         </div>
@@ -216,60 +321,6 @@ export default function DashboardWithSidebar() {
                 </div>
             )}
 
-            {/* Scoped CSS */}
-            <style jsx>{`
-                .modal {
-                    position: fixed;
-                    z-index: 1000;
-                    left: 0;
-                    top: 0;
-                    width: 100%;
-                    height: 100%;
-                    background-color: rgba(0, 0, 0, 0.5);
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                .modal-content {
-                    background-color: white;
-                    padding: 20px;
-                    border-radius: 10px;
-                    width: 400px;
-                    text-align: center;
-                }
-
-                .modal-actions {
-                    margin-top: 20px;
-                    display: flex;
-                    justify-content: space-between;
-                }
-
-                .input {
-                    padding: 10px;
-                    width: 100%;
-                    margin-bottom: 20px;
-                    border-radius: 5px;
-                    border: 1px solid #ddd;
-                }
-
-                .btn {
-                    padding: 10px 20px;
-                    border-radius: 5px;
-                    border: none;
-                    cursor: pointer;
-                }
-
-                .btn-primary {
-                    background-color: #007bff;
-                    color: white;
-                }
-
-                .btn-default {
-                    background-color: #f8f9fa;
-                    color: black;
-                }
-            `}</style>
         </Layout>
     );
 }
