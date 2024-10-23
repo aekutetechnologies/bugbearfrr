@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import Layout from "../components/Layout/Layout";
+import freelancer from '../public/assets/imgs/role/freelancer.webp'
 
 export default function ChooseRole() {
     const router = useRouter();
@@ -15,26 +16,26 @@ export default function ChooseRole() {
 
     return (
         <Layout>
-        <div className="choose-role-container">
-            <h1 className="title">Choose Your Role</h1>
-            <p>Select whether you're a jobseeker or a recruiter.</p>
-            <div className="button-group">
-                <button
-                    className="btn btn-role"
-                    onClick={() => handleRoleSelection('jobseeker')}
-                >
-                    Jobseeker
-                </button>
-                <button
-                    className="btn btn-role"
-                    onClick={() => handleRoleSelection('recruiter')}
-                >
-                    Recruiter
-                </button>
-            </div>
+            {/* <div className="choose-role-container">
+                <h1 className="title">Choose Your Role</h1>
+                <p>Select whether you're a jobseeker or a recruiter.</p>
+                <div className="button-group">
+                    <button
+                        className="btn btn-role"
+                        onClick={() => handleRoleSelection('jobseeker')}
+                    >
+                        Jobseeker
+                    </button>
+                    <button
+                        className="btn btn-role"
+                        onClick={() => handleRoleSelection('recruiter')}
+                    >
+                        Recruiter
+                    </button>
+                </div>
 
-            {/* Styling for Choose Role Page */}
-            <style jsx>{`
+
+                <style jsx>{`
                 .choose-role-container {
                     display: flex;
                     flex-direction: column;
@@ -65,7 +66,46 @@ export default function ChooseRole() {
                     background-color: #005bb5;
                 }
             `}</style>
-        </div>
+            </div> */}
+
+            <div className='h-[90vh]  flex flex-col justify-center items-center gap-10 '>
+                <div className=' w-full text-center'>
+                    <h1 className='text-5xl font-black'>Choose Your Role</h1>
+                    <p>Select whether you're a jobseeker or a recruiter.</p>
+                </div>
+
+                <div className='flex w-full justify-evenly py-16'>
+                    <div className=" flex flex-col items-center h-fit">
+                        <button
+                            className="flex justify-center items-center bg-white rounded-full shadow-xl hover:shadow-blue-200"
+                            onClick={() => handleRoleSelection('jobseeker')}
+                        >
+                            <img
+                                src="/assets/imgs/role/freelancer-2.webp"
+                                alt=""
+                                className="rounded-full"
+                                width={300}
+                            />
+                        </button>
+                        <span className="w-full text-center mt-9 font-black text-xl">Job Seeker</span>
+                    </div>
+                    <div className=" flex flex-col items-center h-fit">
+                        <button
+                            className="flex justify-center items-center bg-white rounded-full shadow-xl hover:shadow-blue-200"
+                            onClick={() => handleRoleSelection('recruiter')}
+                        >
+                            <img
+                                src='/assets/imgs/role/recruter-2.png'
+                                alt=""
+                                className="rounded-full"
+                                width={300}
+                            />
+                        </button>
+                        <span className="w-full text-center mt-9 font-black text-xl">Recruiter</span>
+                    </div>
+
+                </div>
+            </div>
         </Layout>
     );
 }
