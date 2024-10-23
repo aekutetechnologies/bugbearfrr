@@ -4,6 +4,9 @@ import Layout from "../components/Layout/Layout";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+import { Editor } from 'primereact/editor';
+
+
 // Dummy Job Types
 const JOB_TYPE_CHOICES = [
     { value: "Full Time", label: "Full Time" },
@@ -98,15 +101,23 @@ export default function CreateJob() {
         }));
     };
 
+    const handleTextChange = (fieldName, htmlValue) => {
+        setJobData((prevData) => ({
+            ...prevData,
+            [fieldName]: htmlValue, // Dynamically update the specific field (responsibilities, qualifications, preferredSkills)
+        }));
+
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
-    
+
         const url = isEditing
-            ? `http://127.0.0.1:8000/api/jobs/${id}` // Update existing job
+            ? `http://127.0.0.1:8000/api/jobs/${id}/` // Update existing job
             : `http://127.0.0.1:8000/api/jobs/`; // Create new job
-    
+
         const method = isEditing ? "PUT" : "POST"; // Use PUT for edit, POST for create
-    
+
         const payload = {
             title: jobData.jobTitle,
             location: jobData.location,
@@ -124,7 +135,7 @@ export default function CreateJob() {
             job_expiry: jobData.job_expiry,
             featured: jobData.featured,
         };
-    
+
         try {
             const token = localStorage.getItem('accessToken'); // Assuming the token is stored in localStorage
             const response = await fetch(url, {
@@ -135,8 +146,10 @@ export default function CreateJob() {
                 },
                 body: JSON.stringify(payload),
             });
-    
+
             if (response.ok) {
+                console.log(payload);
+
                 toast.success(isEditing ? "Job updated successfully!" : "Job created successfully!");
                 router.push("/dashboard"); // Redirect to job listing page after success
             } else {
@@ -147,7 +160,7 @@ export default function CreateJob() {
             toast.error("Error occurred while saving job.");
         }
     };
-    
+
 
     const handleCancel = () => {
         router.back(); // Navigate to the previous page
@@ -313,12 +326,24 @@ export default function CreateJob() {
                                             {/* Responsibilities */}
                                             <div className="form-group">
                                                 <label>Responsibilities</label>
-                                                <textarea
+                                                {/* <textarea
                                                     className="form-control"
                                                     rows={3}
                                                     name="responsibilities"
                                                     value={jobData.responsibilities}
                                                     onChange={handleInputChange}
+                                                /> */}
+                                                {/* <Editor
+                                                    className="form-control"
+                                                    rows={3}
+                                                    name="responsibilities"
+                                                    value={jobData.responsibilities}
+                                                    onChange={handleTextChange}
+                                                /> */}
+                                                <Editor
+                                                    value={jobData.responsibilities}
+                                                    onTextChange={(e) => handleTextChange('responsibilities', e.htmlValue)}
+                                                    style={{ height: '320px' }}
                                                 />
                                             </div>
                                         </div>
@@ -329,12 +354,24 @@ export default function CreateJob() {
                                             {/* Qualifications */}
                                             <div className="form-group">
                                                 <label>Qualifications</label>
-                                                <textarea
+                                                {/* <textarea
                                                     className="form-control"
                                                     rows={3}
                                                     name="qualifications"
                                                     value={jobData.qualifications}
                                                     onChange={handleInputChange}
+                                                /> */}
+                                                {/* <Editor
+                                                    className="form-control"
+                                                    rows={3}
+                                                    name="qualifications"
+                                                    value={jobData.qualifications}
+                                                    onChange={handleTextChange}
+                                                /> */}
+                                                <Editor
+                                                    value={jobData.qualifications}
+                                                    onTextChange={(e) => handleTextChange('qualifications', e.htmlValue)}
+                                                    style={{ height: '320px' }}
                                                 />
                                             </div>
                                         </div>
@@ -345,12 +382,24 @@ export default function CreateJob() {
                                             {/* Preferred Skills */}
                                             <div className="form-group">
                                                 <label>Preferred Skills</label>
-                                                <textarea
+                                                {/* <textarea
                                                     className="form-control"
                                                     rows={3}
                                                     name="preferredSkills"
                                                     value={jobData.preferredSkills}
                                                     onChange={handleInputChange}
+                                                /> */}
+                                                {/* <Editor
+                                                    className="form-control"
+                                                    rows={3}
+                                                    name="preferredSkills"
+                                                    value={jobData.preferredSkills}
+                                                    onChange={handleTextChange}
+                                                /> */}
+                                                <Editor
+                                                    value={jobData.preferredSkills}
+                                                    onTextChange={(e) => handleTextChange('preferredSkills', e.htmlValue)}
+                                                    style={{ height: '320px' }}
                                                 />
                                             </div>
                                         </div>

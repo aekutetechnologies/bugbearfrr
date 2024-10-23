@@ -28,7 +28,7 @@ export default function Home() {
         // Update category state as an array
         setCategory([e.target.value]);
     };
-    
+
     return (
         <>
             <Layout>
@@ -50,7 +50,7 @@ export default function Home() {
                                             applications every single day
                                         </div>
                                         <div className="form-find mt-40 wow animate__animated animate__fadeIn" data-wow-delay=".2s">
-                                        <form onSubmit={handleSearch}>
+                                            <form onSubmit={handleSearch}>
                                                 <input
                                                     className="form-input input-keysearch mr-10"
                                                     type="text"
@@ -86,10 +86,27 @@ export default function Home() {
                                 <div className="col-xl-4 col-lg-12 d-none d-xl-block col-md-6">
                                     <div className="banner-imgs">
                                         <div className="block-1 shape-1">
-                                            <img className="img-responsive" alt="bugbear" src="assets/imgs/page/homepage1/banner1.png" />
+                                            {/* <img className="img-responsive" alt="bugbear" src="assets/imgs/page/homepage1/banner1.png" /> */}
+                                            <img className="img-responsive" alt="bugbear" style={{
+                                                width: "400px",
+                                                height: "260px",
+                                                borderLeft: "10px solid #3457D5",
+                                                borderBottom: "10px solid #3457D5",
+                                                borderTopLeftRadius: "40px",   // Adjust the radius value as needed
+                                                borderTopRightRadius: "40px",  // Adjust the radius value as needed
+                                                borderBottomRightRadius: "80px" // Adjust the radius value as needed
+                                            }}
+                                                src="assets/imgs/page/homepage1/nbanner1.jpeg" />
                                         </div>
                                         <div className="block-2 shape-2">
-                                            <img className="img-responsive" alt="bugbear" src="assets/imgs/page/homepage1/banner2.png" />
+                                            {/* <img className="img-responsive" alt="bugbear" src="assets/imgs/page/homepage1/banner2.png" /> */}
+                                            <img className="img-responsive" alt="bugbear" style={{
+                                                borderLeft: "5px solid #3457D5",
+                                                borderBottom: "5px solid #3457D5",
+                                                borderTopLeftRadius: "30px",   // Adjust the radius value as needed
+                                                borderTopRightRadius: "30px",  // Adjust the radius value as needed
+                                                borderBottomRightRadius: "80px"
+                                            }} src="assets/imgs/page/homepage1/nbanner2.jpeg" />
                                         </div>
                                         <div className="block-3 shape-3">
                                             <img className="img-responsive" alt="bugbear" src="assets/imgs/page/homepage1/icon-top-banner.png" />
@@ -456,8 +473,11 @@ export default function Home() {
                     <div className="container">
                         <div className="box-newsletter">
                             <div className="row">
-                                <div className="col-xl-3 col-12 text-center d-none d-xl-block">
-                                    <img src="assets/imgs/template/newsletter-left.png" alt="joxBox" />
+                                <div className="col-xl-3 col-12 text-center d-none d-xl-block" >
+                                    {/* <img src="assets/imgs/template/newsletter-left.png" alt="joxBox" /> */}
+                                    <img src="assets/imgs/template/newsletter2.jpg" alt="joxBox" style={{ width: "150px", borderRadius: "15px", marginRight: "13px", display: "absolute", top: "0" }} />
+                                    <img src="assets/imgs/template/newsletter1.jpg" alt="joxBox" style={{ width: "100px", borderRadius: "15px" }} />
+                                    <img src="assets/imgs/template/newsletter3.jpg" alt="joxBox" style={{ width: "150px", borderRadius: "15px" }} />
                                 </div>
                                 <div className="col-lg-12 col-xl-6 col-12">
                                     <h2 className="text-md-newsletter text-center">
@@ -472,8 +492,31 @@ export default function Home() {
                                     </div>
                                 </div>
                                 <div className="col-xl-3 col-12 text-center d-none d-xl-block">
-                                    <img src="assets/imgs/template/newsletter-right.png" alt="joxBox" />
+                                    <img
+                                        src="assets/imgs/template/newsletter4.jpeg"
+                                        alt="joxBox"
+                                        style={{
+                                            width: "150px",
+                                            borderRadius: "15px",
+                                            position: "relative",
+                                            top: "-50px",  // Moves the image 10px down
+                                            left: "-10px"  // Moves the image 20px to the right
+                                        }}
+                                    />
+                                    <img
+                                        src="assets/imgs/template/newsletter1.jpg"
+                                        alt="joxBox"
+                                        style={{
+                                            width: "80px",
+                                            borderRadius: "15px",
+                                            position: "relative",
+                                            top: "80px",   // Moves the image 20px down
+                                            left: "-10px"  // Moves the image 10px to the left
+                                        }}
+                                    />
+                                    {/* <img src="assets/imgs/template/newsletter3.jpg" alt="joxBox"  style={{width:"150px",borderRadius:"15px"}}/> */}
                                 </div>
+
                             </div>
                         </div>
                     </div>

@@ -56,13 +56,15 @@ const FeaturedSlider = ({ featuredJobs }) => {
                                                 {getRelativeTime(job.job_created)} {/* Dynamic time ago */}
                                             </span>
                                         </div>
-                                        <p className="font-sm color-text-paragraph mt-15">{job.description || "No description available."}</p>
+                                        {/* <p className="font-sm color-text-paragraph mt-15">{job.description || "No description available."}</p> */}
+                                        <p dangerouslySetInnerHTML={{ __html: job.description || "Job description not available." }} />
                                         <div className="mt-30">
-                                            {job.skills && job.skills.map((skill, index) => (
+                                            {/* {job.skills && job.skills.map((skill, index) => (
                                                 <Link href={`/jobs-grid?skill=${skill}`} key={index} legacyBehavior>
                                                     <a className="btn btn-grey-small mr-5">{skill}</a>
                                                 </Link>
-                                            ))}
+                                            ))} */}
+                                            <p dangerouslySetInnerHTML={{ __html: job.skills || "Skills not provided." }} />
                                         </div>
                                         <div className="card-2-bottom mt-30">
                                             <div className="row">
