@@ -131,7 +131,7 @@ export default function Signin() {
                                     </div>
                                     <div className="text-muted text-center">
                                         Don't have an Account?
-                                        <Link legacyBehavior href="/login">
+                                        <Link legacyBehavior href="/choose-role">
                                             <a>Sign up</a>
                                         </Link>
                                     </div>

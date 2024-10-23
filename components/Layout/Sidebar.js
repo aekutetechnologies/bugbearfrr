@@ -24,7 +24,7 @@ const Sidebar = ({ openClass }) => {
 
     return (
         <>
-            <div className={`mobile-header-active mobile-header-wrapper-style perfect-scrollbar ${openClass}`}>
+            <div className={`mobile-header-active mobile-header-wrapper-style perfect-scrollbar  ${openClass}`}>
                 <div className="mobile-header-wrapper-inner">
                     <div className="mobile-header-content-area">
                         <div className="perfect-scroll">
@@ -183,7 +183,7 @@ const Sidebar = ({ openClass }) => {
                                         </li>
                                 </ul>
                             </div>
-                            <div className="site-copyright">Copyright 2022 © bugbear. <br />Designed by AliThemes.</div>
+                            {/* <div className="site-copyright">Copyright 2022 © bugbear. <br />Designed by AliThemes.</div> */}
                         </div>
                     </div>
                 </div>
@@ -194,3 +194,91 @@ const Sidebar = ({ openClass }) => {
 };
 
 export default Sidebar;
+
+// import Link from "next/link";
+// import { useState } from "react";
+
+// const Sidebar = ({ isOpen }) => {
+//     const [isActive, setIsActive] = useState({
+//         status: false,
+//         key: "",
+//     });
+
+//     const handleToggle = (key) => {
+//         setIsActive((prev) => ({
+//             status: prev.key === key ? false : true,
+//             key: prev.key === key ? "" : key,
+//         }));
+//     };
+
+//     return (
+//         <div className={`fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-lg transition-transform transform ${isOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0`}>
+//             <div className="p-4">
+//                 <div className="flex items-center justify-between">
+//                     <h2 className="text-lg font-semibold">Menu</h2>
+//                     <button className="text-gray-600 hover:text-gray-800" onClick={() => handleToggle('')}>×</button>
+//                 </div>
+//                 <nav className="mt-4">
+//                     <ul className="space-y-2">
+//                         {/* Example menu items */}
+//                         <li className={isActive.key === 1 ? "has-children active" : "has-children"}>
+//                             <span onClick={() => handleToggle(1)} className="flex items-center justify-between cursor-pointer p-2 hover:bg-gray-100">
+//                                 <Link href="/">
+//                                     Home
+//                                 </Link>
+//                                 <i className="fi-rr-angle-small-down"></i>
+//                             </span>
+//                             <ul className={`sub-menu pl-4 ${isActive.key === 1 ? "block" : "hidden"}`}>
+//                                 <li>
+//                                     <Link href="/">Home 1</Link>
+//                                 </li>
+//                                 <li>
+//                                     <Link href="/index-2">Home 2</Link>
+//                                 </li>
+//                                 {/* Add more sub-menu items as needed */}
+//                             </ul>
+//                         </li>
+
+//                         <li className={isActive.key === 2 ? "has-children active" : "has-children"}>
+//                             <span onClick={() => handleToggle(2)} className="flex items-center justify-between cursor-pointer p-2 hover:bg-gray-100">
+//                                 <Link href="/jobs-grid">
+//                                     Find a Job
+//                                 </Link>
+//                                 <i className="fi-rr-angle-small-down"></i>
+//                             </span>
+//                             <ul className={`sub-menu pl-4 ${isActive.key === 2 ? "block" : "hidden"}`}>
+//                                 <li>
+//                                     <Link href="/jobs-grid">Jobs Grid</Link>
+//                                 </li>
+//                                 <li>
+//                                     <Link href="/jobs-list">Jobs List</Link>
+//                                 </li>
+//                             </ul>
+//                         </li>
+
+//                         {/* More menu items can be added in a similar way */}
+//                     </ul>
+//                 </nav>
+//                 <div className="mt-6">
+//                     <h6 className="mb-2">Your Account</h6>
+//                     <ul className="space-y-2">
+//                         <li>
+//                             <Link href="#">Profile</Link>
+//                         </li>
+//                         <li>
+//                             <Link href="#">Account Settings</Link>
+//                         </li>
+//                         <li>
+//                             <Link href="/login">Sign Out</Link>
+//                         </li>
+//                     </ul>
+//                 </div>
+//                 <div className="mt-6 text-center text-sm text-gray-500">
+//                     Copyright 2022 © bugbear. <br /> Designed by AliThemes.
+//                 </div>
+//             </div>
+//         </div>
+//     );
+// };
+
+// export default Sidebar;

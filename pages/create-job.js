@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Layout from "../components/Layout/Layout";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import ProfileModal from "../components/elements/ProfileModal";
 import { Editor } from 'primereact/editor';
 
 
@@ -30,6 +30,7 @@ export default function CreateJob() {
 
     const [isEditing, setIsEditing] = useState(false);
     const [categories, setCategories] = useState([]);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const [jobData, setJobData] = useState({
         jobTitle: "",
         location: "",
@@ -136,29 +137,76 @@ export default function CreateJob() {
             featured: jobData.featured,
         };
 
+        // try {
+        //     const token = localStorage.getItem('accessToken'); // Assuming the token is stored in localStorage
+        //     const response = await fetch(url, {
+        //         method: method,
+        //         headers: {
+        //             "Content-Type": "application/json",
+        //             "Authorization": `Bearer ${token}`, // Add Authorization header
+        //         },
+        //         body: JSON.stringify(payload),
+        //     });
+
+        //     if (response.ok) {
+        //         console.log(payload);
+
+        //         toast.success(isEditing ? "Job updated successfully!" : "Job created successfully!");
+        //         router.push("/dashboard"); // Redirect to job listing page after success
+        //     } else {
+        //         toast.error("Something went wrong!");
+        //     }
+        // } catch (error) {
+        //     console.error("Error:", error);
+        //     toast.error("Error occurred while saving job.");
+        // }
+
         try {
-            const token = localStorage.getItem('accessToken'); // Assuming the token is stored in localStorage
-            const response = await fetch(url, {
-                method: method,
+            const token = localStorage.getItem('accessToken'); // Get access token
+        
+           
+            const profileResponse = await fetch('http://127.0.0.1:8000/api/user/user-details/', {
+                method: 'GET',
                 headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${token}`, // Add Authorization header
+                    "Authorization": `Bearer ${token}`, // Use the token for authorization
                 },
-                body: JSON.stringify(payload),
             });
-
-            if (response.ok) {
-                console.log(payload);
-
-                toast.success(isEditing ? "Job updated successfully!" : "Job created successfully!");
-                router.push("/dashboard"); // Redirect to job listing page after success
+        
+            const profileData = await profileResponse.json();
+        
+            
+            const requiredFields = ['first_name', 'last_name', 'current_location', 'current_company_name', 'current_designation', 'email'];
+            const isProfileComplete = requiredFields.every(field => profileData[field] && profileData[field].trim() !== '');
+        
+            if (profileResponse.ok && isProfileComplete) {
+                const response = await fetch(url, {
+                    method: method,
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`, 
+                    },
+                    body: JSON.stringify(payload),
+                });
+        
+                if (response.ok) {
+                    console.log(payload);
+                    toast.success(isEditing ? "Job updated successfully!" : "Job created successfully!");
+                    router.push("/dashboard");
+                } else {
+                    toast.error("Something went wrong!");
+                }
             } else {
-                toast.error("Something went wrong!");
+                // toast.error("Please complete your profile before creating a job.");
+                // router.push("/recruiter-profile")
+                setIsModalOpen(true);
             }
-        } catch (error) {
+        } 
+        
+        catch (error) {
             console.error("Error:", error);
             toast.error("Error occurred while saving job.");
         }
+        
     };
 
 
@@ -466,6 +514,7 @@ export default function CreateJob() {
                                             <button type="button" className="btn btn-secondary" onClick={handleCancel}>
                                                 Cancel
                                             </button>
+                                            <button></button>
                                         </div>
                                     </div>
                                 </form>
@@ -474,6 +523,7 @@ export default function CreateJob() {
                     </div>
                 </section>
             </div>
+            <ProfileModal isOpen={isModalOpen}  />
         </Layout>
     );
 }

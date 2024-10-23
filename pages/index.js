@@ -33,6 +33,7 @@ export default function Home() {
         <>
             <Layout>
                 <div className="bg-homepage1" />
+                {/* hero */}
                 <section className="section-box">
                     <div className="banner-hero hero-1">
                         <div className="banner-inner">
@@ -120,20 +121,29 @@ export default function Home() {
                         </div>
                     </div>
                 </section>
+
                 <div className="mt-100" />
-                <section className="section-box mt-80">
-                    <div className="section-box wow animate__animated animate__fadeIn">
-                        <div className="container">
+
+                {/* category slider */}
+                <section className="mt-20">
+                    <div className="animate__animated animate__fadeIn">
+                        <div className="container mx-auto">
                             <div className="text-center">
-                                <h2 className="section-title mb-10 wow animate__animated animate__fadeInUp">Browse by category</h2>
-                                <p className="font-lg color-text-paragraph-2 wow animate__animated animate__fadeInUp">Find the job that’s perfect for you. about 800+ new jobs everyday</p>
+                                <h2 className="text-3xl font-bold mb-6 animate__animated animate__fadeInUp">
+                                    Browse by category
+                                </h2>
+                                <p className="text-lg text-gray-500 animate__animated animate__fadeInUp">
+                                    Find the job that’s perfect for you. About 800+ new jobs every day.
+                                </p>
                             </div>
-                            <div className="box-swiper mt-50">
+                            <div className="mt-12 ">
                                 <CategorySlider />
                             </div>
                         </div>
                     </div>
                 </section>
+
+                {/* advertisement */}
                 <div className="section-box mb-30">
                     <div className="container">
                         <div className="box-we-hiring">
@@ -153,6 +163,9 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
+
+
+
                 {/* <section className="section-box mt-50">
                     <div className="container">
                         <div className="text-center">
@@ -199,7 +212,9 @@ export default function Home() {
                         </div>
                     </div>
                 </section> */}
-                <section className="section-box overflow-visible mt-50 mb-50">
+
+                {/* rating css */}
+                {/* <section className="section-box overflow-visible mt-50 mb-50">
                     <div className="container">
                         <div className="row">
                             <div className="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
@@ -260,8 +275,64 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
+                </section> */}
+
+                {/* rating tailwind css */}
+                <section className="overflow-visible my-16">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div className="text-center">
+                            <h1 className="text-brand-2 text-4xl font-bold">
+                                <span className="count">25</span>
+                                <span> K+</span>
+                            </h1>
+                            <h5 className="text-lg font-medium">Completed Cases</h5>
+                            <p className="text-sm text-gray-500 mt-2">
+                                We always provide people a <br className="hidden lg:block" />
+                                complete solution upon focused on <br className="hidden lg:block" />
+                                any business
+                            </p>
+                        </div>
+                        <div className="text-center">
+                            <h1 className="text-brand-2 text-4xl font-bold">
+                                <span className="count">17</span>
+                                <span> +</span>
+                            </h1>
+                            <h5 className="text-lg font-medium">Our Office</h5>
+                            <p className="text-sm text-gray-500 mt-2">
+                                We always provide people a <br className="hidden lg:block" />
+                                complete solution upon focused on <br className="hidden lg:block" />
+                                any business
+                            </p>
+                        </div>
+                        <div className="text-center">
+                            <h1 className="text-brand-2 text-4xl font-bold">
+                                <span className="count">86</span>
+                                <span> +</span>
+                            </h1>
+                            <h5 className="text-lg font-medium">Skilled People</h5>
+                            <p className="text-sm text-gray-500 mt-2">
+                                We always provide people a <br className="hidden lg:block" />
+                                complete solution upon focused on <br className="hidden lg:block" />
+                                any business
+                            </p>
+                        </div>
+                        <div className="text-center">
+                            <h1 className="text-brand-2 text-4xl font-bold">
+                                <span className="count">28</span>
+                                <span> +</span>
+                            </h1>
+                            <h5 className="text-lg font-medium">Happy Clients</h5>
+                            <p className="text-sm text-gray-500 mt-2">
+                                We always provide people a <br className="hidden lg:block" />
+                                complete solution upon focused on <br className="hidden lg:block" />
+                                any business
+                            </p>
+                        </div>
+                    </div>
                 </section>
-                <section className="section-box mt-50">
+
+
+                {/* <section className="section-box mt-50">
                     <div className="container">
                         <div className="text-center">
                             <h2 className="section-title mb-10 wow animate__animated animate__fadeInUp">Top Recruiters</h2>
@@ -273,7 +344,26 @@ export default function Home() {
                             <TopRekruterSlider />
                         </div>
                     </div>
+                </section> */}
+
+                <section className="mt-12">
+                    <div className="container mx-auto">
+                        <div className="text-center">
+                            <h2 className="text-3xl font-bold mb-4 animate__animated animate__fadeInUp">Top Recruiters</h2>
+                            <p className="text-lg text-gray-600 animate__animated animate__fadeInUp">
+                                Discover your next career move, freelance gig, or internship
+                            </p>
+                        </div>
+                    </div>
+                    <div className="container mx-auto">
+                        <div className="mt-12">
+                            <TopRekruterSlider />
+                        </div>
+                    </div>
                 </section>
+
+
+
                 {/* <section className="section-box mt-50">
                     <div className="container">
                         <div className="text-center">
@@ -469,12 +559,13 @@ export default function Home() {
                         </div>
                     </div>
                 </section> */}
-                <section className="section-box mt-50 mb-20">
+
+                {/* <section className="section-box mt-50 mb-20">
                     <div className="container">
                         <div className="box-newsletter">
                             <div className="row">
                                 <div className="col-xl-3 col-12 text-center d-none d-xl-block" >
-                                    {/* <img src="assets/imgs/template/newsletter-left.png" alt="joxBox" /> */}
+        
                                     <img src="assets/imgs/template/newsletter2.jpg" alt="joxBox" style={{ width: "150px", borderRadius: "15px", marginRight: "13px", display: "absolute", top: "0" }} />
                                     <img src="assets/imgs/template/newsletter1.jpg" alt="joxBox" style={{ width: "100px", borderRadius: "15px" }} />
                                     <img src="assets/imgs/template/newsletter3.jpg" alt="joxBox" style={{ width: "150px", borderRadius: "15px" }} />
@@ -499,8 +590,8 @@ export default function Home() {
                                             width: "150px",
                                             borderRadius: "15px",
                                             position: "relative",
-                                            top: "-50px",  // Moves the image 10px down
-                                            left: "-10px"  // Moves the image 20px to the right
+                                            top: "-50px", 
+                                            left: "-10px"  
                                         }}
                                     />
                                     <img
@@ -510,17 +601,66 @@ export default function Home() {
                                             width: "80px",
                                             borderRadius: "15px",
                                             position: "relative",
-                                            top: "80px",   // Moves the image 20px down
-                                            left: "-10px"  // Moves the image 10px to the left
+                                            top: "80px",  
+                                            left: "-10px"  
                                         }}
                                     />
-                                    {/* <img src="assets/imgs/template/newsletter3.jpg" alt="joxBox"  style={{width:"150px",borderRadius:"15px"}}/> */}
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </section> */}
 
+                <section className="section-box mt-12 mb-5">
+                    <div className="container mx-auto">
+                        <div className="box-newsletter">
+                            <div className="flex flex-wrap justify-center">
+                                <div className="xl:flex flex-col items-center">
+                                    {/* <img
+                                        src="assets/imgs/template/newsletter2.jpg"
+                                        alt="joxBox"
+                                        className="w-36 rounded-lg mr-3 absolute top-0"
+                                    /> */}
+                                    <img
+                                        src="assets/imgs/template/newsletter1.jpg"
+                                        alt="joxBox"
+                                        className="w-24 rounded-lg mt-4"
+                                    />
+                                    <img
+                                        src="assets/imgs/template/newsletter3.jpg"
+                                        alt="joxBox"
+                                        className="w-36 rounded-lg mt-4"
+                                    />
+                                </div>
+                                <div className="col-lg-12 col-xl-6 col-12">
+                                    <h2 className="text-md-newsletter text-center">
+                                        New Things Will Always
+                                        <br /> Update Regularly
+                                    </h2>
+                                    <div className="box-form-newsletter mt-40">
+                                        <form className="form-newsletter">
+                                            <input className="input-newsletter" type="text" placeholder="Enter your email here" />
+                                            <button className="btn btn-default font-heading icon-send-letter">Subscribe</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div className=" xl:flex flex-col items-center">
+                                    <img
+                                        src="assets/imgs/template/newsletter4.jpeg"
+                                        alt="joxBox"
+                                        className="w-36 rounded-lg relative -top-12 -left-2"
+                                    />
+                                    <img
+                                        src="assets/imgs/template/newsletter1.jpg"
+                                        alt="joxBox"
+                                        className="w-20 rounded-lg relative top-20 -left-2 mt-4"
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
                 </section>
+
             </Layout>
         </>
     );

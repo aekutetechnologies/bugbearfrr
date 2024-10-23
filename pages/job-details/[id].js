@@ -4,10 +4,14 @@ import Layout from "../../components/Layout/Layout";
 import FeaturedSlider from "./../../components/sliders/Featured";
 import { format } from 'date-fns';
 import { FaIndustry, FaMoneyBillWave, FaClock, FaMapMarkerAlt, FaStar, FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
+import { GoBriefcase } from "react-icons/go";
 import { useState } from "react";  // Import useState for managing button clicks
 import { ToastContainer, toast } from 'react-toastify'; // Import toast notifications
 import 'react-toastify/dist/ReactToastify.css'; // Import styles for toast notifications
 import cookie from 'cookie'; // Import cookie module
+// import { FaClock, FaMapMarkerAlt } from 'react-icons/fa';
+// import image from 'pub'
+
 
 export default function JobDetails({ job, featuredJobs }) {
     const [isApplying, setIsApplying] = useState(false);
@@ -87,6 +91,15 @@ export default function JobDetails({ job, featuredJobs }) {
         toast.info("Connecting to VDI...");
     };
 
+    function formatSalary(amount) {
+        if (amount >= 1000 && amount < 100000) {
+            return (amount / 1000).toFixed(0) + 'k'; // For amounts in thousands (e.g., 10k, 15k)
+        } else if (amount >= 100000) {
+            return (amount / 100000).toFixed(0) + 'L'; // For lakhs if needed
+        }
+        return amount; // Return the original amount if it doesn't meet conditions
+    }
+
     return (
         <>
             <Layout>
@@ -97,19 +110,22 @@ export default function JobDetails({ job, featuredJobs }) {
                             <div className="banner-hero banner-image-single">
                                 <img src="/assets/imgs/page/job-single/thumb.png" alt="bugbear" />
                             </div>
-                            <div className="row mt-10">
-                                <div className="col-lg-8 col-md-12">
+                            <div className="flex flex-wrap ">
+                                {/* First column: Job Title and Info */}
+                                <div className="col-lg-8 col-md-12 flex flex-col justify-center ">
                                     <h3>{job.title || "Job Title"}</h3>
-                                    <div className="mt-0 mb-15">
-                                        <span className="card-briefcase">{job.job_type || "Full Time"}</span>
-                                        <span className="card-time"><FaClock /> {jobPostedDate}</span> {/* Use formatted job_posted date */}
-                                        <span className="card-time"><FaClock /> {jobExpiryDate}</span> {/* Use formatted job_expiry date */}
+                                    <div className="mt-10 mb-15 flex items-center gap-3">
+                                        <span className="text-xs flex gap-2 text-gray-500"><GoBriefcase /> {job.job_type || "Full Time"}</span>
+                                        <span className="text-xs flex gap-2 text-gray-500"><FaClock /> {jobPostedDate}</span>
+                                        <span className="text-xs flex gap-2 text-gray-500"><FaClock /> {jobExpiryDate}</span>
                                     </div>
                                 </div>
-                                <div className="col-lg-4 col-md-12 text-lg-end">
-                                    <div style={{ display: "flex", justifyContent: "flex-end", alignItems: "center" }}>
+
+                                {/* Second column: Buttons and Save Icon */}
+                                <div className="col-lg-4 col-md-12 flex items-center justify-end ">
+                                    <div className="flex items-center">
                                         {job.is_approved && (
-                                            <button className="btn btn-connect-vdi hover-up" style={{ marginRight: "10px" }} onClick={handleConnectVDI}>
+                                            <button className="btn btn-connect-vdi hover-up mr-2" onClick={handleConnectVDI}>
                                                 Connect VDI
                                             </button>
                                         )}
@@ -121,15 +137,17 @@ export default function JobDetails({ job, featuredJobs }) {
                                         >
                                             {job.applied ? "Applied" : isApplying ? "Applying..." : "Apply now"}
                                         </button>
+
                                         <FaStar
                                             size={24}
                                             color={saved ? "yellow" : "gray"}  // Yellow if saved, gray if not saved
-                                            style={{ cursor: "pointer", marginLeft: "10px" }}
+                                            className="ml-2 cursor-pointer"
                                             onClick={handleSave}
                                         />
                                     </div>
                                 </div>
                             </div>
+
                             <div className="border-bottom pt-10 pb-10" />
                         </div>
                     </section>
@@ -157,7 +175,7 @@ export default function JobDetails({ job, featuredJobs }) {
                                                 </div>
                                                 <div className="sidebar-text-info ml-10">
                                                     <span className="text-description salary-icon mb-10">Salary</span>
-                                                    <strong className="small-heading">${job.salary_min} - ${job.salary_max}</strong> {/* Display salary */}
+                                                    <strong className="small-heading">₹{formatSalary(job.salary_min)} - ₹{formatSalary(job.salary_max)}</strong> {/* Display salary */}
                                                 </div>
                                             </div>
                                         </div>
@@ -242,11 +260,11 @@ export default function JobDetails({ job, featuredJobs }) {
                                 <h2 className="section-title mb-10">Featured Jobs</h2>
                                 <div className="mt-50">
                                     <FeaturedSlider featuredJobs={featuredJobs} />
-                                    <div className="text-center">
+                                    {/* <div className="text-center">
                                         <Link href="#">
                                             Load more posts
                                         </Link>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </div>

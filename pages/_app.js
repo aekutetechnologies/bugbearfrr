@@ -1,12 +1,12 @@
-import "../public/assets/css/style.css";
 import "../styles/globals.css";
+import "../public/assets/css/style.css";
 
 import { useEffect } from "react";
 
 function MyApp({ Component, pageProps }) {
-    useEffect(() => {
-        require("../public/assets/js/bootstrap.bundle.min.js");
-    }, []);
+    // useEffect(() => {
+    //     require("../public/assets/js/bootstrap.bundle.min.js");
+    // }, []);
 
     return <Component {...pageProps} />;
 }
