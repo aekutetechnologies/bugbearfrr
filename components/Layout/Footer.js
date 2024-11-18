@@ -4,8 +4,8 @@ import Link from "next/link";
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-200 text-white mt-12">
-            <div className="container mx-24 px-4 py-8">
+        <footer className=" text-white mt-12 bg-gray-200 px-4 py-8">
+            {/* <div className="container mx-24 px-4 py-8"> */}
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
                     <div className="footer-col-1 col-span-1 md:col-span-2">
                         <Link legacyBehavior href="/">
@@ -67,7 +67,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            {/* </div> */}
         </footer>
     );
 };
