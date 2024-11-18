@@ -7,10 +7,13 @@ import CategoryTab from "./../components/elements/CategoryTab";
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import emailjs from 'emailjs-com';
 
 export default function Home() {
     const [keyword, setKeyword] = useState("");
     const router = useRouter();
+    const [email, setEmail] = useState('');
+    // const [status, setStatus] = useState(null);
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -27,6 +30,36 @@ export default function Home() {
     const handleCategoryChange = (e) => {
         // Update category state as an array
         setCategory([e.target.value]);
+    };
+
+    const handleSubscribe = async (e) => {
+        e.preventDefault();
+
+        // if (!email) {
+        //     // setMessage('Please enter a valid email.');
+        //     return;
+        //   }
+      
+          // EmailJS parameters
+          const templateParams = {
+            to_email: email,
+          };
+      
+          emailjs
+            .send(
+              'service_ang9xrd',  // Replace with your EmailJS service ID
+              'template_mmpwfdn', // Replace with your EmailJS template ID
+              templateParams,
+              'Wkp-5jo3Ay-65MU35'      // Replace with your EmailJS   
+            )
+            .then((response) => {
+              console.log('Email sent successfully!', response.status, response.text);
+            //   setMessage('Subscription successful! Check your inbox.');
+            })
+            .catch((err) => {
+              console.error('Failed to send email:', err);
+            //   setMessage('Failed to subscribe. Please try again later.');
+            });
     };
 
     return (
@@ -638,9 +671,14 @@ export default function Home() {
                                         <br /> Update Regularly
                                     </h2>
                                     <div className="box-form-newsletter mt-40">
-                                        <form className="form-newsletter">
-                                            <input className="input-newsletter" type="text" placeholder="Enter your email here" />
-                                            <button className="btn btn-default font-heading icon-send-letter">Subscribe</button>
+                                        <form className="form-newsletter" onSubmit={handleSubscribe}>
+                                            <input
+                                                className="input-newsletter"
+                                                placeholder="Enter your email here"
+                                                type="email"
+                                                value={email}
+                                                onChange={(e) => setEmail(e.target.value)} required />
+                                            <button type="submit" className="btn btn-default font-heading icon-send-letter">Subscribe</button>
                                         </form>
                                     </div>
                                 </div>

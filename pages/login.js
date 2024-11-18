@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import Layout from "../components/Layout/Layout";
 import Link from "next/link";
-import { ToastContainer, toast } from 'react-toastify';
+import {ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Cookies from 'js-cookie';
 
@@ -45,13 +45,15 @@ export default function Signin() {
                 localStorage.setItem('userType', data.user_type);
                 Cookies.set('accessToken', data.token.access, { expires: 1 });
 
-                toast.success(data.msg || "Login successful!");
+                // toast.success(data.msg || "Login successful!");
 
                 // Redirect to dashboard or another protected page
                 if (data.user_type === 3) {
                     router.push('/dashboard');  // Redirect to dashboard if userType is 3
+                    toast.success(data.msg || "Login successful!");
                 } else {
                     router.push('/jobs-list');  // Redirect to jobs-list for other userTypes
+                    toast.success(data.msg || "Login successful!");
                 }
             } else {
                 const errorData = await res.json();
@@ -146,7 +148,11 @@ export default function Signin() {
                         </div>
                     </div>
                 </section>
-                <ToastContainer />
+                <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} />
+
+                {/* <div>
+                    <button className="bg-blue-300 p-3" onClick={() => toast.success("Clicked")}>click</button>
+                </div> */}
             </Layout>
         </>
     );

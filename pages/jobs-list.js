@@ -19,6 +19,7 @@ export default function JobList() {
     });
     const [jobCount, setJobCount] = useState(0);
     const [token, setToken] = useState(null);
+    const [salaryRange, setSalaryRange] = useState([0, 200000]);
 
     const router = useRouter();
     const { keyword } = router.query;
@@ -61,6 +62,7 @@ export default function JobList() {
             });
 
             const data = await res.json();
+
             if (data && data.results) {
                 setJobs(data.results);
                 setJobCount(data.count);
@@ -100,6 +102,15 @@ export default function JobList() {
             return updatedFilters;
         });
     };
+    // const filteredJobs = jobs.filter((job) => {
+    //     return filters.salaryRange.some((range) => {
+    //         const [minRange, maxRange] = salaryRanges[range];
+    //         return (
+    //             job.salary_min >= minRange &&
+    //             job.salary_max <= maxRange
+    //         );
+    //     });
+    // });
 
     const handleFilterApply = (e) => {
         e.preventDefault();
@@ -342,6 +353,36 @@ export default function JobList() {
                                                     ))}
                                                 </ul>
                                             </div>
+
+                                            {/* <div className="filter-block mb-30">
+                                                <h5 className="medium-heading mb-15">Salary Range</h5>
+                                                <div className="slider-container">
+                                                    <div className="range-values">
+                                                        <span>${salaryRange[0].toLocaleString()}</span> -
+                                                        <span>${salaryRange[1].toLocaleString()}</span>
+                                                    </div>
+                                                    <input
+                                                        type="range"
+                                                        name="min"
+                                                        min="0"
+                                                        max="200000"
+                                                        step="1000"
+                                                        value={salaryRange[0]}
+                                                        onChange={handleFilterApply}
+                                                        className="slider"
+                                                    />
+                                                    <input
+                                                        type="range"
+                                                        name="max"
+                                                        min="0"
+                                                        max="200000"
+                                                        step="1000"
+                                                        value={salaryRange[1]}
+                                                        onChange={handleFilterApply}
+                                                        className="slider"
+                                                    />
+                                                </div>
+                                            </div> */}
 
                                             {/* Experience Level Filter */}
                                             <div className="filter-block mb-30">

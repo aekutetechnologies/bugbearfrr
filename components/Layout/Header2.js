@@ -5,6 +5,7 @@ import Cookies from "js-cookie";
 import { useRouter } from "next/router";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaUserCircle, FaCog, FaSignOutAlt } from "react-icons/fa";
+import { ToastContainer,toast } from 'react-toastify';
 
 const Header2 = () => {
     const [scroll, setScroll] = useState(false);
@@ -67,7 +68,7 @@ const Header2 = () => {
         setIsLoggedIn(false);
         setProfileData(null);
         setUserType(null);
-
+        toast.success("Logout Sucessfully")
         router.push("/login");
     };
 
@@ -169,7 +170,8 @@ const Header2 = () => {
                     
                         {dropdownOpen && (
                             <div className="absolute right-0 mt-4 w-48 bg-white rounded-md shadow-lg z-10">
-                                <Link href={userType === "3" ? "/recruiter-profile" : "/candidate-profile"}>
+                                {/* <Link href={userType === "1" ? "/candidate-profile" : "/recruiter-profile"}> */}
+                                <Link href={userType === "1" ? "/candidate-profile" : userType === "2" ? "/organization-profile" : "/recruiter-profile"}>.
                                     <div className="dropdown-item flex items-center p-2 cursor-pointer">
                                         <FaUserCircle className="mr-2" style={{ fontSize: "1.2rem" }} />
                                         View Profile
@@ -208,7 +210,10 @@ const Header2 = () => {
                     <RxHamburgerMenu size={35} />
                 </div>
             </div>
+            <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} />
         </header>
+
+        
     )
 }
 

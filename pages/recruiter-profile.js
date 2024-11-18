@@ -57,6 +57,7 @@ export default function OrganizationProfile() {
                         company_logo_url: data.company_logo_url, // Fetch company logo URL
                         email: data.email,
                     });
+                    console.log(profileData);
                     setSelectedSkills(data.skills.map((skill) => ({ label: skill, value: skill })));
                 }
             } catch (error) {

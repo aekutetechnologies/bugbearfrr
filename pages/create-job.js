@@ -313,6 +313,8 @@ export default function CreateJob() {
                                                     name="salary_min"
                                                     value={jobData.salary_min}
                                                     onChange={handleInputChange}
+                                                    step={1000}
+                                                    min={0}
                                                     required
                                                 />
                                             </div>
@@ -327,6 +329,8 @@ export default function CreateJob() {
                                                     name="salary_max"
                                                     value={jobData.salary_max}
                                                     onChange={handleInputChange}
+                                                    step={1000}
+                                                    min={0}
                                                     required
                                                 />
                                             </div>
@@ -344,6 +348,7 @@ export default function CreateJob() {
                                                     name="experience"
                                                     value={jobData.experience}
                                                     onChange={handleInputChange}
+                                                    min={0}
                                                     required
                                                 />
                                             </div>

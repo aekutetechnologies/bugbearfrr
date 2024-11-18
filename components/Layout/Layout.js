@@ -4,6 +4,7 @@ import Footer from './Footer';
 import Header from './Header';
 import Sidebar from './Sidebar';
 import Header2 from './Header2';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Layout = ({ children }) => {
     const [openClass, setOpenClass] = useState('');
@@ -20,17 +21,21 @@ const Layout = ({ children }) => {
         }
     }
     return (
-        <div className=' lg:max-w-screen-xl mx-auto'>
-            <div className="body-overlay-1" onClick={handleRemove} /> 
-             {/* <Header handleOpen={handleOpen} handleRemove={handleRemove} openClass={openClass} /> */}
-             <Header2/>
+
+        <div className=' lg:max-w-screen-xl mx-auto '>
+             {/* <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} /> */}
+            <div className="body-overlay-1" onClick={handleRemove} />
+            {/* <Header handleOpen={handleOpen} handleRemove={handleRemove} openClass={openClass} /> */}
+            <Header2 />
             <Sidebar openClass={openClass} />
             <main className="main">
+
                 {children}
             </main>
-            <Footer className=""/>
+            <Footer />
             <BackToTop />
         </div>
+
     );
 };
 
