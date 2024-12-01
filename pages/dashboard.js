@@ -6,8 +6,8 @@ import { useRouter } from "next/router";
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from "chart.js";
 import Layout from "../components/Layout/Layout";
 
-import JobStats from "../components/elements/jobStats";
-import VdiStats from "../components/elements/vdiStats";
+import JobStats from "../components/elements/JobStats";
+import VdiStats from "../components/elements/VdiStats";
 // Register chart.js components
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
@@ -38,7 +38,7 @@ export default function DashboardWithSidebar() {
             }
 
             try {
-                const response = await fetch("http://127.0.0.1:8000/api/jobs/stats/", {
+                const response = await fetch("http://3.109.222.157/api/jobs/stats/", {
                     method: "GET",
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -79,7 +79,7 @@ export default function DashboardWithSidebar() {
         }
 
         try {
-            const response = await fetch("http://127.0.0.1:8000/api/vdi/create/", {
+            const response = await fetch("http://3.109.222.157/api/vdi/create/", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

@@ -204,7 +204,7 @@ export async function getServerSideProps(context) {
         const token = cookies.accessToken; // Get the token from cookies
 
         // Fetch the applicants for the job
-        const res = await fetch(`http://127.0.0.1:8000/api/jobs/applicants/${id}/`, {
+        const res = await fetch(`http://3.109.222.157/api/jobs/applicants/${id}/`, {
             method: 'GET',
             headers: {
                 Authorization: `Bearer ${token}`, // Pass the token in the headers

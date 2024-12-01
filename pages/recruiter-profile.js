@@ -32,7 +32,7 @@ export default function OrganizationProfile() {
         const fetchProfileData = async () => {
             try {
                 const token = localStorage.getItem("accessToken");
-                const response = await fetch("http://127.0.0.1:8000/api/user/recruiter-profile/", {
+                const response = await fetch("http://3.109.222.157/api/user/recruiter-profile/", {
                     method: "GET",
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -81,7 +81,7 @@ export default function OrganizationProfile() {
         setLoading(true);
         try {
             const token = localStorage.getItem("accessToken");
-            const response = await fetch("http://127.0.0.1:8000/api/user/recruiter-profile/", {
+            const response = await fetch("http://3.109.222.157/api/user/recruiter-profile/", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -117,7 +117,7 @@ export default function OrganizationProfile() {
 
         try {
             const token = localStorage.getItem("accessToken");
-            const response = await fetch("http://127.0.0.1:8000/api/user/upload-recruiter-profile-pic/", {
+            const response = await fetch("http://3.109.222.157/api/user/upload-recruiter-profile-pic/", {
                 method: "POST",
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -147,7 +147,7 @@ export default function OrganizationProfile() {
 
         try {
             const token = localStorage.getItem("accessToken");
-            const response = await fetch("http://127.0.0.1:8000/api/user/upload-company-logo/", {
+            const response = await fetch("http://3.109.222.157/api/user/upload-company-logo/", {
                 method: "POST",
                 headers: {
                     Authorization: `Bearer ${token}`,
