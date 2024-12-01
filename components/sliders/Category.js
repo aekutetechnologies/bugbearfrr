@@ -15,7 +15,7 @@
 //     useEffect(() => {
 //         const fetchCategories = async () => {
 //             try {
-//                 const response = await fetch("http://127.0.0.1:8000/api/jobs/categories"); // Update this URL to match your backend endpoint
+//                 const response = await fetch("http://3.109.222.157/api/jobs/categories"); // Update this URL to match your backend endpoint
 //                 const data = await response.json();
 //                 setCategories(data);
 //             } catch (error) {
@@ -112,7 +112,7 @@ const CategorySlider = () => {
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const response = await fetch("http://127.0.0.1:8000/api/jobs/categories");
+                const response = await fetch("http://3.109.222.157/api/jobs/categories");
                 const data = await response.json();
                 setCategories(data);
             } catch (error) {

@@ -51,7 +51,7 @@ export default function CreateJob() {
 
     // Fetch categories from API
     useEffect(() => {
-        fetch("http://127.0.0.1:8000/api/jobs/category/")
+        fetch("http://3.109.222.157/api/jobs/category/")
             .then((response) => response.json())
             .then((data) => {
                 setCategories(data);
@@ -66,7 +66,7 @@ export default function CreateJob() {
     useEffect(() => {
         if (id) {
             setIsEditing(true);
-            fetch(`http://127.0.0.1:8000/api/jobs/${id}`)
+            fetch(`http://3.109.222.157/api/jobs/${id}`)
                 .then((response) => response.json())
                 .then((data) => {
                     setJobData({
@@ -114,8 +114,8 @@ export default function CreateJob() {
         e.preventDefault();
 
         const url = isEditing
-            ? `http://127.0.0.1:8000/api/jobs/${id}/` // Update existing job
-            : `http://127.0.0.1:8000/api/jobs/`; // Create new job
+            ? `http://3.109.222.157/api/jobs/${id}/` // Update existing job
+            : `http://3.109.222.157/api/jobs/`; // Create new job
 
         const method = isEditing ? "PUT" : "POST"; // Use PUT for edit, POST for create
 
@@ -165,7 +165,7 @@ export default function CreateJob() {
             const token = localStorage.getItem('accessToken'); // Get access token
         
            
-            const profileResponse = await fetch('http://127.0.0.1:8000/api/user/user-details/', {
+            const profileResponse = await fetch('http://3.109.222.157/api/user/user-details/', {
                 method: 'GET',
                 headers: {
                     "Authorization": `Bearer ${token}`, // Use the token for authorization

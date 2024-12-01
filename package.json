@@ -28,7 +28,7 @@
     "react-image-file-resizer": "^0.4.8",
     "react-perfect-scrollbar": "^1.5.8",
     "react-select": "^5.8.0",
-    "react-toastify": "^10.0.5",
+    "react-toastify": "^10.0.6",
     "sass": "^1.56.1",
     "swiper": "^8.4.4"
   },

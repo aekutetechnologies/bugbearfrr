@@ -28,7 +28,7 @@ export default function JobGrid() {
             if (!token) return; // If token is not available yet, do not make the request
 
             try {
-                const response = await fetch("http://127.0.0.1:8000/api/jobs/applied", {
+                const response = await fetch("http://3.109.222.157/api/jobs/applied", {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",

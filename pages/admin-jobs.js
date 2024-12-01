@@ -37,13 +37,13 @@ export default function JobsList() {
                 return;
             }
 
-            let apiUrl = "http://127.0.0.1:8000/api/jobs/list/all"; // Default to all jobs
+            let apiUrl = "http://3.109.222.157/api/jobs/list/all"; // Default to all jobs
 
             // Set the correct API URL based on the status
             if (status === "open") {
-                apiUrl = "http://127.0.0.1:8000/api/jobs/list/open";
+                apiUrl = "http://3.109.222.157/api/jobs/list/open";
             } else if (status === "closed") {
-                apiUrl = "http://127.0.0.1:8000/api/jobs/list/closed";
+                apiUrl = "http://3.109.222.157/api/jobs/list/closed";
             }
 
             try {
@@ -92,7 +92,7 @@ export default function JobsList() {
 
             try {
                 console.log("Fetching VDIs...");
-                const response = await fetch("http://127.0.0.1:8000/api/vdi/list", {
+                const response = await fetch("http://3.109.222.157/api/vdi/list", {
                     method: "GET",
                     headers: {
                         Authorization: `Bearer ${token}`, // Pass the token in the headers
@@ -128,7 +128,7 @@ export default function JobsList() {
     const handleStatusChange = async (jobId, newStatus) => {
         const token = localStorage.getItem("accessToken");
         try {
-            const response = await fetch(`http://127.0.0.1:8000/api/jobs/${jobId}/`, {
+            const response = await fetch(`http://3.109.222.157/api/jobs/${jobId}/`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
@@ -156,7 +156,7 @@ export default function JobsList() {
     const handleVdiChange = async (jobId, vdiId) => {
         const token = localStorage.getItem("accessToken");
         try {
-            const response = await fetch("http://127.0.0.1:8000/api/jobs/vdi/", {
+            const response = await fetch("http://3.109.222.157/api/jobs/vdi/", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

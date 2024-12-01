@@ -1,19 +1,21 @@
-import React from 'react'
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
+/* eslint-disable @next/next/no-html-link-for-pages */
+import Link from "next/link";
+import React, { useState, useEffect } from "react";
+import { FaUserCircle, FaCog, FaSignOutAlt } from "react-icons/fa";
+import Sidebar from "../../components/elements/Sidebar"; // Import the sidebar component
 import Cookies from "js-cookie";
 import { useRouter } from "next/router";
+import { fetchProfileData } from "../../util/api"; // Import the API function
 import { RxHamburgerMenu } from "react-icons/rx";
-import { FaUserCircle, FaCog, FaSignOutAlt } from "react-icons/fa";
 import { ToastContainer,toast } from 'react-toastify';
 
-const Header2 = () => {
+const Header2 = ({ handleOpen, handleRemove, openClass }) => {
     const [scroll, setScroll] = useState(false);
     const [profileData, setProfileData] = useState(null);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [dropdownOpen, setDropdownOpen] = useState(false);
-    const [userType, setUserType] = useState(null);
     const [isSidebarOpen, setSidebarOpen] = useState(false);
+    const [userType, setUserType] = useState(null);
 
     const router = useRouter();
 
@@ -30,35 +32,21 @@ const Header2 = () => {
         // Fetch profile data if logged in
         const token = localStorage.getItem("accessToken");
         if (token) {
-            fetchProfileData(token);
+            fetchProfileData(token)
+                .then(data => {
+                    setProfileData(data);
+                    setIsLoggedIn(true);
+                    setUserType(localStorage.getItem("userType"));
+                })
+                .catch(error => {
+                    console.error("Error fetching profile data:", error);
+                });
         }
 
         return () => {
             document.removeEventListener("scroll", handleScroll);
         };
     }, [scroll]);
-
-    const fetchProfileData = async (token) => {
-        try {
-            const response = await fetch(
-                "http://127.0.0.1:8000/api/user/user-details/",
-                {
-                    method: "GET",
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                    },
-                }
-            );
-            if (response.ok) {
-                const data = await response.json();
-                setProfileData(data);
-                setIsLoggedIn(true);
-                setUserType(localStorage.getItem("userType"));
-            }
-        } catch (error) {
-            console.error("Error fetching profile data:", error);
-        }
-    };
 
     const handleLogout = () => {
         localStorage.removeItem("accessToken");
