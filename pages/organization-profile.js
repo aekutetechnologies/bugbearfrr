@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Layout from "../components/Layout/Layout";
 import { formatDistanceToNow } from 'date-fns';
 import { useRouter } from "next/router";
+import API_BASE_URL from "../config";
 
 // Skill suggestions data
 const skillOptions = [
@@ -58,7 +59,7 @@ export default function CandidateProfile() {
         const fetchProfileData = async () => {
             try {
                 const token = localStorage.getItem("accessToken");
-                const response = await fetch("http://3.109.222.157/api/user/user-details", {
+                const response = await fetch(`${API_BASE_URL}user/user-details`, {
                     method: "GET",
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -96,7 +97,7 @@ export default function CandidateProfile() {
         const fetchAppliedJobs = async () => {
             try {
                 const token = localStorage.getItem("accessToken");
-                const response = await fetch("http://3.109.222.157/api/jobs/applied", {
+                const response = await fetch(`${API_BASE_URL}jobs/applied`, {
                     method: "GET",
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -120,7 +121,7 @@ export default function CandidateProfile() {
         const fetchSavedJobs = async () => {
             try {
                 const token = localStorage.getItem("accessToken");
-                const response = await fetch("http://3.109.222.157/api/jobs/saved", {
+                const response = await fetch(`${API_BASE_URL}jobs/saved`, {
                     method: "GET",
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -152,7 +153,7 @@ export default function CandidateProfile() {
         setLoading(true);
         try {
             const token = localStorage.getItem("accessToken");
-            const response = await fetch("http://3.109.222.157/api/user/user-details/", {
+            const response = await fetch(`${API_BASE_URL}user/user-details/`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -188,7 +189,7 @@ export default function CandidateProfile() {
 
         try {
             const token = localStorage.getItem("accessToken");
-            const response = await fetch("http://3.109.222.157/api/user/upload-profile-pic/", {
+            const response = await fetch(`${API_BASE_URL}user/upload-profile-pic/`, {
                 method: "POST",
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -219,7 +220,7 @@ export default function CandidateProfile() {
 
         try {
             const token = localStorage.getItem("accessToken");
-            const response = await fetch("http://3.109.222.157/api/user/upload-company-logo/", {
+            const response = await fetch(`${API_BASE_URL}user/upload-company-logo/`, {
                 method: "POST",
                 headers: {
                     Authorization: `Bearer ${token}`,

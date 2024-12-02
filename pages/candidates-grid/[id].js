@@ -8,6 +8,7 @@ import { useState, useEffect, useCallback } from "react";
 import React from "react";
 import { useRouter } from "next/router";
 import { fetchCandidateDetails, fetchJobApplicants } from "../../util/api"; // Import the API functions
+import API_BASE_URL from "../../config";
 
 // Pagination Component
 const Pagination = ({ currentPage, totalPages, handlePageChange }) => {
@@ -229,7 +230,7 @@ export default function CandidateGrid({ initialApplicants, jobId }) {
             const token = cookie.parse(document.cookie).accessToken;
             const payload = { searchTerm };
 
-            const response = await fetch(`http://3.109.222.157/api/jobs/applicants/${jobId}/`, {
+            const response = await fetch(`${API_BASE_URL}jobs/applicants/${jobId}/`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -257,7 +258,7 @@ export default function CandidateGrid({ initialApplicants, jobId }) {
     const handleApprove = async (candidateId, isApproved) => {
         try {
             const token = cookie.parse(document.cookie).accessToken;
-            const response = await fetch(`http://3.109.222.157/api/jobs/apply/`, {
+            const response = await fetch(`${API_BASE_URL}jobs/apply/`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
@@ -394,7 +395,7 @@ export async function getServerSideProps(context) {
         const cookies = context.req.headers.cookie ? cookie.parse(context.req.headers.cookie) : {};
         const token = cookies.accessToken;
 
-        const res = await fetch(`http://3.109.222.157/api/jobs/applicants/${id}/`, {
+        const res = await fetch(`${API_BASE_URL}jobs/applicants/${id}/`, {
             method: 'GET',
             headers: {
                 Authorization: `Bearer ${token}`,

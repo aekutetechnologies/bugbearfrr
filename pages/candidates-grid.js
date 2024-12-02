@@ -3,6 +3,7 @@ import Link from "next/link";
 import Layout from "../components/Layout/Layout";
 import BlogSlider from "./../components/sliders/Blog";
 import cookie from "cookie";
+import API_BASE_URL from "../config";
 
 const AlphabetList = () => {
     const alphabets = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
@@ -204,7 +205,7 @@ export async function getServerSideProps(context) {
         const token = cookies.accessToken; // Get the token from cookies
 
         // Fetch the applicants for the job
-        const res = await fetch(`http://3.109.222.157/api/jobs/applicants/${id}/`, {
+        const res = await fetch(`${API_BASE_URL}jobs/applicants/${id}/`, {
             method: 'GET',
             headers: {
                 Authorization: `Bearer ${token}`, // Pass the token in the headers

@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import Layout from "../components/Layout/Layout";
 import { formatDistanceToNow, parseISO } from 'date-fns'; // To handle relative time formatting
 import { FaEdit } from "react-icons/fa"; // Import the edit icon from react-icons
+import API_BASE_URL from "../config";
 
 export default function JobsList() {
     const router = useRouter();
@@ -37,13 +38,13 @@ export default function JobsList() {
                 return;
             }
 
-            let apiUrl = "http://3.109.222.157/api/jobs/list/all"; // Default to all jobs
+            let apiUrl = `${API_BASE_URL}jobs/list/all`; // Default to all jobs
 
             // Set the correct API URL based on the status
             if (status === "open") {
-                apiUrl = "http://3.109.222.157/api/jobs/list/open";
+                apiUrl = `${API_BASE_URL}jobs/list/open`;
             } else if (status === "closed") {
-                apiUrl = "http://3.109.222.157/api/jobs/list/closed";
+                apiUrl = `${API_BASE_URL}jobs/list/closed`;
             }
 
             try {
@@ -92,7 +93,7 @@ export default function JobsList() {
 
             try {
                 console.log("Fetching VDIs...");
-                const response = await fetch("http://3.109.222.157/api/vdi/list", {
+                const response = await fetch(`${API_BASE_URL}vdi/list`, {
                     method: "GET",
                     headers: {
                         Authorization: `Bearer ${token}`, // Pass the token in the headers
@@ -128,7 +129,7 @@ export default function JobsList() {
     const handleStatusChange = async (jobId, newStatus) => {
         const token = localStorage.getItem("accessToken");
         try {
-            const response = await fetch(`http://3.109.222.157/api/jobs/${jobId}/`, {
+            const response = await fetch(`${API_BASE_URL}jobs/${jobId}/`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
@@ -156,7 +157,7 @@ export default function JobsList() {
     const handleVdiChange = async (jobId, vdiId) => {
         const token = localStorage.getItem("accessToken");
         try {
-            const response = await fetch("http://3.109.222.157/api/jobs/vdi/", {
+            const response = await fetch(`${API_BASE_URL}jobs/vdi/`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

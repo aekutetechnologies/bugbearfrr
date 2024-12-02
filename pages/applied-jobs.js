@@ -3,6 +3,7 @@ import Link from "next/link";
 import Layout from "../components/Layout/Layout";
 import { useRouter } from "next/router";
 import Loader from "../components/elements/Loader";
+import API_BASE_URL from "../config";
 
 export default function JobGrid() {
     const [jobs, setJobs] = useState([]);
@@ -28,7 +29,7 @@ export default function JobGrid() {
             if (!token) return; // If token is not available yet, do not make the request
 
             try {
-                const response = await fetch("http://3.109.222.157/api/jobs/applied", {
+                const response = await fetch(`${API_BASE_URL}jobs/applied`, {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",

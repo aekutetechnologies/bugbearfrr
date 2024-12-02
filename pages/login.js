@@ -7,6 +7,7 @@ import Link from "next/link";
 import {ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Cookies from 'js-cookie';
+import API_BASE_URL from "../config";
 
 export default function Signin() {
     const router = useRouter();
@@ -28,7 +29,7 @@ export default function Signin() {
         e.preventDefault();
 
         try {
-            const res = await fetch("http://3.109.222.157/api/user/login/", {
+            const res = await fetch(`${API_BASE_URL}user/login/`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

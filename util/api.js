@@ -1,8 +1,10 @@
 // util/api.js
 
+import API_BASE_URL from "../config";
+
 export const fetchProfileData = async (token) => {
     try {
-        const response = await fetch("http://3.109.222.157/api/user/user-details/", {
+        const response = await fetch(`${API_BASE_URL}user/user-details/`, {
             method: "GET",
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -23,7 +25,7 @@ export const fetchProfileData = async (token) => {
 
 export const fetchCandidateDetails = async (id, token) => {
     try {
-        const response = await fetch(`http://3.109.222.157/api/user/candidate/${id}/`, {
+        const response = await fetch(`${API_BASE_URL}user/candidate/${id}/`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -45,7 +47,7 @@ export const fetchCandidateDetails = async (id, token) => {
 
 export const fetchJobApplicants = async (id, token) => {
     try {
-        const response = await fetch(`http://3.109.222.157/api/jobs/applicants/${id}/`, {
+        const response = await fetch(`${API_BASE_URL}jobs/applicants/${id}/`, {
             method: 'GET',
             headers: {
                 Authorization: `Bearer ${token}`,

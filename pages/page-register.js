@@ -4,6 +4,7 @@ import Layout from "../components/Layout/Layout";
 import Link from "next/link";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import API_BASE_URL from "../config";
 
 export default function Register() {
     const router = useRouter();
@@ -56,7 +57,7 @@ export default function Register() {
         };
 
         try {
-            const res = await fetch("http://3.109.222.157/api/user/register/", {
+            const res = await fetch(`${API_BASE_URL}user/register/`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

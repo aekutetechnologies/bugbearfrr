@@ -38,7 +38,7 @@ export default function DashboardWithSidebar() {
             }
 
             try {
-                const response = await fetch("http://3.109.222.157/api/jobs/stats/", {
+                const response = await fetch(`${API_BASE_URL}jobs/stats/`, {
                     method: "GET",
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -79,7 +79,7 @@ export default function DashboardWithSidebar() {
         }
 
         try {
-            const response = await fetch("http://3.109.222.157/api/vdi/create/", {
+            const response = await fetch(`${API_BASE_URL}vdi/create/`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

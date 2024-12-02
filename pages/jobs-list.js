@@ -44,7 +44,7 @@ export default function JobList() {
 
         setLoading(true);
         try {
-            const res = await fetch(`http://3.109.222.157/api/jobs/search/`, {
+            const res = await fetch(`${API_BASE_URL}jobs/search/`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
