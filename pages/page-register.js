@@ -4,7 +4,7 @@ import Layout from "../components/Layout/Layout";
 import Link from "next/link";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import API_BASE_URL from "../config";
+import API_BASE_URL from "../util/config";
 
 export default function Register() {
     const router = useRouter();

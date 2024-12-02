@@ -4,7 +4,7 @@ import Select from "react-select";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Layout from "../components/Layout/Layout";
-import API_BASE_URL from "../config";
+import API_BASE_URL from "../util/config";
 
 export default function OrganizationProfile() {
     const [profileData, setProfileData] = useState({

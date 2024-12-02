@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import API_BASE_URL from "../config";
+import API_BASE_URL from "../../util/config";
 
 const CategorySlider = () => {
     const [categories, setCategories] = useState([]);

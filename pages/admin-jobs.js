@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import Layout from "../components/Layout/Layout";
 import { formatDistanceToNow, parseISO } from 'date-fns'; // To handle relative time formatting
 import { FaEdit } from "react-icons/fa"; // Import the edit icon from react-icons
-import API_BASE_URL from "../config";
+import API_BASE_URL from "../util/config";
 
 export default function JobsList() {
     const router = useRouter();

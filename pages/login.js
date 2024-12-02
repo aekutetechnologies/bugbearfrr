@@ -7,7 +7,7 @@ import Link from "next/link";
 import {ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Cookies from 'js-cookie';
-import API_BASE_URL from "../config";
+import API_BASE_URL from "../util/config";
 
 export default function Signin() {
     const router = useRouter();

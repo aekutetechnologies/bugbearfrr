@@ -15,7 +15,7 @@ import { GoBriefcase } from "react-icons/go";
 import { useState, useEffect } from "react";  // Import useState and useEffect
 import { ToastContainer, toast } from 'react-toastify'; // Import toast notifications
 import 'react-toastify/dist/ReactToastify.css'; // Import styles for toast notifications
-import API_BASE_URL from "../../config"; // Import API base URL
+import API_BASE_URL from "../../util/config"; // Import API base URL
 
 export default function JobDetails({ job, featuredJobs, token }) {
   const [isApplying, setIsApplying] = useState(false);

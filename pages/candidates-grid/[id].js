@@ -8,7 +8,7 @@ import { useState, useEffect, useCallback } from "react";
 import React from "react";
 import { useRouter } from "next/router";
 import { fetchCandidateDetails, fetchJobApplicants } from "../../util/api"; // Import the API functions
-import API_BASE_URL from "../../config";
+import API_BASE_URL from "../../util/config";
 
 // Pagination Component
 const Pagination = ({ currentPage, totalPages, handlePageChange }) => {

@@ -5,7 +5,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ProfileModal from "../components/elements/ProfileModal";
 import { Editor } from 'primereact/editor';
-import API_BASE_URL from "../config";
+import API_BASE_URL from "../util/config";
 
 
 // Dummy Job Types

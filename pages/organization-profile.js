@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Layout from "../components/Layout/Layout";
 import { formatDistanceToNow } from 'date-fns';
 import { useRouter } from "next/router";
-import API_BASE_URL from "../config";
+import API_BASE_URL from "../util/config";
 
 // Skill suggestions data
 const skillOptions = [

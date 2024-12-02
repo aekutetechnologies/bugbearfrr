@@ -3,7 +3,7 @@ import Link from "next/link";
 import Layout from "../components/Layout/Layout";
 import { useRouter } from "next/router";
 import Loader from "../components/elements/Loader";
-import API_BASE_URL from "../config";
+import API_BASE_URL from "../util/config";
 
 export default function JobGrid() {
     const [jobs, setJobs] = useState([]);

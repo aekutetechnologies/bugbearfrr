@@ -3,7 +3,7 @@ import Link from "next/link";
 import Layout from "../components/Layout/Layout";
 import BlogSlider from "./../components/sliders/Blog";
 import cookie from "cookie";
-import API_BASE_URL from "../config";
+import API_BASE_URL from "../util/config";
 
 const AlphabetList = () => {
     const alphabets = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
