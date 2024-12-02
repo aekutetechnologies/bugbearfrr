@@ -166,7 +166,7 @@ export default function CreateJob() {
             const token = localStorage.getItem('accessToken'); // Get access token
         
            
-            const profileResponse = await fetch(`${API_BASE_URL}user/user-details/', {
+            const profileResponse = await fetch(`${API_BASE_URL}user/user-details/`, {
                 method: 'GET',
                 headers: {
                     "Authorization": `Bearer ${token}`, // Use the token for authorization
