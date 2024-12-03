@@ -1,29 +1,20 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import { FaUserCircle, FaCog, FaSignOutAlt } from "react-icons/fa";
-import Sidebar from "../../components/elements/Sidebar"; // Import the sidebar component
-import Cookies from "js-cookie";
-import { useRouter } from "next/router";
-import { fetchProfileData } from "../../util/api"; // Import the API function
+import dynamic from "next/dynamic";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
+import { useRouter } from "next/router";
 
-const Header2 = ({ handleOpen, handleRemove, openClass }) => {
+const AuthButtons = dynamic(() => import("../elements/AuthButtons"), {
+  ssr: false,
+});
+
+const Header2 = () => {
   const [scroll, setScroll] = useState(false);
-  const [profileData, setProfileData] = useState(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [isSidebarOpen, setSidebarOpen] = useState(false);
-  const [userType, setUserType] = useState(null);
-  const [isClient, setIsClient] = useState(false);
-
   const router = useRouter();
 
   useEffect(() => {
-    // Ensure this code runs only on the client
-    setIsClient(true);
-
     const handleScroll = () => {
       const scrollCheck = window.scrollY > 100;
       if (scrollCheck !== scroll) {
@@ -31,47 +22,25 @@ const Header2 = ({ handleOpen, handleRemove, openClass }) => {
       }
     };
 
-    document.addEventListener("scroll", handleScroll);
-
-    // Fetch profile data if logged in
-    if (isClient) {
-      const token = localStorage.getItem("accessToken");
-      if (token) {
-        fetchProfileData(token)
-          .then((data) => {
-            setProfileData(data);
-            setIsLoggedIn(true);
-            setUserType(localStorage.getItem("userType"));
-          })
-          .catch((error) => {
-            console.error("Error fetching profile data:", error);
-          });
-      }
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", handleScroll);
     }
 
     return () => {
-      document.removeEventListener("scroll", handleScroll);
+      if (typeof window !== "undefined") {
+        window.removeEventListener("scroll", handleScroll);
+      }
     };
-  }, [scroll, isClient]);
+  }, [scroll]);
 
-  const handleLogout = () => {
-    localStorage.removeItem("accessToken");
-    localStorage.removeItem("refreshToken");
-    localStorage.removeItem("userType");
-    Cookies.remove("token");
-    setIsLoggedIn(false);
-    setProfileData(null);
-    setUserType(null);
-    toast.success("Logout Successfully");
-    router.push("/login");
-  };
-
-  const toggleDropdown = () => {
-    setDropdownOpen(!dropdownOpen);
-  };
-
-  const toggleSidebar = () => {
-    setSidebarOpen(!isSidebarOpen);
+  // Handle logo click based on token availability
+  const handleLogoClick = () => {
+    const token = localStorage.getItem("accessToken"); // Fetch token from localStorage
+    if (token) {
+      router.push("/jobs-list/"); // Redirect to jobs-list if token is available
+    } else {
+      router.push("/"); // Redirect to home if token is not available
+    }
   };
 
   return (
@@ -86,141 +55,22 @@ const Header2 = ({ handleOpen, handleRemove, openClass }) => {
         }
       >
         <div>
-          <Link
-            href={
-              !isLoggedIn
-                ? "/"
-                : userType === "3"
-                ? "/dashboard"
-                : userType === "1" || userType === "2"
-                ? "/jobs-list"
-                : "/"
-            }
-            className="d-flex"
+          <div
+            onClick={handleLogoClick}
+            className="cursor-pointer d-flex items-center"
           >
             <img
               className="w-44"
               alt="bugbear"
               src="/assets/imgs/template/jobhub-logo.svg"
             />
-          </Link>
+          </div>
         </div>
 
-        <div className="hidden lg:flex items-center gap-3">
-          {isClient && isLoggedIn && userType === "3" && (
-            <div className="flex gap-4">
-              <Link
-                href="/dashboard"
-                className="text-gray-700 hover:text-white font-semibold"
-              >
-                <button>Dashboard</button>
-              </Link>
-            </div>
-          )}
-          {isClient && isLoggedIn && (userType === "1" || userType === "2") && (
-            <div className="flex gap-4">
-              <Link
-                href="/jobs-list"
-                className="text-gray-700 hover:text-white font-semibold"
-              >
-                <button className="w-full">Search Jobs</button>
-              </Link>
-              <Link
-                href="/applied-jobs"
-                className="text-gray-700 hover:text-white font-semibold"
-              >
-                <button className="w-full">My Jobs</button>
-              </Link>
-              <Link
-                href="/saved-jobs"
-                className="text-gray-700 hover:text-white font-semibold"
-              >
-                <button className="w-full">Saved Jobs</button>
-              </Link>
-            </div>
-          )}
-          {isClient && isLoggedIn ? (
-            <div className="relative">
-              <button
-                className="flex items-center gap-2 pr-10"
-                onClick={toggleDropdown}
-              >
-                <img
-                  src={
-                    profileData?.profile_pic_url ||
-                    "/assets/imgs/default-profile-pic.png"
-                  }
-                  alt="Profile"
-                  width={45}
-                  className="rounded-full"
-                />
-                <span>
-                  <span>Hi,</span>
-                  {profileData?.first_name || "User"}
-                </span>
-              </button>
-
-              {dropdownOpen && (
-                <div className="absolute right-0 mt-4 w-48 bg-white rounded-md shadow-lg z-10">
-                  <Link
-                    href={
-                      userType === "1"
-                        ? "/candidate-profile"
-                        : userType === "2"
-                        ? "/organization-profile"
-                        : "/recruiter-profile"
-                    }
-                  >
-                    <div className="dropdown-item flex items-center p-2 cursor-pointer">
-                      <FaUserCircle
-                        className="mr-2"
-                        style={{ fontSize: "1.2rem" }}
-                      />
-                      View Profile
-                    </div>
-                  </Link>
-                  <div
-                    className="dropdown-item flex items-center p-2 cursor-pointer"
-                    onClick={toggleSidebar}
-                  >
-                    <FaCog
-                      className="mr-2"
-                      style={{ fontSize: "1.2rem" }}
-                    />
-                    My Account
-                  </div>
-                  <div
-                    className="dropdown-item flex items-center p-2 cursor-pointer"
-                    onClick={handleLogout}
-                  >
-                    <FaSignOutAlt
-                      className="mr-2"
-                      style={{ fontSize: "1.2rem" }}
-                    />
-                    Logout
-                  </div>
-                </div>
-              )}
-            </div>
-          ) : (
-            isClient && (
-              <div className="flex items-center pr-10">
-                <Link
-                  href="/choose-role"
-                  className="text-link-bd-btom hover-up"
-                >
-                  Register
-                </Link>
-                <Link
-                  href="/login"
-                  className="btn btn-default btn-shadow ml-40 hover-up"
-                >
-                  Sign in
-                </Link>
-              </div>
-            )
-          )}
+        <div className="lg:flex items-center gap-3">
+          <AuthButtons />
         </div>
+
         <div className="flex lg:hidden items-center">
           <RxHamburgerMenu size={35} />
         </div>

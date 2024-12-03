@@ -4,6 +4,7 @@ import Layout from "../components/Layout/Layout";
 import BlogSlider from "./../components/sliders/Blog";
 import { useRouter } from "next/router";
 import { formatDistanceToNow } from 'date-fns';
+import API_BASE_URL from "";
 
 export default function JobList() {
     const [jobs, setJobs] = useState([]);
